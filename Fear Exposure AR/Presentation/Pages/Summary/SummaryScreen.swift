@@ -15,9 +15,10 @@ struct SummaryScreen : View {
         
         ScrollView {
             VStack (spacing: 32) {
-                Image("Image/Illustration/DummyImage")
+                Image("image/illustration/summary")
                     .resizable()
                     .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
                 VStack (spacing: 8) {
                     Text("You’re Doing Great!")
                         .font(.title2)
@@ -80,6 +81,7 @@ struct SummaryScreen : View {
             }
             .padding(.horizontal, 16)
         }
+        .padding(.top, 32)
         .navigationBarBackButtonHidden()
     }
 }

@@ -9,8 +9,14 @@ import SwiftUI
 
 struct ReflectionScreen: View {
     
+    enum Field {
+        case before
+        case after
+    }
+    
     @Environment(Router.self) private var router
     @State var viewModel = ReflectionViewModel()
+    @FocusState private var focusedField: Field?
     
     var body: some View {
         ScrollView {
@@ -69,6 +75,7 @@ struct ReflectionScreen: View {
                 
                 TextField("Answer Here", text: $viewModel.beforeText, axis: .vertical)
                     .lineLimit(5...10)
+                    .focused($focusedField, equals: .before)
                     .textFieldStyle(.roundedBorder)
                     .multilineTextAlignment(.leading)
                 Spacer()
@@ -79,8 +86,10 @@ struct ReflectionScreen: View {
                 
                 TextField("Answer Here", text: $viewModel.afterText, axis: .vertical)
                     .lineLimit(5...10)
+                    .focused($focusedField, equals: .after)
                     .textFieldStyle(.roundedBorder)
                     .multilineTextAlignment(.leading)
+                
                 Spacer()
                     .frame(height: 48)
                 
@@ -101,6 +110,15 @@ struct ReflectionScreen: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 16)
             
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                
+                Button("Done") {
+                    focusedField = nil
+                }
+            }
         }
         .navigationTitle("Session Reflection")
         .navigationBarTitleDisplayMode(.large)

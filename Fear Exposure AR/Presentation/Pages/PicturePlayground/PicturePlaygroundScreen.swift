@@ -13,7 +13,7 @@ struct PicturePlaygroundScreen : View {
     
     var body: some View {
         ZStack (alignment : .bottom) {
-            Image("Image/Data/SadHamster")
+            Image("image/data/sad_hamster")
                 .resizable()
                 .scaledToFit()
                 .font(.title)

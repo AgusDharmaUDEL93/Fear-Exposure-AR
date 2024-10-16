@@ -19,7 +19,7 @@ struct TherapyTypeScreen : View {
                     description: "View photos of your feared object to gradually reduce your fear response.",
                     image: "photo",
                     action: {
-                        router.navigate(to: .arPlayground)
+                        router.navigate(to: .picturePlayground)
                     }
                 )
                 CardTherapyType(

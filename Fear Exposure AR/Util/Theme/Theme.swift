@@ -6,19 +6,19 @@
 //
 
 enum Theme : String {
-    case primary50 = "Color/Primary/Primary50"
-    case primary100 = "Color/Primary/Primary100"
-    case primary200 = "Color/Primary/Primary200"
-    case primary300 = "Color/Primary/Primary300"
-    case primary400 = "Color/Primary/Primary400"
-    case primary500 = "Color/Primary/Primary500"
-    case primary600 = "Color/Primary/Primary600"
-    case primary700 = "Color/Primary/Primary700"
-    case primary800 = "Color/Primary/Primary800"
-    case primary900 = "Color/Primary/Primary900"
-    case primary950 = "Color/Primary/Primary950"
+    case primary50 = "color/primary/primary_50"
+    case primary100 = "color/primary/primary_100"
+    case primary200 = "color/primary/primary_200"
+    case primary300 = "color/primary/primary_300"
+    case primary400 = "color/primary/primary_400"
+    case primary500 = "color/primary/primary_500"
+    case primary600 = "color/primary/primary_600"
+    case primary700 = "color/primary/primary_700"
+    case primary800 = "color/primary/primary_800"
+    case primary900 = "color/primary/primary_900"
+    case primary950 = "color/primary/primary_950"
     
-    case error = "Color/Error/Error"
+    case error = "color/error/error"
     
-    case background = "Color/Background/Background"
+    case background = "color/background/background"
 }

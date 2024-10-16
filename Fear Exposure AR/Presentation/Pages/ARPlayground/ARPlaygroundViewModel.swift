@@ -24,8 +24,8 @@ class ARPlaygroundViewModel {
     }
         
     private func getFearedObject ()  {
-        fearedObject.baseModel = try? ModelEntity.loadModel(named: "base_snake.usdc")
-//        fearedObject.animation = try? ModelEntity.loadModel(named: "kucheng_eat_animation.usdz").availableAnimations.first
+        fearedObject.baseModel = try? ModelEntity.loadModel(named: "base_snake.usdz")
+        fearedObject.animation = try? ModelEntity.loadModel(named: "animation_snake.usdz").availableAnimations.first
     }
     
     func placeItem (){

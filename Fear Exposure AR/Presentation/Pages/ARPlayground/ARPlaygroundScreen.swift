@@ -40,6 +40,11 @@ struct ARPlaygroundScreen : View {
                         action: {
                             viewModel.placeItem()
                             viewModel.hideBackButton()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(120)) {
+                                router.navigateBack()
+                                router.navigateBack()
+                                router.navigate(to: .reflection)
+                            }
                         },
                         label: {
                             Label(
