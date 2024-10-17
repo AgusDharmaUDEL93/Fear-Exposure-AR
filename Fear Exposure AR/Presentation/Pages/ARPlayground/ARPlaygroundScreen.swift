@@ -13,60 +13,63 @@ struct ARPlaygroundScreen : View {
     @Environment(Router.self) private var router
     
     var body : some View {
-        ZStack (alignment : .bottom) {
-            ARPlayground(fearedObject: $viewModel.fearedObject)
-                .ignoresSafeArea()
+        GeometryReader { geometry in
             
-            Group {
-                if (viewModel.fearedObject.isActive){
-                    Button(
-                        action: {
-                            viewModel.toogleConfirmationDialog()
-                        },
-                        label: {
-                            Label(
-                                "End Session",
-                                systemImage:  "xmark.circle.fill"
-                            )
-                            .font(.body)
-                            .bold()
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 6)
-                        }
-                    )
-                    .foregroundStyle(Color(Theme.error.rawValue))
-                } else {
-                    Button(
-                        action: {
-                            viewModel.placeItem()
-                            viewModel.hideBackButton()
-                            DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(120)) {
-                                router.navigateBack()
-                                router.navigateBack()
-                                router.navigate(to: .reflection)
+            ZStack (alignment : .bottom) {
+                ARPlayground(fearedObject: $viewModel.fearedObject)
+                    .ignoresSafeArea()
+                
+                Group {
+                    if (viewModel.fearedObject.isActive){
+                        Button(
+                            action: {
+                                viewModel.toogleConfirmationDialog()
+                            },
+                            label: {
+                                Label(
+                                    "End Session",
+                                    systemImage:  "xmark.circle.fill"
+                                )
+                                .font(.body)
+                                .bold()
+                                .frame(maxWidth: geometry.size.width)
+                                .padding(.vertical, 6)
                             }
-                        },
-                        label: {
-                            Label(
-                                "Place & Start",
-                                systemImage:  "play.fill"
-                            )
-                            .font(.body)
-                            .bold()
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 6)
-                            
-                        }
-                    )
-                    .foregroundStyle(Color(Theme.primary500.rawValue))
-                    
+                        )
+                        .foregroundStyle(Color(Theme.error.rawValue))
+                    } else {
+                        Button(
+                            action: {
+                                viewModel.placeItem()
+                                viewModel.hideBackButton()
+                                DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(120)) {
+                                    router.navigateBack()
+                                    router.navigateBack()
+                                    router.navigate(to: .reflection)
+                                }
+                            },
+                            label: {
+                                Label(
+                                    "Place & Start",
+                                    systemImage:  "play.fill"
+                                )
+                                .font(.body)
+                                .bold()
+                                .frame(maxWidth: geometry.size.width)
+                                .padding(.vertical, 6)
+                                
+                            }
+                        )
+                        .foregroundStyle(Color(Theme.primary500.rawValue))
+                        
+                    }
                 }
+                .buttonStyle(.borderedProminent)
+                .tint(Color(Theme.background.rawValue))
+                .padding(.bottom, 48)
+                .padding(.horizontal)
+                
             }
-            .buttonStyle(.borderedProminent)
-            .tint(Color(Theme.background.rawValue))
-            .padding(.bottom, 50)
-            .padding(.horizontal)
-            
         }
         .navigationBarBackButtonHidden(viewModel.isHideBackButton)
         .alert(
@@ -85,8 +88,8 @@ struct ARPlaygroundScreen : View {
                     router.navigateBack()
                     router.navigate(to: .reflection)
                 })
-
-               
+                
+                
                 
             },
             message: {

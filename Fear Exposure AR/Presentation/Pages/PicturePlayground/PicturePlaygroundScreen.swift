@@ -12,29 +12,43 @@ struct PicturePlaygroundScreen : View {
     @State var viewModel = PicturePlaygroundViewModel()
     
     var body: some View {
-        ZStack (alignment : .bottom) {
-            Image("image/data/sad_hamster")
-                .resizable()
-                .scaledToFit()
-                .font(.title)
-                .scaleEffect(viewModel.currentZoom + viewModel.totalZoom)
-                .gesture(
-                    MagnificationGesture()
-                        .onChanged { value in
-                            viewModel.onChangedZoom(value)
-                        }
-                        .onEnded { value in
-                            viewModel.onEndedZoom()
-                        }
-                )
-            
-            Button(action: {
-                viewModel.onResetZoom()
-            }, label: {
-                Text("Reset")
-            })
-            .buttonStyle(.borderedProminent)
+        GeometryReader { geometry in
+            ZStack{
+                Image("image/data/image_snake")
+                    .resizable()
+                    .scaledToFit()
+                    .font(.title)
+                    .scaleEffect(viewModel.currentZoom + viewModel.totalZoom)
+                
+                VStack  {
+                    Spacer()
+                    Button(action: {
+                        viewModel.onResetZoom()
+                    }, label: {
+                        Text("Reset")
+                            .font(.body)
+                            .bold()
+                            .frame(maxWidth: geometry.size.width)
+                            .padding(.vertical, 6)
+                    })
+                    .padding(.bottom, 48)
+                    .buttonStyle(.borderedProminent)
+                }
+                .padding(.horizontal, 16)
+            }
+            .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
+            .background()
+            .gesture(
+                MagnificationGesture()
+                    .onChanged { value in
+                        viewModel.onChangedZoom(value)
+                    }
+                    .onEnded { value in
+                        viewModel.onEndedZoom()
+                    }
+            )
         }
+        
         .ignoresSafeArea(.all)
     }
 }

@@ -19,10 +19,12 @@ class PicturePlaygroundViewModel {
     func onEndedZoom () {
         totalZoom += currentZoom
         currentZoom = 0
+        print("here")
     }
     
     func onResetZoom () {
         currentZoom = 0.0
         totalZoom = 1.0
+        print("here 2")
     }
 }

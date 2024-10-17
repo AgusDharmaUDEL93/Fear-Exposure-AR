@@ -72,7 +72,7 @@ struct CardTherapy : View {
     CardTherapy(
         title: "Afraid of Snakes?",
         description: Text("Your daily \(Text("ophidiophobia").bold()) therapy session is ready"),
-        image: "image/illustration/dummy_image",
+        image: "image/illustration/card_snake",
         beginRangeTime: 15,
         endedRangeTime: 30,
         action: {
