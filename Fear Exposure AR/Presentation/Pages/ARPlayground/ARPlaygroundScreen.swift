@@ -42,11 +42,15 @@ struct ARPlaygroundScreen : View {
                             action: {
                                 viewModel.placeItem()
                                 viewModel.hideBackButton()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(120)) {
-                                    router.navigateBack()
-                                    router.navigateBack()
-                                    router.navigate(to: .reflection)
-                                }
+                                viewModel.startTimer(block: { timer in
+                                    print(viewModel.timerCount)
+                                    viewModel.countTimer()
+                                    if (viewModel.timerCount == 0){
+                                        viewModel.stopTimer()
+                                        viewModel.resetTimer()
+                                        router.navigate(to: .reflection)
+                                    }
+                                })
                             },
                             label: {
                                 Label(
@@ -84,8 +88,6 @@ struct ARPlaygroundScreen : View {
                 Button ("End Session", role: .destructive, action: {
                     viewModel.clearItem()
                     viewModel.toogleConfirmationDialog()
-                    router.navigateBack()
-                    router.navigateBack()
                     router.navigate(to: .reflection)
                 })
                 
@@ -110,6 +112,10 @@ struct ARPlaygroundScreen : View {
                 Button("OK", role: .cancel) {}
             }
         )
+        .onDisappear(perform: {
+            viewModel.stopTimer()
+            viewModel.resetTimer()
+        })
     }
 }
 

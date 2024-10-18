@@ -63,7 +63,7 @@ struct SummaryScreen : View {
                         
                         Button(
                             action: {
-                                router.navigateBack()
+                                router.navigateToRoot()
                             },
                             label: {
                                 Text("Done")
