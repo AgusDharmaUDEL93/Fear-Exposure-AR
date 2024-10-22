@@ -44,38 +44,23 @@ struct SummaryScreen : View {
                             value: "87 BPM"
                         )
                     }
-                    VStack (spacing: 8) {
-                        Button(
-                            action: {
-                                
-                            },
-                            label: {
-                                Text("Continue to Next Session")
-                                    .frame(maxWidth: geometry.size.width)
-                                    .foregroundStyle(Color(Theme.background.rawValue))
-                                    .padding(.vertical, 6)
-                                    .bold()
-                                
-                            }
-                        )
-                        .buttonStyle(.borderedProminent)
-                        .tint(Color(Theme.primary500.rawValue))
-                        
-                        Button(
-                            action: {
-                                router.navigateToRoot()
-                            },
-                            label: {
-                                Text("Done")
-                                    .frame(maxWidth: geometry.size.width)
-                                    .foregroundStyle(Color(Theme.primary500.rawValue))
-                                    .padding(.vertical, 6)
-                                    .bold()
-                                
-                            }
-                        )
-                        .buttonStyle(.borderless)
-                    }
+                    Spacer()
+                    Button(
+                        action: {
+                            router.navigateToRoot()
+                        },
+                        label: {
+                            Text("Done")
+                                .frame(maxWidth: geometry.size.width)
+                                .foregroundStyle(Color(Theme.background.rawValue))
+                                .padding(.vertical, 6)
+                                .bold()
+                            
+                        }
+                    )
+                    .buttonStyle(.borderedProminent)
+                    .tint(Color(Theme.primary500.rawValue))
+                    
                     
                     
                 }

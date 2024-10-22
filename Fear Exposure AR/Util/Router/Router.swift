@@ -19,6 +19,8 @@ class Router  {
         case summary
         case arPlayground
         case picturePlayground
+        case userInfo
+        case difficultyType
     }
     
     func navigate(to destination: Destination) {

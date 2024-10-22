@@ -22,6 +22,30 @@ struct ReflectionScreen: View {
         GeometryReader { geometry in
             ScrollView {
                 VStack (alignment: .leading) {
+                    
+                    Text("How do you feel now compared to before the therapy session began?")
+                        .font(.body)
+                        .bold()
+                    
+                    TextField("Answer Here", text: $viewModel.beforeText, axis: .vertical)
+                        .lineLimit(5...10)
+                        .focused($focusedField, equals: .before)
+                        .textFieldStyle(.roundedBorder)
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                        .frame(height: 48)
+                    Text("How do you feel about facing the fear-inducing situation or object outside of the therapy session?")
+                        .font(.body)
+                        .bold()
+                    
+                    TextField("Answer Here", text: $viewModel.afterText, axis: .vertical)
+                        .lineLimit(5...10)
+                        .focused($focusedField, equals: .after)
+                        .textFieldStyle(.roundedBorder)
+                        .multilineTextAlignment(.leading)
+                    
+                    Spacer()
+                        .frame(height: 48)
                     Text("What do you feel during this session?")
                         .font(.body)
                         .bold()
@@ -68,29 +92,6 @@ struct ReflectionScreen: View {
                         )
                     }
                     .frame(maxWidth: geometry.size.width)
-                    Spacer()
-                        .frame(height: 48)
-                    Text("How do you feel now compared to before the therapy session began?")
-                        .font(.body)
-                        .bold()
-                    
-                    TextField("Answer Here", text: $viewModel.beforeText, axis: .vertical)
-                        .lineLimit(5...10)
-                        .focused($focusedField, equals: .before)
-                        .textFieldStyle(.roundedBorder)
-                        .multilineTextAlignment(.leading)
-                    Spacer()
-                        .frame(height: 48)
-                    Text("How do you feel about facing the fear-inducing situation or object outside of the therapy session?")
-                        .font(.body)
-                        .bold()
-                    
-                    TextField("Answer Here", text: $viewModel.afterText, axis: .vertical)
-                        .lineLimit(5...10)
-                        .focused($focusedField, equals: .after)
-                        .textFieldStyle(.roundedBorder)
-                        .multilineTextAlignment(.leading)
-                    
                     Spacer()
                         .frame(height: 48)
                     

@@ -61,6 +61,10 @@ struct ContentView: View {
                         ReflectionScreen()
                     case .summary:
                         SummaryScreen()
+                    case .userInfo:
+                        UserInfoScreen()
+                    case .difficultyType:
+                        DifficultyTypeScreen()
                     }
                 }
             )

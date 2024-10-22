@@ -25,7 +25,7 @@ struct TherapyScreen : View {
                         beginRangeTime: 15,
                         endedRangeTime: 30,
                         action: {
-                            router.navigate(to: .theraphyType)
+                            router.navigate(to: .userInfo)
                         }
                     )
                     

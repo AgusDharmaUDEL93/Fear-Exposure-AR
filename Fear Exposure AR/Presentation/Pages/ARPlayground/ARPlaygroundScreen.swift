@@ -14,57 +14,72 @@ struct ARPlaygroundScreen : View {
     
     var body : some View {
         GeometryReader { geometry in
-            
-            ZStack (alignment : .bottom) {
+            ZStack  {
                 ARPlayground(fearedObject: $viewModel.fearedObject)
                     .ignoresSafeArea()
                 
                 Group {
                     if (viewModel.fearedObject.isActive){
-                        Button(
-                            action: {
-                                viewModel.toogleConfirmationDialog()
-                            },
-                            label: {
-                                Label(
-                                    "End Session",
-                                    systemImage:  "xmark.circle.fill"
-                                )
-                                .font(.body)
+                        VStack {
+                            Text("Look at the snake for 30 seconds")
+                                .font(.title3)
                                 .bold()
-                                .frame(maxWidth: geometry.size.width)
-                                .padding(.vertical, 6)
-                            }
-                        )
-                        .foregroundStyle(Color(Theme.error.rawValue))
+                                .foregroundStyle(Color(Theme.background.rawValue))
+                            Spacer()
+                            Button(
+                                action: {
+                                    viewModel.toogleConfirmationDialog()
+                                },
+                                label: {
+                                    Label(
+                                        "End Session",
+                                        systemImage:  "xmark.circle.fill"
+                                    )
+                                    .font(.body)
+                                    .bold()
+                                    .frame(maxWidth: geometry.size.width)
+                                    .padding(.vertical, 6)
+                                }
+                            )
+                            .foregroundStyle(Color(Theme.error.rawValue))
+                        }
+                        
                     } else {
-                        Button(
-                            action: {
-                                viewModel.placeItem()
-                                viewModel.hideBackButton()
-                                viewModel.startTimer(block: { timer in
-                                    print(viewModel.timerCount)
-                                    viewModel.countTimer()
-                                    if (viewModel.timerCount == 0){
-                                        viewModel.stopTimer()
-                                        viewModel.resetTimer()
-                                        router.navigate(to: .reflection)
-                                    }
-                                })
-                            },
-                            label: {
-                                Label(
-                                    "Place & Start",
-                                    systemImage:  "play.fill"
-                                )
-                                .font(.body)
+                        VStack {
+                            Text("Point the Camera Away from you")
+                                .font(.title3)
                                 .bold()
-                                .frame(maxWidth: geometry.size.width)
-                                .padding(.vertical, 6)
-                                
-                            }
-                        )
-                        .foregroundStyle(Color(Theme.primary500.rawValue))
+                                .foregroundStyle(Color(Theme.background.rawValue))
+                            Spacer()
+                            Button(
+                                action: {
+                                    viewModel.placeItem()
+                                    viewModel.hideBackButton()
+                                    viewModel.startTimer(block: { timer in
+                                        print(viewModel.timerCount)
+                                        viewModel.countTimer()
+                                        if (viewModel.timerCount == 0){
+                                            viewModel.stopTimer()
+                                            viewModel.resetTimer()
+                                            router.navigate(to: .reflection)
+                                        }
+                                    })
+                                },
+                                label: {
+                                    Label(
+                                        "Place & Start",
+                                        systemImage:  "play.fill"
+                                    )
+                                    .font(.body)
+                                    .bold()
+                                    .frame(maxWidth: geometry.size.width)
+                                    .padding(.vertical, 6)
+                                    
+                                }
+                            )
+                            .foregroundStyle(Color(Theme.primary500.rawValue))
+                        }
+                        
                         
                     }
                 }
@@ -76,6 +91,10 @@ struct ARPlaygroundScreen : View {
             }
         }
         .navigationBarBackButtonHidden(viewModel.isHideBackButton)
+//        .toolbarBackground(.black, for: .navigationBar)
+//        .toolbarBackground(.visible, for: .navigationBar)
+//        .navigationTitle("Here")
+//        .tint(.red)
         .alert(
             "End Therapy Session?",
             isPresented: $viewModel.isConfirmationDialogShow,
