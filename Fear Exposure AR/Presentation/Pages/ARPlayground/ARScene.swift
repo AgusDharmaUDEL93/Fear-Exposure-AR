@@ -47,6 +47,7 @@ class ARScene : ARView {
             config.sceneReconstruction = .meshWithClassification
         }
         self.session.run(config)
+        
     }
 
 }
