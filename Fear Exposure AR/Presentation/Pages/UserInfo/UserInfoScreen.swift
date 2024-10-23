@@ -42,21 +42,25 @@ struct UserInfoScreen : View {
                         .keyboardType(.numberPad)
                     Spacer()
                         .frame(height: 48)
-                    Text("Gender")
-                        .font(.body)
-                        .bold()
-                    Picker("Your Gender", selection: $viewModel.gender) {
-                        ForEach(viewModel.genders, id: \.self){
-                            Text($0)
+                    HStack {
+                        Text("Gender")
+                            .font(.body)
+                            .bold()
+                        Spacer()
+                        Picker("Your Gender", selection: $viewModel.gender) {
+                            ForEach(viewModel.genders, id: \.self){
+                                Text($0)
+                            }
                         }
+                        .pickerStyle(MenuPickerStyle())
                     }
-                    .pickerStyle(.inline)
+                   
 
                     Spacer()
                         .frame(height: 48)
                     
                     Button(action: {
-                        router.navigate(to: .difficultyType)
+                        router.navigate(to: .theraphyType)
                     }, label: {
                         Text("Done")
                             .frame(maxWidth: geometry.size.width)
@@ -92,5 +96,6 @@ struct UserInfoScreen : View {
     NavigationStack {
         UserInfoScreen()
     }
+    .tint(Color(Theme.primary500.rawValue))
     .environment(Router())
 }

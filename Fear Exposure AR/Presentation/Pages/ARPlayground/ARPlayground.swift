@@ -45,6 +45,8 @@ struct ARPlayground : UIViewRepresentable {
         }
         
         clearFearedObject(in: uiView)
+        context.coordinator.startSubscriptionIfNeeded(arView: uiView, fearedObject: fearedObject, onChangedLength: onChangedLength)
+
     }
     
     

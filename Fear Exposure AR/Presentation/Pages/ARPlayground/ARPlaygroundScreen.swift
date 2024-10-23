@@ -16,13 +16,13 @@ struct ARPlaygroundScreen : View {
     var body : some View {
         GeometryReader { geometry in
             ZStack  {
-                //                ARPlayground(
-                //                    fearedObject: $viewModel.fearedObject, onChangedLength: { value in
-                //                        viewModel.onChangedLength(value)
-                //                    }
-                //                )
-                //                .ignoresSafeArea()
-                //
+                                ARPlayground(
+                                    fearedObject: $viewModel.fearedObject, onChangedLength: { value in
+                                        viewModel.onChangedLength(value)
+                                    }
+                                )
+                                .ignoresSafeArea()
+                
                 Group {
                     if (viewModel.fearedObject.isActive){
                         VStack {
@@ -46,10 +46,11 @@ struct ARPlaygroundScreen : View {
                                 Spacer()
                                 Button(
                                     action : {
-                                        
+                                        viewModel.stopTimer()
+                                        viewModel.clearItem()
                                     },
                                     label : {
-                                        Image(systemName: "door.left.hand.closed")
+                                        Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
                                             .resizable()
                                             .scaledToFit()
                                             .frame(height : 25)
@@ -60,10 +61,6 @@ struct ARPlaygroundScreen : View {
                                     })
                             }
                             .padding(.horizontal)
-                            
-                            
-                            
-                            
                         }
                         
                     } else {

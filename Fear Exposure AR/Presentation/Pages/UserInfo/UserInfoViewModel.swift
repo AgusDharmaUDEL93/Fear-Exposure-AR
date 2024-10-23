@@ -11,8 +11,8 @@ import Observation
 class UserInfoViewModel {
     var name : String = ""
     var age : String = ""
-    var gender : String = "Men"
+    var gender : String = "Male"
     
-    var genders  = ["Men", "Female"]
+    var genders  = ["Male", "Female"]
     
 }

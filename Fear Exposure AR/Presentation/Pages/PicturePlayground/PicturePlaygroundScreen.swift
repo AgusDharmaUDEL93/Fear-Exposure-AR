@@ -18,10 +18,13 @@ struct PicturePlaygroundScreen : View {
                     .resizable()
                     .scaledToFit()
                     .font(.title)
+                    .padding(60)
                     .scaleEffect(viewModel.currentZoom + viewModel.totalZoom)
-                
                 VStack  {
                     Spacer()
+                    Slider(value: $viewModel.currentZoom)
+                    Spacer()
+                        .frame(height: 32)
                     Button(action: {
                         viewModel.onResetZoom()
                     }, label: {
@@ -38,15 +41,15 @@ struct PicturePlaygroundScreen : View {
             }
             .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
             .background()
-            .gesture(
-                MagnificationGesture()
-                    .onChanged { value in
-                        viewModel.onChangedZoom(value)
-                    }
-                    .onEnded { value in
-                        viewModel.onEndedZoom()
-                    }
-            )
+//            .gesture(
+//                MagnificationGesture()
+//                    .onChanged { value in
+//                        viewModel.onChangedZoom(value)
+//                    }
+//                    .onEnded { value in
+//                        viewModel.onEndedZoom()
+//                    }
+//            )
         }
         
         .ignoresSafeArea(.all)

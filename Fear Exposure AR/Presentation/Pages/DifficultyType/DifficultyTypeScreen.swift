@@ -17,7 +17,7 @@ struct DifficultyTypeScreen : View {
             ScrollView {
                 VStack (alignment:.leading, spacing: 16) {
                     Button(action: {
-                        router.navigate(to: .theraphyType)
+                        router.navigate(to: .arPlayground)
                     }, label: {
                         HStack {
                             VStack (alignment: .leading) {
@@ -37,7 +37,7 @@ struct DifficultyTypeScreen : View {
                     .buttonStyle(.plain)
                     
                     Button(action: {
-                        router.navigate(to: .theraphyType)
+                        router.navigate(to: .arPlayground)
 
                     }, label: {
                         HStack {
@@ -57,7 +57,7 @@ struct DifficultyTypeScreen : View {
                     })
                     .buttonStyle(.plain)
                     Button(action: {
-                        router.navigate(to: .theraphyType)
+                        router.navigate(to: .arPlayground)
                     }, label: {
                         HStack {
                             VStack (alignment: .leading) {
