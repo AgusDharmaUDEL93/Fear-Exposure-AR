@@ -19,7 +19,7 @@ class ARPlaygroundViewModel {
     var isConfirmationDialogShow : Bool = false
     var isHideBackButton : Bool = false
     var timer : Timer?
-    @ObservationIgnored private let maxTimer : Double = 30.0
+    @ObservationIgnored let maxTimer : Double = 30.0
     var timerCount : Double = 0.0
     @ObservationIgnored private let counter : Double = 1.0
     

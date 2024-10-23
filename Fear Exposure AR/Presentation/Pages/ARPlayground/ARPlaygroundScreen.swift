@@ -16,38 +16,52 @@ struct ARPlaygroundScreen : View {
     var body : some View {
         GeometryReader { geometry in
             ZStack  {
-                                ARPlayground(
-                                    fearedObject: $viewModel.fearedObject, onChangedLength: { value in
-                                        viewModel.onChangedLength(value)
-                                    }
-                                )
-                                    .ignoresSafeArea()
-                
+                //                ARPlayground(
+                //                    fearedObject: $viewModel.fearedObject, onChangedLength: { value in
+                //                        viewModel.onChangedLength(value)
+                //                    }
+                //                )
+                //                .ignoresSafeArea()
+                //
                 Group {
                     if (viewModel.fearedObject.isActive){
                         VStack {
-                            Text("Look at the snake for 30 seconds")
-                                .font(.title3)
-                                .bold()
-                                .foregroundStyle(Color(Theme.background.rawValue))
-                            Spacer()
                             
-                            Button(
-                                action: {
-                                    viewModel.toogleConfirmationDialog()
-                                },
-                                label: {
-                                    Label(
-                                        "End Session",
-                                        systemImage:  "xmark.circle.fill"
-                                    )
-                                    .font(.body)
-                                    .bold()
-                                    .frame(maxWidth: geometry.size.width)
-                                    .padding(.vertical, 6)
-                                }
-                            )
-                            .foregroundStyle(Color(Theme.error.rawValue))
+                            Spacer()
+                            HStack {
+                                Button(
+                                    action : {
+                                        viewModel.toogleConfirmationDialog()
+                                    },
+                                    label : {
+                                        Image(systemName: "door.left.hand.closed")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(height : 25)
+                                            .foregroundStyle(.white)
+                                            .padding(20)
+                                            .background(.black.opacity(0.75))
+                                            .clipShape(Circle())
+                                    })
+                                Spacer()
+                                Button(
+                                    action : {
+                                        
+                                    },
+                                    label : {
+                                        Image(systemName: "door.left.hand.closed")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(height : 25)
+                                            .foregroundStyle(.white)
+                                            .padding(20)
+                                            .background(.black.opacity(0.75))
+                                            .clipShape(Circle())
+                                    })
+                            }
+                            .padding(.horizontal)
+                            
+                            
                             
                             
                         }
@@ -75,7 +89,7 @@ struct ARPlaygroundScreen : View {
                                             .foregroundStyle(.white)
                                     }
                                     Spacer()
-
+                                    
                                 }
                                 Button(
                                     action: {
@@ -108,7 +122,7 @@ struct ARPlaygroundScreen : View {
                                 .buttonStyle(.borderedProminent)
                                 .background(viewModel.isCanPlaced ? Color(hex: 0x55B5AB) : .white)
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
-
+                                
                             }
                             .padding(.horizontal)
                             .padding(.top)
@@ -116,11 +130,11 @@ struct ARPlaygroundScreen : View {
                             .frame(maxWidth: .infinity)
                             .background(.black.opacity(0.75))
                         }
+                        .ignoresSafeArea()
                         
                         
                     }
                 }
-                .ignoresSafeArea()
                 
             }
         }
@@ -142,7 +156,7 @@ struct ARPlaygroundScreen : View {
         }
         
         .toolbarBackground(.black.opacity(0.75), for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarBackground(viewModel.fearedObject.isActive ? .hidden : .visible, for: .navigationBar)
         .navigationBarBackButtonHidden()
         .alert(
             "End Therapy Session?",
