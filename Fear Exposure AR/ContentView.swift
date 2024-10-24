@@ -19,10 +19,10 @@ struct ContentView: View {
                         Tab("Today", systemImage: "star.fill") {
                             TherapyScreen()
                         }
-                        Tab("Today", systemImage: "star.fill") {
+                        Tab("Calendar", systemImage: "calendar") {
                             TherapyScreen()
                         }
-                        Tab("Today", systemImage: "star.fill") {
+                        Tab("Today", systemImage: "person") {
                             TherapyScreen()
                         }
                     }
@@ -34,11 +34,11 @@ struct ContentView: View {
                             }
                         TherapyScreen()
                             .tabItem {
-                                Label("Today", systemImage: "star.fill")
+                                Label("Calendar", systemImage: "calendar")
                             }
                         TherapyScreen()
                             .tabItem {
-                                Label("Today", systemImage: "star.fill")
+                                Label("Profile", systemImage: "person")
                             }
                     }
                     

@@ -87,7 +87,6 @@ struct UserInfoScreen : View {
         }
         .navigationTitle("User Info")
         .navigationBarTitleDisplayMode(.large)
-        .navigationBarBackButtonHidden()
     }
 }
 
