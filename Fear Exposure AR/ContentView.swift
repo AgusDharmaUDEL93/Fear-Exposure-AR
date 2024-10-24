@@ -22,7 +22,7 @@ struct ContentView: View {
                         Tab("Calendar", systemImage: "calendar") {
                             TherapyScreen()
                         }
-                        Tab("Today", systemImage: "person") {
+                        Tab("Profile", systemImage: "person") {
                             TherapyScreen()
                         }
                     }
