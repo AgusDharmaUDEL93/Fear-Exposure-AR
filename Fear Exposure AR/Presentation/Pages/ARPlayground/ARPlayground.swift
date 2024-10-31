@@ -14,23 +14,9 @@ import Combine
 struct ARPlayground : UIViewRepresentable {
     
     @Binding var fearedObject : FearedObject
-    var onChangedLength : (Float) -> Void
     
     func makeUIView(context: Context) -> ARScene {
         let arView = ARScene(frame: .zero)
-        
-        context.coordinator.startSubscriptionIfNeeded(arView: arView, fearedObject: fearedObject, onChangedLength: onChangedLength)
-        
-        
-        if let position = arView.focusEntity?.position {
-            
-            let lengthOnPixel = sqrt(position.x * position.x + position.y * position.y)
-            let length = lengthOnPixel * 0.0002645833
-            
-            print(length)
-            onChangedLength(length)
-        }
-        
         
         return arView
     }
@@ -40,12 +26,10 @@ struct ARPlayground : UIViewRepresentable {
         
         if (fearedObject.isActive) {
             placeFearedObject(in: uiView)
-            context.coordinator.stopSubscription()
             return
         }
         
         clearFearedObject(in: uiView)
-        context.coordinator.startSubscriptionIfNeeded(arView: uiView, fearedObject: fearedObject, onChangedLength: onChangedLength)
 
     }
     
@@ -77,35 +61,6 @@ struct ARPlayground : UIViewRepresentable {
         if let anchorEntity = entity.anchor {
             uiView.scene.removeAnchor(anchorEntity)
         }
-    }
-    
-    class Coordinator {
-            var cancellable: Cancellable?
-            
-            func startSubscriptionIfNeeded(arView: ARScene, fearedObject: FearedObject, onChangedLength: @escaping (Float) -> Void) {
-                // Start the subscription only if fearedObject is not active
-                guard !fearedObject.isActive, cancellable == nil else { return }
-                
-                cancellable = arView.scene.subscribe(to: SceneEvents.Update.self) { event in
-                    if let position = arView.focusEntity?.position {
-                        let length = sqrt(position.x * position.x + position.y * position.y + position.z * position.z)
-                        
-                        // Print and update the length
-                        print(length)
-                        onChangedLength(length)
-                    }
-                }
-            }
-            
-            func stopSubscription() {
-                // Cancel the subscription if it exists
-                cancellable?.cancel()
-                cancellable = nil
-            }
-        }
-    
-    func makeCoordinator() -> Coordinator {
-        return Coordinator()
     }
     
     

@@ -16,19 +16,18 @@ struct ARPlaygroundScreen : View {
     var body : some View {
         GeometryReader { geometry in
             ZStack  {
-                                ARPlayground(
-                                    fearedObject: $viewModel.fearedObject, onChangedLength: { value in
-                                        viewModel.onChangedLength(value)
-                                    }
-                                )
-                                .ignoresSafeArea()
+                ARPlayground(
+                    fearedObject: $viewModel.fearedObject
+                )
+                .ignoresSafeArea()
                 
                 Group {
                     if (viewModel.fearedObject.isActive){
                         VStack {
-                            
                             Spacer()
-                            HStack {
+                            HStack (
+                                alignment : .bottom
+                            ) {
                                 Button(
                                     action : {
                                         viewModel.toogleConfirmationDialog()
@@ -44,21 +43,41 @@ struct ARPlaygroundScreen : View {
                                             .clipShape(Circle())
                                     })
                                 Spacer()
-                                Button(
-                                    action : {
-                                        viewModel.stopTimer()
-                                        viewModel.clearItem()
-                                    },
-                                    label : {
-                                        Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(height : 25)
-                                            .foregroundStyle(.white)
-                                            .padding(20)
-                                            .background(.black.opacity(0.75))
-                                            .clipShape(Circle())
-                                    })
+                                VStack {
+                                    Button(
+                                        action : {
+                                            // TODO : Modal Sheet Open
+                                            viewModel.openModalSheet()
+                                        },
+                                        label : {
+                                            Image(systemName: "slider.horizontal.3")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(height : 25)
+                                                .foregroundStyle(.white)
+                                                .padding(20)
+                                                .background(.black.opacity(0.75))
+                                                .clipShape(Circle())
+                                        }
+                                    )
+                                    Button(
+                                        action : {
+                                            viewModel.stopTimer()
+                                            viewModel.clearItem()
+                                        },
+                                        label : {
+                                            Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(height : 25)
+                                                .foregroundStyle(.white)
+                                                .padding(20)
+                                                .background(.black.opacity(0.75))
+                                                .clipShape(Circle())
+                                        }
+                                    )
+                                }
+                                
                             }
                             .padding(.horizontal)
                         }
@@ -66,69 +85,36 @@ struct ARPlaygroundScreen : View {
                     } else {
                         VStack {
                             Spacer()
-                            VStack (spacing : 16){
-                                HStack (spacing : 16){
-                                    Image(systemName: "arrow.up")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(height : 30)
-                                        .foregroundColor(.white)
-                                        .padding(16)
-                                        .background(.white.opacity(0.25))
-                                        .clipShape(.circle)
-                                    VStack (alignment : .leading) {
-                                        Text ("\(NSString(format: "%.01f", viewModel.length)) \(Text("meters").font(.title2)  )")
-                                            .font(.largeTitle)
-                                            .bold()
-                                            .foregroundStyle(.white)
-                                        Text("Point the camera at a flat surface")
-                                            .font(.body)
-                                            .foregroundStyle(.white)
-                                    }
-                                    Spacer()
+                            Button(
+                                action: {
+                                    viewModel.placeItem()
+                                    viewModel.hideBackButton()
+                                    viewModel.startTimer(block: { timer in
+                                        viewModel.countTimer()
+                                    })
+                                },
+                                label: {
+                                    Label(
+                                        "Place & Start",
+                                        systemImage:  "play.fill"
+                                    )
+                                    .font(.body)
+                                    .bold()
+                                    .frame(maxWidth: geometry.size.width)
+                                    .padding(.vertical, 6)
                                     
                                 }
-                                Button(
-                                    action: {
-                                        viewModel.placeItem()
-                                        viewModel.hideBackButton()
-                                        viewModel.startTimer(block: { timer in
-                                            print(viewModel.timerCount)
-                                            viewModel.countTimer()
-                                            if (viewModel.timerCount == 0){
-                                                viewModel.stopTimer()
-                                                viewModel.resetTimer()
-                                                router.navigate(to: .reflection)
-                                            }
-                                        })
-                                    },
-                                    label: {
-                                        Label(
-                                            "Place & Start",
-                                            systemImage:  "play.fill"
-                                        )
-                                        .font(.body)
-                                        .bold()
-                                        .frame(maxWidth: geometry.size.width)
-                                        .padding(.vertical, 6)
-                                        
-                                    }
-                                )
-                                .foregroundStyle(viewModel.isCanPlaced ? .white : .gray)
-                                .disabled(!viewModel.isCanPlaced)
-                                .buttonStyle(.borderedProminent)
-                                .background(viewModel.isCanPlaced ? Color(hex: 0x55B5AB) : .white)
-                                .clipShape(RoundedRectangle(cornerRadius: 8))
-                                
-                            }
-                            .padding(.horizontal)
-                            .padding(.top)
-                            .padding(.bottom, 48)
-                            .frame(maxWidth: .infinity)
-                            .background(.black.opacity(0.75))
+                            )
+                            .buttonStyle(.borderedProminent)
+                            
+                            
                         }
+                        .padding(.horizontal)
+                        .padding(.top)
+                        .padding(.bottom, 48)
+                        .frame(maxWidth: .infinity)
+                        .background(.black.opacity(0.75))
                         .ignoresSafeArea()
-                        
                         
                     }
                 }
@@ -151,7 +137,6 @@ struct ARPlaygroundScreen : View {
             }
             
         }
-        
         .toolbarBackground(.black.opacity(0.75), for: .navigationBar)
         .toolbarBackground(viewModel.fearedObject.isActive ? .hidden : .visible, for: .navigationBar)
         .navigationBarBackButtonHidden()
@@ -177,24 +162,16 @@ struct ARPlaygroundScreen : View {
                 Text("A message should be a short, complete sentence.")
             }
         )
-        .alert(
-            viewModel.errorMessage ?? "Unexpected Error Occured!",
-            isPresented: Binding(
-                get: {
-                    viewModel.errorMessage != nil
-                },
-                set: {
-                    if !$0 { viewModel.errorMessage = nil }
-                }
-            ),
-            actions: {
-                Button("OK", role: .cancel) {}
-            }
-        )
         .onDisappear(perform: {
             viewModel.stopTimer()
             viewModel.resetTimer()
         })
+        .sheet(isPresented: $viewModel.isModalSheetOpen ){
+            NavigationStack {
+                SettingsARScreen()
+            }
+            
+        }
     }
 }
 
