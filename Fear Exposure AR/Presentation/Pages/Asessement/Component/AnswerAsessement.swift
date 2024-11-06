@@ -19,12 +19,14 @@ struct AnswerAsessement : View {
                 Text(
                     label
                 )
-                .foregroundStyle(Color(Theme.background.rawValue))
+                .foregroundColor(.black)
                 .padding(.vertical, 12)
                 .frame(maxWidth: .infinity)
-                .background(Color(Theme.primary500.rawValue))
-                .clipShape(
+                .background(Color(Theme.primary100.rawValue))
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .overlay(
                     RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color(Theme.primary500.rawValue), lineWidth: 2)
                 )
             } else {
                 Text(
@@ -56,5 +58,5 @@ struct AnswerAsessement : View {
             
         }
     )
-        .padding()
+    .padding()
 }
