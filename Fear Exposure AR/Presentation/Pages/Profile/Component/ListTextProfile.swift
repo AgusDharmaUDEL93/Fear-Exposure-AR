@@ -11,6 +11,8 @@ struct ListTextProfile : View {
     let label : String
     let image : String
     let onAction : () -> Void
+    var isBottom : Bool = false
+    var selectedItem : String = ""
     
     var body: some View {
         Button(
@@ -28,11 +30,22 @@ struct ListTextProfile : View {
                             .frame(width: 16)
                         Text (label)
                         Spacer()
+                        
+                        // TODO : Changed the color
+                        Text(selectedItem)
+                            .font(.subheadline)
+                            .foregroundStyle(.gray)
+                        
                         Image (systemName: "chevron.right")
                     }
                     Spacer()
                         .frame(height: 16)
-                    Divider()
+        
+                    
+                    
+                    if (!isBottom){
+                        Divider()
+                    }
                 }
             }
         )
@@ -42,9 +55,13 @@ struct ListTextProfile : View {
 
 #Preview {
     ListTextProfile(
-        label: "Phobia", image: "globe", onAction: {
+        label: "Phobia",
+        image: "globe",
+        onAction: {
             
-        }
+        },
+        isBottom: false,
+        selectedItem: "English (US)"
     )
         .padding()
 }

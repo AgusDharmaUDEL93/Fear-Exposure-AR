@@ -11,73 +11,71 @@ import SwiftUI
 struct CardTherapy : View {
     
     let title : String
-    let description : Text
-    let image : String
-    let beginRangeTime : Int
-    let endedRangeTime : Int
+    let caption : String
+    var isAnimal : Bool = true
     let action : () -> Void
     
     var body: some View {
-        VStack (alignment : .leading) {
-            Image(image)
-                .resizable()
-                .scaledToFit()
-            Group {
-                Spacer()
-                    .frame(height: 16)
-                HStack {
-                    Image(systemName: "clock.fill")
-                    Text("\(beginRangeTime)-\(endedRangeTime) Minutes")
-                        .font(.body)
-                        .bold()
+        Button(
+            action: action,
+            label: {
+                ZStack (alignment: .bottomLeading) {
+                    Image(isAnimal ? "image/illustration/fear_animal" : "image/illustration/fear_object")
+                        .offset(
+                            x: -15,
+                            y: 15
+                        )
+
+                    VStack (alignment : .leading) {
+                        Text(caption)
+                            .font(.subheadline)
+                            .italic()
+                        Spacer()
+                            .frame(height: 4)
+                            .frame(maxWidth: .infinity)
+                        Text(title)
+                            .font(.headline)
+                            .bold()
+                        HStack {
+                            Spacer()
+                            Image(systemName: "arrow.right.circle.fill")
+                                .font(.largeTitle)
+                                .foregroundStyle(Color(Theme.primary500.rawValue))
+                        }
+                        
+                    }
+                    .padding(16)
+                    .frame(maxWidth: .infinity)
+                    
+
                 }
-                .foregroundStyle(Color(Theme.primary500.rawValue))
-                Spacer()
-                    .frame(height: 12)
-                Text(title)
-                    .font(.title3)
-                    .bold()
-                Spacer()
-                    .frame(height: 12)
-                Text("\(description)")
-                    .font(.body)
-                Spacer()
-                    .frame(height: 16)
-            }
-            .padding(.horizontal, 16)
-            Button(
-                action: {
-                    action()
-                },
-                label: {
-                    Text("Start Therapy")
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 6)
-                        .font(.body)
-                        .bold()
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .overlay{
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(.fill, lineWidth: 1)
                 }
-            )
-            .foregroundStyle(Color(Theme.background.rawValue))
-            .tint(Color(Theme.primary500.rawValue))
-            .padding([.bottom, .horizontal], 16)
-            .buttonStyle(.borderedProminent)
-            
         }
-        .background(Color(Theme.primary50.rawValue))
-        .clipShape(RoundedRectangle(cornerRadius: 8))
+        )
+        .buttonStyle(.plain)
+        
+        
     }
 }
 
 #Preview {
-    CardTherapy(
-        title: "Afraid of Snakes?",
-        description: Text("Your daily \(Text("ophidiophobia").bold()) therapy session is ready"),
-        image: "image/illustration/card_snake",
-        beginRangeTime: 15,
-        endedRangeTime: 30,
-        action: {
-            
-        }
-    )
+    LazyVGrid (columns: [
+        GridItem(.adaptive(minimum: 100)),
+        GridItem(.adaptive(minimum: 100))
+    ]){
+        CardTherapy(
+            title: "Intense fear of Spiders",
+            caption: "Arachnophobia",
+            action: {
+                
+            }
+        )
+        
+    }
+    
     .padding(16)
 }
