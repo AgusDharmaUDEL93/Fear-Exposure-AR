@@ -84,6 +84,10 @@ struct AsessementScreen : View {
                         )
                     }
                     
+                    Spacer()
+                        .frame(height: 32)
+                        .frame(maxWidth: geometry.size.width)
+                    
                     Text("Technical Assessment")
                         .font(.title3)
                         .bold()
@@ -92,7 +96,7 @@ struct AsessementScreen : View {
                     VStack(spacing: 28) {
                         QuestionAsessement(
                             number: 1,
-                            question: "Are you willing to be exposed to a **2D cartoon image** of the feared object.",
+                            question: "Are you willing to be exposed to a 2D cartoon image of the feared object.",
                             options: [
                                 "Yes", "No"
                             ],
@@ -145,6 +149,10 @@ struct AsessementScreen : View {
                             }
                         )
                     }
+                    
+                    Spacer()
+                        .frame(height: 32)
+                        .frame(maxWidth: geometry.size.width)
                 }
                 .padding(.horizontal, 16)
                 .frame(maxWidth: geometry.size.width)
