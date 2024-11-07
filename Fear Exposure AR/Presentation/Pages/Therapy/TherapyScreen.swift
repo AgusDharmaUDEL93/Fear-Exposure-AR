@@ -23,21 +23,55 @@ struct TherapyScreen : View {
                     GridItem(.adaptive(minimum: 100))
                 ], spacing: 16){
                     CardTherapy(
-                        title: "Intense fear of Spiders",
+                        title: "Intense fear of Snake",
                         caption: "Arachnophobia",
                         action: {
                             
                         }
                     )
                     CardTherapy(
-                        title: "Intense fear of Spiders",
+                        title: "Intense fear of Dog",
+                        caption: "Cynophobia",
+                        action: {
+                            
+                        }
+                    )
+                    CardTherapy(
+                        title: "Intense fear of Crocodile",
+                        caption: "Herpetophobia",
+                        action: {
+                            
+                        }
+                    )
+                    CardTherapy(
+                        title: "Intense fear of Cockroach",
+                        caption: "Katsaridaphobia",
+                        action: {
+                            
+                        }
+                    )
+                    CardTherapy(
+                        title: "Intense fear of Lizard",
+                        caption: "Herpetophobia",
+                        action: {
+                            
+                        }
+                    )
+                    CardTherapy(
+                        title: "Intense fear of Spider",
                         caption: "Arachnophobia",
+                        action: {
+                            
+                        }
+                    )
+                    CardTherapy(
+                        title: "Intense fear of Balloons",
+                        caption: "Globophobia",
                         isAnimal: false,
                         action: {
                             
                         }
                     )
-                    
                 }
                 .padding(.horizontal, 16)
             }

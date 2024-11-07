@@ -15,7 +15,7 @@ struct TitleScreen : View {
     var body: some View {
         VStack (alignment : .leading) {
             Spacer()
-                .frame(width: 0, height: 100)
+                .frame(width: 0, height: 80)
                 .frame(maxWidth: .infinity)
             Text (title)
                 .font(.largeTitle)

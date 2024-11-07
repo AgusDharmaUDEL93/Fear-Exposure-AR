@@ -25,17 +25,17 @@ struct CardTherapy : View {
                             x: -15,
                             y: 15
                         )
-
-                    VStack (alignment : .leading) {
+                    
+                    VStack (alignment : .leading, spacing: 8) {
                         Text(caption)
                             .font(.subheadline)
                             .italic()
-                        Spacer()
-                            .frame(height: 4)
-                            .frame(maxWidth: .infinity)
                         Text(title)
                             .font(.headline)
                             .bold()
+                        Spacer()
+                            .frame(height: 28)
+                            .frame(maxWidth: .infinity)
                         HStack {
                             Spacer()
                             Image(systemName: "arrow.right.circle.fill")
@@ -47,14 +47,14 @@ struct CardTherapy : View {
                     .padding(16)
                     .frame(maxWidth: .infinity)
                     
-
+                    
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .overlay{
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(.fill, lineWidth: 1)
                 }
-        }
+            }
         )
         .buttonStyle(.plain)
         

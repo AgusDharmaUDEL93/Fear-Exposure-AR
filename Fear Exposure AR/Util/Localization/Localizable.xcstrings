@@ -7,23 +7,13 @@
     "-" : {
 
     },
-    "%@" : {
-
-    },
-    "%lld-%lld Minutes" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld-%2$lld Minutes"
-          }
-        }
-      }
-    },
     "%lld." : {
 
     },
     "+" : {
+
+    },
+    "2" : {
 
     },
     "A message should be a short, complete sentence." : {
@@ -89,16 +79,10 @@
     "Logs" : {
 
     },
-    "Logs Screen" : {
-
-    },
     "Medium" : {
 
     },
     "Name" : {
-
-    },
-    "ophidiophobia" : {
 
     },
     "Place & Start" : {
@@ -131,7 +115,7 @@
     "Session Settings" : {
 
     },
-    "Start Therapy" : {
+    "SUN" : {
 
     },
     "Technical Assessment" : {
@@ -156,9 +140,6 @@
 
     },
     "Your Age" : {
-
-    },
-    "Your daily %@ therapy session is ready" : {
 
     },
     "Your Gender" : {
