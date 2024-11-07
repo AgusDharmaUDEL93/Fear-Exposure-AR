@@ -20,6 +20,7 @@ struct TitleScreen : View {
             Text (title)
                 .font(.largeTitle)
                 .bold()
+                .padding(.bottom, 4)
             Text (description)
                 .font(.body)
         }
