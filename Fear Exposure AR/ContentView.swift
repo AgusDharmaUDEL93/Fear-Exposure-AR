@@ -10,33 +10,41 @@ import SwiftUI
 struct ContentView: View {
     
     @State var router = Router()
+    @AppStorage("locale") private var locale = Locale.current.identifier
     
     var body: some View {
         NavigationStack (path : $router.navPath)  {
             Group {
                 if #available(iOS 18.0, *) {
                     TabView {
-                        Tab("Today", systemImage: "star.fill") {
+                        Tab("Theraphy", systemImage: "heart") {
                             TherapyScreen()
                         }
-                        Tab("Calendar", systemImage: "calendar") {
-                            TherapyScreen()
+                        Tab("Progress", systemImage: "chart.bar") {
+                            ProgressScreen()
+                        }
+                        Tab("Logs", systemImage: "book.pages") {
+                            LogsScreen()
                         }
                         Tab("Profile", systemImage: "person") {
-                            TherapyScreen()
+                            ProfileScreen()
                         }
                     }
                 } else {
                     TabView {
                         TherapyScreen()
                             .tabItem {
-                                Label("Today", systemImage: "star.fill")
+                                Label("Theraphy", systemImage: "heart")
                             }
-                        TherapyScreen()
+                        ProgressScreen()
                             .tabItem {
-                                Label("Calendar", systemImage: "calendar")
+                                Label("Progress", systemImage: "chart.bar")
                             }
-                        TherapyScreen()
+                        LogsScreen()
+                            .tabItem {
+                                Label("Logs", systemImage: "book.pages")
+                            }
+                        ProfileScreen()
                             .tabItem {
                                 Label("Profile", systemImage: "person")
                             }
@@ -44,7 +52,6 @@ struct ContentView: View {
                     
                 }
             }
-            .navigationTitle("Today")
             .navigationDestination(
                 for: Router.Destination.self,
                 destination:  { destination in
@@ -65,6 +72,8 @@ struct ContentView: View {
                         UserInfoScreen()
                     case .difficultyType:
                         DifficultyTypeScreen()
+                    case .termCondition:
+                        TermsAndConditionScreen()
                     }
                 }
             )
@@ -74,6 +83,7 @@ struct ContentView: View {
 
         .tint(Color(Theme.primary500.rawValue))
         .environment(router)
+        .environment(\.locale, .init(identifier: locale))
         
     }
 }

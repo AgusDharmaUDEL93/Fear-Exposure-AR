@@ -1,0 +1,172 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "-" : {
+
+    },
+    "%@" : {
+
+    },
+    "%lld-%lld Minutes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld-%2$lld Minutes"
+          }
+        }
+      }
+    },
+    "%lld." : {
+
+    },
+    "+" : {
+
+    },
+    "A message should be a short, complete sentence." : {
+
+    },
+    "Age" : {
+
+    },
+    "Always consult with a qualified healthcare provider or psychologist before starting any new treatment or therapy program, including the use of this app. By using the Denxéro AR Exposure Therapy App (\"Fear Exposure AR or FEAR\"), you acknowledge and agree to the following terms:" : {
+
+    },
+    "Answer Here" : {
+
+    },
+    "Apply Changes" : {
+
+    },
+    "By pressing “I Accept” button, you agree to the terms and conditions of using Fear Exposure AR app." : {
+
+    },
+    "By using the Denxéro AR Exposure Therapy App (\"Fear Exposure AR or FEAR\"), you acknowledge and agree that your use of the app is at your sole risk. Denxéro Team and its affiliates are not responsible or liable for any direct, indirect, incidental, consequential, or any other damages arising from your use of the app." : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Congratulations! You have completed your session!" : {
+
+    },
+    "Dark Mode" : {
+
+    },
+    "Done" : {
+
+    },
+    "Easy" : {
+
+    },
+    "End Session" : {
+
+    },
+    "End Therapy Session?" : {
+
+    },
+    "Gender" : {
+
+    },
+    "Hard" : {
+
+    },
+    "How do you feel about facing the fear-inducing situation or object outside of the therapy session?" : {
+
+    },
+    "How do you feel now compared to before the therapy session began?" : {
+
+    },
+    "I Accept" : {
+
+    },
+    "Languange" : {
+
+    },
+    "Logs" : {
+
+    },
+    "Logs Screen" : {
+
+    },
+    "Medium" : {
+
+    },
+    "Name" : {
+
+    },
+    "ophidiophobia" : {
+
+    },
+    "Place & Start" : {
+
+    },
+    "Profile" : {
+
+    },
+    "Progress" : {
+
+    },
+    "Progress Screen" : {
+
+    },
+    "Putu Wira" : {
+
+    },
+    "Question Category" : {
+
+    },
+    "Select Difficulty" : {
+
+    },
+    "Select Therapy" : {
+
+    },
+    "Session Reflection" : {
+
+    },
+    "Session Settings" : {
+
+    },
+    "Start Therapy" : {
+
+    },
+    "Technical Assessment" : {
+
+    },
+    "Terms and Conditions" : {
+
+    },
+    "Theraphy" : {
+
+    },
+    "Today" : {
+
+    },
+    "User Info" : {
+
+    },
+    "What do you feel during this session?" : {
+
+    },
+    "You’re Doing Great!" : {
+
+    },
+    "Your Age" : {
+
+    },
+    "Your daily %@ therapy session is ready" : {
+
+    },
+    "Your Gender" : {
+
+    },
+    "Your Name" : {
+
+    }
+  },
+  "version" : "1.0"
+}

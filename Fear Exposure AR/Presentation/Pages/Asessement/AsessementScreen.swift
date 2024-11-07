@@ -11,22 +11,10 @@ struct AsessementScreen : View {
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
-                VStack (alignment : .leading) {
-                    Spacer()
-                        .frame(width: 0, height: geometry.size.height * 0.15)
-                        .frame(maxWidth: geometry.size.width)
-                    Text ("Fear Asessement")
-                        .font(.largeTitle)
-                        .bold()
-                    Text ("Please complete this assessment form to help us tailor the therapy to your specific needs.")
-                        .font(.body)
-                }
-                
-                .foregroundStyle(Color(Theme.background.rawValue))
-                .padding(.horizontal, 16)
-                .padding(.bottom, 16)
-                .frame(maxWidth: geometry.size.width)
-                .background(Color(Theme.primary500.rawValue))
+                TitleScreen(
+                    title: "Fear Asessement",
+                    description: "Please complete this assessment form to help us tailor the therapy to your specific needs."
+                )
                 
                 VStack (alignment : .leading) {
                     Spacer()
@@ -83,6 +71,8 @@ struct AsessementScreen : View {
                             }
                         )
                     }
+                    Spacer()
+                        .frame(height: 32)
                     
                     Spacer()
                         .frame(height: 32)
@@ -156,9 +146,7 @@ struct AsessementScreen : View {
                 }
                 .padding(.horizontal, 16)
                 .frame(maxWidth: geometry.size.width)
-                
             }
-            .ignoresSafeArea()
         }
     }
 }

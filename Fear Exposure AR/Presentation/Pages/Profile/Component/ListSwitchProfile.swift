@@ -11,7 +11,7 @@ struct ListSwitchProfile : View {
     
     let label : String
     let image : String
-    
+    var isBottom : Bool = false
     
     var body: some View {
         
@@ -37,7 +37,10 @@ struct ListSwitchProfile : View {
             
             Spacer()
                 .frame(height: 16)
-            Divider()
+            if (!isBottom){
+                Divider()
+
+            }
         }
         
     }

@@ -14,27 +14,34 @@ struct TherapyScreen : View {
     var body : some View {
         GeometryReader { geometry in
             ScrollView {
-                VStack (alignment:.leading) {
-                    Text("Today’s Session")
-                        .font(.title2)
-                    
+                TitleScreen(
+                    title: "Therapies",
+                    description: "Description of this screen and its purpose."
+                )
+                LazyVGrid (columns: [
+                    GridItem(.adaptive(minimum: 100)),
+                    GridItem(.adaptive(minimum: 100))
+                ], spacing: 16){
                     CardTherapy(
-                        title: "Afraid of Snakes?",
-                        description: Text("Your daily \(Text("ophidiophobia").bold()) therapy session is ready"),
-                        image: "image/illustration/card_snake",
-                        beginRangeTime: 15,
-                        endedRangeTime: 30,
+                        title: "Intense fear of Spiders",
+                        caption: "Arachnophobia",
                         action: {
-                            router.navigate(to: .userInfo)
+                            
+                        }
+                    )
+                    CardTherapy(
+                        title: "Intense fear of Spiders",
+                        caption: "Arachnophobia",
+                        isAnimal: false,
+                        action: {
+                            
                         }
                     )
                     
                 }
-                .frame(maxWidth: geometry.size.width, alignment: .leading)
                 .padding(.horizontal, 16)
             }
         }
-        .navigationTitle("Today")
     }
 }
 

@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct ProfileScreen : View {
+    
+    @State var viewModel = ProfileViewModel()
+    @AppStorage("locale") private var locale = Locale.current.identifier
+    @Environment(Router.self) private var router
+
+    
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
@@ -45,60 +51,63 @@ struct ProfileScreen : View {
                     }
                     VStack (alignment : .leading) {
                         
-                        TitleProfile(label: "General")
+                        TitleProfile(label: "Settings")
                         
                         ListTextProfile(
-                            label: "Phobia",
-                            image: "globe",
+                            label: "Phobias",
+                            image: "brain.filled.head.profile",
                             onAction: {
                                 
                             }
                         )
                         ListTextProfile(
-                            label: "Phobia",
-                            image: "globe",
+                            label: "Notification",
+                            image: "bell",
                             onAction: {
                                 
                             }
                         )
                         ListTextProfile(
-                            label: "Phobia",
+                            label: "Language",
                             image: "globe",
                             onAction: {
-                                
-                            }
+                                viewModel.onOpenLanguageSheets()
+                            },
+                            isBottom: true,
+                            selectedItem: viewModel.getLanguageSeletedLabel()
                         )
-                        TitleProfile(label: "App Settings")
-                        ListTextProfile(
-                            label: "Phobia",
-                            image: "globe",
-                            onAction: {
-                                
-                            }
-                        )
-                        ListSwitchProfile(label: "Dark Mode", image: "globe")
                         
-                        TitleProfile(label: "Support")
+                        TitleProfile(label: "Others")
                         ListTextProfile(
-                            label: "Phobia",
-                            image: "globe",
+                            label: "Help Center",
+                            image: "lifepreserver",
+                            onAction: {
+                                
+                            }
+                        )
+                        
+                        ListTextProfile(
+                            label: "Terms & Conditions",
+                            image: "doc.plaintext",
+                            onAction: {
+                                router.navigate(to: .termCondition)
+                            }
+                        )
+                        ListTextProfile(
+                            label: "Privacy Notice",
+                            image: "lock.shield",
                             onAction: {
                                 
                             }
                         )
                         ListTextProfile(
-                            label: "Phobia",
-                            image: "globe",
+                            label: "About",
+                            image: "info.circle",
                             onAction: {
                                 
-                            }
-                        )
-                        ListTextProfile(
-                            label: "Phobia",
-                            image: "globe",
-                            onAction: {
-                                
-                            }
+                            },
+                            isBottom: true,
+                            selectedItem: "Version 1.0.0 (Latest)"
                         )
                         Spacer()
                             .frame(height: 16)
@@ -109,10 +118,29 @@ struct ProfileScreen : View {
                 }
                 .frame(maxWidth: geometry.size.width)
             }
+            .sheet(
+                isPresented: $viewModel.isSheetLanguageOpen,
+                content: {
+                    NavigationStack {
+                        ModalLanguageProfile(languageSelected: viewModel.languageSelected, onTapList: { language in
+                            viewModel.onChangedLanguage(language: language)
+                            locale = language.rawValue
+                            
+                        })
+                        
+                    }
+                }
+            )
+        }
+        .onAppear{
+            viewModel.languageSelected = Locale(identifier: locale)
         }
     }
 }
 
 #Preview {
-    ProfileScreen()
+    NavigationStack {
+        ProfileScreen()
+    }
+    .environment(Router())
 }
