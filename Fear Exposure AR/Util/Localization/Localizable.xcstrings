@@ -49,9 +49,6 @@
     "Done" : {
 
     },
-    "Easy" : {
-
-    },
     "End Session" : {
 
     },
@@ -61,7 +58,7 @@
     "Gender" : {
 
     },
-    "Hard" : {
+    "Gradually increase the size of the snake" : {
 
     },
     "How do you feel about facing the fear-inducing situation or object outside of the therapy session?" : {
@@ -79,9 +76,6 @@
     "Logs" : {
 
     },
-    "Medium" : {
-
-    },
     "Name" : {
 
     },
@@ -89,9 +83,6 @@
 
     },
     "Profile" : {
-
-    },
-    "Progress" : {
 
     },
     "Progress Screen" : {
@@ -103,7 +94,7 @@
     "Question Category" : {
 
     },
-    "Select Difficulty" : {
+    "Reveal Object" : {
 
     },
     "Select Therapy" : {
@@ -113,6 +104,12 @@
 
     },
     "Session Settings" : {
+
+    },
+    "Start your session by revealing your object" : {
+
+    },
+    "Submit" : {
 
     },
     "SUN" : {

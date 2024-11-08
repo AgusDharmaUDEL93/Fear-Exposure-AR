@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AnswerAsessement : View {
+struct ChipSelection : View {
     
     let label : String
     @Binding var isSelected : Bool
@@ -51,7 +51,7 @@ struct AnswerAsessement : View {
 }
 
 #Preview {
-    AnswerAsessement(
+    ChipSelection(
         label : "Yes",
         isSelected: .constant(true),
         onTapAnswer: {

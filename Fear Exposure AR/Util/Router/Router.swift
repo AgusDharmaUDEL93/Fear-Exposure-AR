@@ -20,7 +20,6 @@ class Router  {
         case arPlayground
         case picturePlayground
         case userInfo
-        case difficultyType
         case termCondition
     }
     

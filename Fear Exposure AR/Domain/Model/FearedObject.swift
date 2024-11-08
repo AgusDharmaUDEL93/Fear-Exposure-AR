@@ -10,4 +10,6 @@ struct FearedObject {
     var baseModel : ModelEntity?
     var animation : AnimationResource?
     var isActive : Bool = false
+    var image : String?
+    var audio : AudioResource?
 }

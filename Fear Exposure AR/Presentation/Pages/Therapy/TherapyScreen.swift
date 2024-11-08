@@ -10,6 +10,7 @@ import SwiftUI
 struct TherapyScreen : View {
     
     @Environment(Router.self) private var router
+    @State var viewModel = TherapyViewModel()
     
     var body : some View {
         GeometryReader { geometry in
@@ -22,56 +23,15 @@ struct TherapyScreen : View {
                     GridItem(.adaptive(minimum: 100)),
                     GridItem(.adaptive(minimum: 100))
                 ], spacing: 16){
-                    CardTherapy(
-                        title: "Intense fear of Snake",
-                        caption: "Arachnophobia",
-                        action: {
-                            
-                        }
-                    )
-                    CardTherapy(
-                        title: "Intense fear of Dog",
-                        caption: "Cynophobia",
-                        action: {
-                            
-                        }
-                    )
-                    CardTherapy(
-                        title: "Intense fear of Crocodile",
-                        caption: "Herpetophobia",
-                        action: {
-                            
-                        }
-                    )
-                    CardTherapy(
-                        title: "Intense fear of Cockroach",
-                        caption: "Katsaridaphobia",
-                        action: {
-                            
-                        }
-                    )
-                    CardTherapy(
-                        title: "Intense fear of Lizard",
-                        caption: "Herpetophobia",
-                        action: {
-                            
-                        }
-                    )
-                    CardTherapy(
-                        title: "Intense fear of Spider",
-                        caption: "Arachnophobia",
-                        action: {
-                            
-                        }
-                    )
-                    CardTherapy(
-                        title: "Intense fear of Balloons",
-                        caption: "Globophobia",
-                        isAnimal: false,
-                        action: {
-                            
-                        }
-                    )
+                    ForEach(viewModel.phobia, id: \.id){ phobia in
+                        CardTherapy(
+                            title: phobia.description,
+                            caption: phobia.name,
+                            action: {
+                                
+                            }
+                        )
+                    }
                 }
                 .padding(.horizontal, 16)
             }

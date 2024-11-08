@@ -36,8 +36,7 @@ struct TherapyTypeScreen : View {
                         description: "Use AR to see and interact with snakes in a more realistic environment.",
                         image: "arkit",
                         action: {
-                            router.navigate(to: .difficultyType)
-                        }
+                                                    }
                     )
                     
                 }

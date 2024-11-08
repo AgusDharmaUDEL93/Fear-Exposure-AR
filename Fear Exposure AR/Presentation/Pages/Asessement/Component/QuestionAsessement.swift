@@ -29,7 +29,7 @@ struct QuestionAsessement : View {
                 GridItem(.adaptive(minimum: 100))
             ]){
                 ForEach(0...(options.count - 1), id: \.self){ index in
-                    AnswerAsessement(
+                    ChipSelection(
                         label: options[index],
                         isSelected: Binding(get: {
                             optionIndexSelected == index

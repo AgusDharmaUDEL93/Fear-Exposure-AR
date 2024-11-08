@@ -33,7 +33,7 @@ struct SettingsARScreen : View {
                             description: "Description"
                         )
                         Spacer()
-                            .frame(height : 40)
+                            .frame(height: 40)
                     }
                     .padding(.horizontal, 16)
 

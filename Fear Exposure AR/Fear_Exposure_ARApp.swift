@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct Fear_Exposure_ARApp: App {
+    
+    
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
