@@ -8,44 +8,44 @@
 let phobiasData : [Phobia] = [
     Phobia(
         id: 0,
-        name: "Arachnophobia0",
-        description: "Intense fear of Spiders",
+        name: "Ophidiophobia",
+        description: "Intense fear of Snakes",
         fearedObject: FearedObject()
     ),
     Phobia(
         id: 1,
-        name: "Arachnophobia1",
-        description: "Intense fear of Spiders",
+        name: "Katsaridaphobia",
+        description: "Intense fear of Cockroaches",
         fearedObject: FearedObject()
     ),
     Phobia(
         id: 2,
-        name: "Arachnophobia2",
-        description: "Intense fear of Spiders",
+        name: "Cynophobia",
+        description: "Intense fear of Dog",
         fearedObject: FearedObject()
     ),
     Phobia(
         id: 3,
-        name: "Arachnophobia3",
-        description: "Intense fear of Spiders",
+        name: "Crocodylophobia",
+        description: "Intense fear of Crocodile",
         fearedObject: FearedObject()
     ),
     Phobia(
         id: 4,
-        name: "Arachnophobia4",
-        description: "Intense fear of Spiders",
+        name: "Globophobia",
+        description: "Intense fear of Balloon",
         fearedObject: FearedObject()
     ),
     Phobia(
         id: 5,
-        name: "Arachnophobia5",
+        name: "Arachnophobia",
         description: "Intense fear of Spiders",
         fearedObject: FearedObject()
     ),
     Phobia(
         id: 6,
-        name: "Arachnophobia6",
-        description: "Intense fear of Spiders",
+        name: "Herpetophobia",
+        description: "Intense fear of Gecko",
         fearedObject: FearedObject()
     ),
 ]
