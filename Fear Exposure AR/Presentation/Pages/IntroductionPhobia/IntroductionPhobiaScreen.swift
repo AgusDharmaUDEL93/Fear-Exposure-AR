@@ -11,48 +11,53 @@ struct IntroductionPhobiaScreen: View {
     
     @State var viewModel : IntroductionPhobiaViewModel = IntroductionPhobiaViewModel()
     @Environment(Router.self) private var router
-    @AppStorage("isFirst") private var isFirst : Bool = true
+//    @Binding var isFirst : Bool
 
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                ScrollView {
+                VStack {
                     TitleScreen(
                         title: "Phobia List",
                         description: "Select all the phobias that apply to you. Don’t worry, you can update these choices later."
                     )
-                    LazyVGrid (
-                        columns: [
-                            GridItem(.adaptive(minimum: 100)),
-                            GridItem(.adaptive(minimum: 100))
-                        ],
-                        spacing: 16
-                    ){
-                        ForEach(viewModel.getAllPhobia(), id: \.id){data in
-                            ChipSelection(
-                                label: data.name,
-                                isSelected: Binding(get: {
-                                    viewModel.selectedPhobia.contains(data.id)
-                                }, set: {value in
-                                    
-                                }),
-                                onTapAnswer: {
-                                    viewModel.onTapSelection(id: data.id)
-                                }
-                            )
-                            
+                    ScrollView {
+                        
+                        LazyVGrid (
+                            columns: [
+                                GridItem(.adaptive(minimum: 100)),
+                                GridItem(.adaptive(minimum: 100))
+                            ],
+                            spacing: 16
+                        ){
+                            ForEach(viewModel.getAllPhobia(), id: \.id){data in
+                                ChipSelection(
+                                    label: data.name,
+                                    isSelected: Binding(get: {
+                                        viewModel.selectedPhobia.contains(data.id)
+                                    }, set: {value in
+                                        
+                                    }),
+                                    onTapAnswer: {
+                                        viewModel.onTapSelection(id: data.id)
+                                    }
+                                )
+                                
+                            }
                         }
+                        .padding( 16)
+                        Spacer()
+                            .frame(height: 40)
                     }
-                    .padding( 16)
-                    Spacer()
-                        .frame(height: 40)
                 }
+                
                 VStack {
                     Spacer()
                     Button(action: {
+                        viewModel.onSubmitPhobia()
                         router.navigateToRoot()
-                        isFirst = false
+//                        isFirst = false
                     }, label: {
                         Text ("Submit")
                             .font(.body)
@@ -72,12 +77,30 @@ struct IntroductionPhobiaScreen: View {
             }
             
         }
+        .navigationBarBackButtonHidden()
+        .toolbar(content: {
+            ToolbarItem(placement : .topBarLeading){
+                Button(action: {
+                    router.navigateBack()
+                }, label: {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                    }
+                    
+                })
+                .foregroundStyle(.white)
+                Spacer()
+            }
+        })
+        .ignoresSafeArea()
     }
 }
 
 #Preview {
     NavigationStack {
-        IntroductionPhobiaScreen()
+        IntroductionPhobiaScreen(
+            
+        )
     }
     .environment(Router())
     .tint(Color(Theme.primary500.rawValue))

@@ -21,12 +21,17 @@ struct ProfileScreen : View {
                     ZStack (alignment : .topLeading) {
                         Color(Theme.primary500.rawValue)
                             .frame(height: 250)
-                        Text("Profile")
-                            .font(.largeTitle)
-                            .bold()
-                            .padding(.top, 48)
-                            .padding(.horizontal, 16)
-                            .foregroundStyle(Color(Theme.background.rawValue))
+                        VStack {
+                            Spacer()
+                                .frame(height: 50)
+                            Text("Profile")
+                                .font(.largeTitle)
+                                .bold()
+                                .padding(.top, 48)
+                                .padding(.horizontal, 16)
+                                .foregroundStyle(Color(Theme.background.rawValue))
+                        }
+                       
                         
                         VStack {
                             Spacer()
@@ -57,7 +62,7 @@ struct ProfileScreen : View {
                             label: "Phobias",
                             image: "brain.filled.head.profile",
                             onAction: {
-                                
+                                router.navigate(to: .introductionPhobia)
                             }
                         )
                         ListTextProfile(
@@ -90,7 +95,7 @@ struct ProfileScreen : View {
                             label: "Terms & Conditions",
                             image: "doc.plaintext",
                             onAction: {
-                                router.navigate(to: .termCondition)
+                                router.navigate(to: .termCondition(isOnlyShowing: true))
                             }
                         )
                         ListTextProfile(
@@ -110,14 +115,16 @@ struct ProfileScreen : View {
                             selectedItem: "Version 1.0.0 (Latest)"
                         )
                         Spacer()
-                            .frame(height: 16)
+                            .frame(height: 110)
                         
                         
                     }
                     .padding(.horizontal, 16)
                 }
+                .background(Color(Theme.background.rawValue))
                 .frame(maxWidth: geometry.size.width)
             }
+            .background(Color(Theme.primary500.rawValue))
             .sheet(
                 isPresented: $viewModel.isSheetLanguageOpen,
                 content: {
@@ -135,6 +142,7 @@ struct ProfileScreen : View {
         .onAppear{
             viewModel.languageSelected = Locale(identifier: locale)
         }
+        .ignoresSafeArea()
     }
 }
 

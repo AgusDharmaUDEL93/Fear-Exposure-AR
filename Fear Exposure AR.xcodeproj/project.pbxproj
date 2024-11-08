@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23AD9EFE2CBD12E5000D3B8D /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 23AD9EFD2CBD12E5000D3B8D /* FocusEntity */; };
+		23D9B55C2CDDA94B006F7332 /* Fear Exposure AR Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 23D9B5392CDDA94A006F7332 /* Fear Exposure AR Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,12 +26,50 @@
 			remoteGlobalIDString = 23AD9E762CBCDC68000D3B8D;
 			remoteInfo = "Fear Exposure AR";
 		};
+		23D9B5492CDDA94B006F7332 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23AD9E6F2CBCDC68000D3B8D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23D9B5382CDDA94A006F7332;
+			remoteInfo = "Fear Exposure AR Watch Watch App";
+		};
+		23D9B5532CDDA94B006F7332 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23AD9E6F2CBCDC68000D3B8D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23D9B5382CDDA94A006F7332;
+			remoteInfo = "Fear Exposure AR Watch Watch App";
+		};
+		23D9B55A2CDDA94B006F7332 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23AD9E6F2CBCDC68000D3B8D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23D9B5382CDDA94A006F7332;
+			remoteInfo = "Fear Exposure AR Watch Watch App";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		23D9B5602CDDA94B006F7332 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				23D9B55C2CDDA94B006F7332 /* Fear Exposure AR Watch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		23AD9E772CBCDC68000D3B8D /* Fear Exposure AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fear Exposure AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23AD9E872CBCDC69000D3B8D /* Fear Exposure ARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fear Exposure ARTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23AD9E912CBCDC69000D3B8D /* Fear Exposure ARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fear Exposure ARUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23D9B5392CDDA94A006F7332 /* Fear Exposure AR Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fear Exposure AR Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23D9B5482CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fear Exposure AR Watch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23D9B5522CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fear Exposure AR Watch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -47,6 +86,21 @@
 		23AD9E942CBCDC69000D3B8D /* Fear Exposure ARUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Fear Exposure ARUITests";
+			sourceTree = "<group>";
+		};
+		23D9B53A2CDDA94A006F7332 /* Fear Exposure AR Watch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Fear Exposure AR Watch Watch App";
+			sourceTree = "<group>";
+		};
+		23D9B54B2CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Fear Exposure AR Watch Watch AppTests";
+			sourceTree = "<group>";
+		};
+		23D9B5552CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Fear Exposure AR Watch Watch AppUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -74,6 +128,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23D9B5362CDDA94A006F7332 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D9B5452CDDA94B006F7332 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D9B54F2CDDA94B006F7332 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +158,9 @@
 				23AD9E792CBCDC68000D3B8D /* Fear Exposure AR */,
 				23AD9E8A2CBCDC69000D3B8D /* Fear Exposure ARTests */,
 				23AD9E942CBCDC69000D3B8D /* Fear Exposure ARUITests */,
+				23D9B53A2CDDA94A006F7332 /* Fear Exposure AR Watch Watch App */,
+				23D9B54B2CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppTests */,
+				23D9B5552CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppUITests */,
 				23AD9EFC2CBD12E5000D3B8D /* Frameworks */,
 				23AD9E782CBCDC68000D3B8D /* Products */,
 			);
@@ -94,6 +172,9 @@
 				23AD9E772CBCDC68000D3B8D /* Fear Exposure AR.app */,
 				23AD9E872CBCDC69000D3B8D /* Fear Exposure ARTests.xctest */,
 				23AD9E912CBCDC69000D3B8D /* Fear Exposure ARUITests.xctest */,
+				23D9B5392CDDA94A006F7332 /* Fear Exposure AR Watch Watch App.app */,
+				23D9B5482CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppTests.xctest */,
+				23D9B5522CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,10 +196,12 @@
 				23AD9E732CBCDC68000D3B8D /* Sources */,
 				23AD9E742CBCDC68000D3B8D /* Frameworks */,
 				23AD9E752CBCDC68000D3B8D /* Resources */,
+				23D9B5602CDDA94B006F7332 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				23D9B55B2CDDA94B006F7332 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				23AD9E792CBCDC68000D3B8D /* Fear Exposure AR */,
@@ -177,6 +260,74 @@
 			productReference = 23AD9E912CBCDC69000D3B8D /* Fear Exposure ARUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		23D9B5382CDDA94A006F7332 /* Fear Exposure AR Watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23D9B55D2CDDA94B006F7332 /* Build configuration list for PBXNativeTarget "Fear Exposure AR Watch Watch App" */;
+			buildPhases = (
+				23D9B5352CDDA94A006F7332 /* Sources */,
+				23D9B5362CDDA94A006F7332 /* Frameworks */,
+				23D9B5372CDDA94A006F7332 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				23D9B53A2CDDA94A006F7332 /* Fear Exposure AR Watch Watch App */,
+			);
+			name = "Fear Exposure AR Watch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "Fear Exposure AR Watch Watch App";
+			productReference = 23D9B5392CDDA94A006F7332 /* Fear Exposure AR Watch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		23D9B5472CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23D9B5612CDDA94B006F7332 /* Build configuration list for PBXNativeTarget "Fear Exposure AR Watch Watch AppTests" */;
+			buildPhases = (
+				23D9B5442CDDA94B006F7332 /* Sources */,
+				23D9B5452CDDA94B006F7332 /* Frameworks */,
+				23D9B5462CDDA94B006F7332 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23D9B54A2CDDA94B006F7332 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				23D9B54B2CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppTests */,
+			);
+			name = "Fear Exposure AR Watch Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "Fear Exposure AR Watch Watch AppTests";
+			productReference = 23D9B5482CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		23D9B5512CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23D9B5642CDDA94B006F7332 /* Build configuration list for PBXNativeTarget "Fear Exposure AR Watch Watch AppUITests" */;
+			buildPhases = (
+				23D9B54E2CDDA94B006F7332 /* Sources */,
+				23D9B54F2CDDA94B006F7332 /* Frameworks */,
+				23D9B5502CDDA94B006F7332 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23D9B5542CDDA94B006F7332 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				23D9B5552CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppUITests */,
+			);
+			name = "Fear Exposure AR Watch Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "Fear Exposure AR Watch Watch AppUITests";
+			productReference = 23D9B5522CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,6 +348,17 @@
 					23AD9E902CBCDC69000D3B8D = {
 						CreatedOnToolsVersion = 16.0;
 						TestTargetID = 23AD9E762CBCDC68000D3B8D;
+					};
+					23D9B5382CDDA94A006F7332 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					23D9B5472CDDA94B006F7332 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 23D9B5382CDDA94A006F7332;
+					};
+					23D9B5512CDDA94B006F7332 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 23D9B5382CDDA94A006F7332;
 					};
 				};
 			};
@@ -221,6 +383,9 @@
 				23AD9E762CBCDC68000D3B8D /* Fear Exposure AR */,
 				23AD9E862CBCDC69000D3B8D /* Fear Exposure ARTests */,
 				23AD9E902CBCDC69000D3B8D /* Fear Exposure ARUITests */,
+				23D9B5382CDDA94A006F7332 /* Fear Exposure AR Watch Watch App */,
+				23D9B5472CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppTests */,
+				23D9B5512CDDA94B006F7332 /* Fear Exposure AR Watch Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,6 +406,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		23AD9E8F2CBCDC69000D3B8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D9B5372CDDA94A006F7332 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D9B5462CDDA94B006F7332 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D9B5502CDDA94B006F7332 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -271,6 +457,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		23D9B5352CDDA94A006F7332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D9B5442CDDA94B006F7332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D9B54E2CDDA94B006F7332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -283,6 +490,21 @@
 			isa = PBXTargetDependency;
 			target = 23AD9E762CBCDC68000D3B8D /* Fear Exposure AR */;
 			targetProxy = 23AD9E922CBCDC69000D3B8D /* PBXContainerItemProxy */;
+		};
+		23D9B54A2CDDA94B006F7332 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23D9B5382CDDA94A006F7332 /* Fear Exposure AR Watch Watch App */;
+			targetProxy = 23D9B5492CDDA94B006F7332 /* PBXContainerItemProxy */;
+		};
+		23D9B5542CDDA94B006F7332 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23D9B5382CDDA94A006F7332 /* Fear Exposure AR Watch Watch App */;
+			targetProxy = 23D9B5532CDDA94B006F7332 /* PBXContainerItemProxy */;
+		};
+		23D9B55B2CDDA94B006F7332 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23D9B5382CDDA94A006F7332 /* Fear Exposure AR Watch Watch App */;
+			targetProxy = 23D9B55A2CDDA94B006F7332 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -419,7 +641,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Fear Exposure AR/Preview Content\"";
-				DEVELOPMENT_TEAM = 4WSCC5Q69A;
+				DEVELOPMENT_TEAM = FG6WH2X4N7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -435,7 +657,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.denxero.Fear-Exposure-AR2";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.denxero.Fear-Exposure-AR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -452,7 +674,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Fear Exposure AR/Preview Content\"";
-				DEVELOPMENT_TEAM = 4WSCC5Q69A;
+				DEVELOPMENT_TEAM = FG6WH2X4N7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -468,7 +690,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.denxero.Fear-Exposure-AR2";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.denxero.Fear-Exposure-AR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -548,6 +770,144 @@
 			};
 			name = Release;
 		};
+		23D9B55E2CDDA94B006F7332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Fear Exposure AR Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = FG6WH2X4N7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Fear Exposure AR Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "dev.denxero.Fear-Exposure-AR";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.denxero.Fear-Exposure-AR.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		23D9B55F2CDDA94B006F7332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Fear Exposure AR Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = FG6WH2X4N7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Fear Exposure AR Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "dev.denxero.Fear-Exposure-AR";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.denxero.Fear-Exposure-AR.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		23D9B5622CDDA94B006F7332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FG6WH2X4N7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gusdhar.Fear-Exposure-AR-Watch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fear Exposure AR Watch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fear Exposure AR Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		23D9B5632CDDA94B006F7332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FG6WH2X4N7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.gusdhar.Fear-Exposure-AR-Watch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fear Exposure AR Watch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fear Exposure AR Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		23D9B5652CDDA94B006F7332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FG6WH2X4N7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.denxero.Fear-Exposure-AR-Watch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Fear Exposure AR Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		23D9B5662CDDA94B006F7332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FG6WH2X4N7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.denxero.Fear-Exposure-AR-Watch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Fear Exposure AR Watch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -583,6 +943,33 @@
 			buildConfigurations = (
 				23AD9EA22CBCDC69000D3B8D /* Debug */,
 				23AD9EA32CBCDC69000D3B8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23D9B55D2CDDA94B006F7332 /* Build configuration list for PBXNativeTarget "Fear Exposure AR Watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23D9B55E2CDDA94B006F7332 /* Debug */,
+				23D9B55F2CDDA94B006F7332 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23D9B5612CDDA94B006F7332 /* Build configuration list for PBXNativeTarget "Fear Exposure AR Watch Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23D9B5622CDDA94B006F7332 /* Debug */,
+				23D9B5632CDDA94B006F7332 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23D9B5642CDDA94B006F7332 /* Build configuration list for PBXNativeTarget "Fear Exposure AR Watch Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23D9B5652CDDA94B006F7332 /* Debug */,
+				23D9B5662CDDA94B006F7332 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

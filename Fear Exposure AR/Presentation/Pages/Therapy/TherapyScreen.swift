@@ -11,31 +11,45 @@ struct TherapyScreen : View {
     
     @Environment(Router.self) private var router
     @State var viewModel = TherapyViewModel()
+    @Environment(SettingARUtils.self) private var settings
     
     var body : some View {
         GeometryReader { geometry in
-            ScrollView {
+            VStack {
                 TitleScreen(
                     title: "Therapies",
                     description: "Description of this screen and its purpose."
                 )
-                LazyVGrid (columns: [
-                    GridItem(.adaptive(minimum: 100)),
-                    GridItem(.adaptive(minimum: 100))
-                ], spacing: 16){
-                    ForEach(viewModel.phobia, id: \.id){ phobia in
-                        CardTherapy(
-                            title: phobia.description,
-                            caption: phobia.name,
-                            action: {
-                                
-                            }
-                        )
+                ScrollView {
+                    
+                    Spacer()
+                        .frame(height: 16)
+                    LazyVGrid (columns: [
+                        GridItem(.adaptive(minimum: 100)),
+                        GridItem(.adaptive(minimum: 100))
+                    ], spacing: 16){
+                        ForEach(viewModel.phobia, id: \.id){ phobia in
+                            CardTherapy(
+                                title: phobia.description,
+                                caption: phobia.name,
+                                action: {
+                                    settings.object = phobia.fearedObject
+                                    
+                                }
+                            )
+                        }
                     }
+                    .padding(.horizontal, 16)
+                    Spacer()
+                        .frame(height: 110)
                 }
-                .padding(.horizontal, 16)
             }
+            
         }
+        .onAppear{
+            viewModel.getSelectedPhobia()
+        }
+        .ignoresSafeArea()
     }
 }
 
@@ -44,5 +58,6 @@ struct TherapyScreen : View {
         TherapyScreen()
     }
     .environment(Router())
+    .environment(SettingARUtils())
     
 }

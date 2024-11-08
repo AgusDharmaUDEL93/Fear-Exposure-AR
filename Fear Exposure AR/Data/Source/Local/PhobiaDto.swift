@@ -9,9 +9,9 @@ import SwiftData
 
 @Model
 class PhobiaDto {
-    @Attribute(.unique) var phobiaId : Int
+   var phobiaId : Int?
     
-    init(phobiaId: Int) {
+    init(phobiaId: Int? = nil) {
         self.phobiaId = phobiaId
     }
 }

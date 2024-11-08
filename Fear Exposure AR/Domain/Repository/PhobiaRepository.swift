@@ -17,5 +17,7 @@ protocol PhobiaRepository {
         phobia : Int
     ) throws
     
-    func getPhobiaSelected () throws -> [PhobiaDto] 
+    func getPhobiaSelected () throws -> [PhobiaDto]
+    
+    func getPhobiasById (phobia : Int) -> Phobia?
 }

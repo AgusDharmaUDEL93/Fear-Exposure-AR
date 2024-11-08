@@ -12,45 +12,50 @@ struct ContentView: View {
     @State var router = Router()
     @AppStorage("locale") private var locale = Locale.current.identifier
     @State var settings = SettingARUtils()
-    @AppStorage("isFirst") private var isFirst : Bool = true
+    @State var viewModel = ContentViewViewModel()
     
     var body: some View {
         NavigationStack (path : $router.navPath)  {
-            if (isFirst){
-                IntroductionPhobiaScreen()
-            } else {
-                Group {
-                    if #available(iOS 18.0, *) {
-                        TabView {
-                            Tab("Theraphy", systemImage: "heart") {
+            Group{
+                if (viewModel.getPhobiaSelected().isEmpty){
+                    TermsAndConditionScreen(isOnlyShowing: false)
+                } else {
+                    Group {
+                        if #available(iOS 18.0, *) {
+                            TabView {
+                                Tab("Theraphy", systemImage: "heart") {
+                                    TherapyScreen()
+                                }
+
+                                Tab("Logs", systemImage: "book.pages") {
+                                    LogsScreen()
+                                }
+                                
+                                Tab("Profile", systemImage: "person") {
+                                    ProfileScreen()
+                                }
+                            }
+                        } else {
+                            TabView {
                                 TherapyScreen()
+                                    .tabItem {
+                                        Label("Theraphy", systemImage: "heart")
+                                            
+                                    }
+                                LogsScreen()
+                                    .tabItem {
+                                        Label("Logs", systemImage: "book.pages")
+                                    }
+                                ProfileScreen()
+                                    .tabItem {
+                                        Label("Profile", systemImage: "person")
+                                    }
                             }
                             
-                            Tab("Logs", systemImage: "book.pages") {
-                                LogsScreen()
-                            }
-                            Tab("Profile", systemImage: "person") {
-                                ProfileScreen()
-                            }
                         }
-                    } else {
-                        TabView {
-                            TherapyScreen()
-                                .tabItem {
-                                    Label("Theraphy", systemImage: "heart")
-                                }
-                            LogsScreen()
-                                .tabItem {
-                                    Label("Logs", systemImage: "book.pages")
-                                }
-                            ProfileScreen()
-                                .tabItem {
-                                    Label("Profile", systemImage: "person")
-                                }
-                        }
-                        
                     }
                 }
+            }
                 .navigationDestination(
                     for: Router.Destination.self,
                     destination:  { destination in
@@ -69,13 +74,14 @@ struct ContentView: View {
                             SummaryScreen()
                         case .userInfo:
                             UserInfoScreen()
-                            
-                        case .termCondition:
-                            TermsAndConditionScreen()
+                        case .termCondition (let isOnlyShowing):
+                            TermsAndConditionScreen(isOnlyShowing: isOnlyShowing )
+                        case .introductionPhobia:
+                            IntroductionPhobiaScreen()
                         }
                     }
                 )
-            }
+
         }
         .tint(Color(Theme.primary500.rawValue))
         .environment(router)

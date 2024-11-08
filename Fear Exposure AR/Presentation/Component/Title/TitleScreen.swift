@@ -11,11 +11,12 @@ struct TitleScreen : View {
     
     let title : String
     let description : String
+    let isIgnoreSafeArea : Bool = true
     
     var body: some View {
         VStack (alignment : .leading) {
             Spacer()
-                .frame(width: 0, height: 80)
+                .frame(width: 0, height: isIgnoreSafeArea ? 120 : 80)
                 .frame(maxWidth: .infinity)
             Text (title)
                 .font(.largeTitle)

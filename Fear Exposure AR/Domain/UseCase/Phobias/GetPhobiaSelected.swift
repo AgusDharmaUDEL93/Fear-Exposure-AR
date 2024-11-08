@@ -15,8 +15,10 @@ class GetPhobiaSelected {
     func execute () -> [Int] {
         do {
             return (try phobiaRepository.getPhobiaSelected().map({
-                $0.phobiaId
-            }))
+                $0.phobiaId ?? -1
+            })).filter({
+                $0 != -1
+            })
         } catch {
             return []
         }

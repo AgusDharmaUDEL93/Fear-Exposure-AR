@@ -33,11 +33,16 @@ class PhobiaRepositoryImpl : PhobiaRepository {
         } catch {
             throw error
         }
-       
     }
     
     func getAllPhobias() -> [Phobia] {
         return phobiasData
+    }
+    
+    func getPhobiasById (phobia : Int) -> Phobia? {
+        return phobiasData.first(where: {
+            $0.id == phobia
+        }) ?? nil
     }
     
     func getPhobiaSelected() throws  -> [PhobiaDto] {

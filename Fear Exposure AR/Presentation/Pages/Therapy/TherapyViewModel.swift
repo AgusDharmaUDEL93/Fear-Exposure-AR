@@ -9,9 +9,10 @@ import Observation
 
 @Observable
 class TherapyViewModel {
-    private var phobiaUseCases = PhobiasUseCases.shared
+    @MainActor
+    @ObservationIgnored private var phobiaUseCases = PhobiasUseCases.shared
     
-    var phobia : [Phobia] = []
+    var phobia : [Phobia] = .init()
     
     @MainActor
     init () {

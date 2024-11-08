@@ -7,40 +7,54 @@
 
 import Observation
 
+@MainActor
 @Observable
 class IntroductionPhobiaViewModel {
-    private let phobiaUseCases = PhobiasUseCases.shared
+    @ObservationIgnored private let phobiaUseCases = PhobiasUseCases.shared
     
     var selectedPhobia : [Int] = []
     
-    @MainActor
     init() {
         getSelectedPhobia()
+        print(selectedPhobia)
     }
     
-    @MainActor
     func getAllPhobia () -> [Phobia] {
         phobiaUseCases.getAllPhobia.execute()
     }
     
-    @MainActor
     func getSelectedPhobia () {
         phobiaUseCases.getPhobiaSelected.execute().forEach{ phobiaId in
             selectedPhobia.append(phobiaId)
         }
     }
     
-    @MainActor
     func onTapSelection (id : Int) {
         if (selectedPhobia.contains(id)){
             if let index = selectedPhobia.firstIndex(of: id) {
                 selectedPhobia.remove(at:  index)
             }
-            phobiaUseCases.deletePhobia.execute(id: id)
             return
         }
         selectedPhobia.append(id)
-        phobiaUseCases.addPhobia.execute(id: id)
+    }
+    
+    func onSubmitPhobia () {
+        var selectedSavedPhobia = phobiaUseCases.getPhobiaSelected.execute()
+        
+        for phobia in selectedSavedPhobia {
+            if (!selectedPhobia.contains(phobia)){
+                phobiaUseCases.deletePhobia.execute(id: phobia)
+            }
+        }
+    
+        for phobia in selectedPhobia {
+            if (!selectedSavedPhobia.contains(phobia)){
+                phobiaUseCases.addPhobia.execute(id: phobia)
+            }
+        }
+        
+        selectedSavedPhobia = selectedPhobia
     }
     
 }

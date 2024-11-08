@@ -11,7 +11,6 @@ struct ARPlaygroundScreen : View {
     
     @State var viewModel = ARPlaygroundViewModel()
     @Environment(Router.self) private var router
-    @Environment(\.dismiss) var dismiss
     
     var body : some View {
         GeometryReader { geometry in
@@ -124,7 +123,7 @@ struct ARPlaygroundScreen : View {
         .toolbar{
             ToolbarItem(placement : .topBarLeading){
                 Button(action: {
-                    dismiss()
+                    router.navigateBack()
                 }, label: {
                     HStack {
                         Image(systemName: "chevron.left")

@@ -20,7 +20,8 @@ class Router  {
         case arPlayground
         case picturePlayground
         case userInfo
-        case termCondition
+        case termCondition(isOnlyShowing : Bool = false)
+        case introductionPhobia 
     }
     
     func navigate(to destination: Destination) {
