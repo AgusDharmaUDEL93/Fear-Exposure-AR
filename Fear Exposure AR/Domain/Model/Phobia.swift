@@ -8,6 +8,8 @@
 struct Phobia {
     let id : Int
     let name : String
+    let displayName : String
+    let isAnimal : Bool
     let description : String
     let fearedObject : FearedObject
 }

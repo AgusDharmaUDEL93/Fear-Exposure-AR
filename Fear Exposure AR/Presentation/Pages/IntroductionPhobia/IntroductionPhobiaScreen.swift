@@ -33,7 +33,7 @@ struct IntroductionPhobiaScreen: View {
                         ){
                             ForEach(viewModel.getAllPhobia(), id: \.id){data in
                                 ChipSelection(
-                                    label: data.name,
+                                    label: data.displayName,
                                     isSelected: Binding(get: {
                                         viewModel.selectedPhobia.contains(data.id)
                                     }, set: {value in
