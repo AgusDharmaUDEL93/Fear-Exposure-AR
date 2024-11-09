@@ -71,8 +71,6 @@ struct AsessementScreen : View {
                             }
                         )
                     }
-                    Spacer()
-                        .frame(height: 32)
                     
                     Spacer()
                         .frame(height: 32)
@@ -97,7 +95,7 @@ struct AsessementScreen : View {
                         
                         QuestionAsessement(
                             number: 2,
-                            question: "Are you willing to be exposed to a **3D representation** of the feared object using Augmented reality?",
+                            question: "Are you willing to be exposed to a 3D representation of the feared object using Augmented reality?",
                             options: [
                                 "Yes", "No"
                             ],
@@ -108,7 +106,7 @@ struct AsessementScreen : View {
                         
                         QuestionAsessement(
                             number: 3,
-                            question: "You are **scared by the sound** that the feared object makes.",
+                            question: "You are scared by the sound that the feared object makes.",
                             options: [
                                 "Yes", "No"
                             ],
@@ -119,17 +117,6 @@ struct AsessementScreen : View {
                         
                         QuestionAsessement(
                             number: 4,
-                            question: "How comfortable are you **being close** to the feared object? (m = meters).",
-                            options: [
-                                "Not comfortable!", "Keep it far (5 m)", "A little close (3 m)", "I dare it! (1 m)"
-                            ],
-                            onChangedSelectedOption: { data in
-                                
-                            }
-                        )
-                        
-                        QuestionAsessement(
-                            number: 5,
                             question: "Are you willing to have the 3D object approach to you?",
                             options: [
                                 "Yes", "No"
