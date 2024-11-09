@@ -21,32 +21,31 @@ struct TermsAndConditionScreen: View {
         VStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    Text("By using the Denxéro AR Exposure Therapy App (\"Fear Exposure AR or FEAR\"), you acknowledge and agree that your use of the app is at your sole risk. Denxéro Team and its affiliates are not responsible or liable for any direct, indirect, incidental, consequential, or any other damages arising from your use of the app.")
-                    Text("Always consult with a qualified healthcare provider or psychologist before starting any new treatment or therapy program, including the use of this app. By using the Denxéro AR Exposure Therapy App (\"Fear Exposure AR or FEAR\"), you acknowledge and agree to the following terms:")
+                    Text("By using the Denxéro AR Exposure Therapy app (\"Fear Exposure AR or FEAR\"), the user acknowledges and agrees to the following terms:")
                     
                     Group {
                         disclaimerItem(
                             number: "1.",
                             title: "No Guarantee of Cure",
-                            description: "The app is intended to assist in exposure therapy and is designed to complement professional psychological treatment. Denxéro and its affiliates do not guarantee that the use of the App will cure any mental illness or psychological condition. Individual results may vary."
+                            description: "This app is intended to assist in exposure therapy and is designed to complement professional psychological treatment. Denxéro and its affiliates do not guarantee that the use of this app will cure any mental illness or psychological condition. Individual results may vary."
                         )
                         
                         disclaimerItem(
                             number: "2.",
                             title: "Medical Disclaimer",
-                            description: "The app is not intended to replace professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider or psychologist before starting any new treatment or therapy program, including the use of this app."
+                            description: "This app is not intended to replace professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider or psychologist before starting any new treatment or therapy program, including the use of this app."
                         )
                         
                         disclaimerItem(
                             number: "3.",
                             title: "User Responsibility",
-                            description: "You are responsible for your own health and safety while using the app. Use the app in a safe environment, especially when engaging with Augmented Reality (AR) features. Be aware of your surroundings to prevent physical injury or property damage."
+                            description: "The user is responsible for their own health and safety while using this app. Use this app in a safe environment, especially when engaging with Augmented Reality (AR) features. Be aware of your surroundings to prevent physical injury or property damage."
                         )
                         
                         disclaimerItem(
                             number: "4.",
                             title: "Limitation of Liability",
-                            description: "To the fullest extent permitted by law, Denxéro and its affiliates shall not be liable for any direct, indirect, incidental, consequential, or any other damages arising from your use of, or inability to use, the app. This includes, but is not limited to, damages for loss of profits, goodwill, data, or other intangible losses."
+                            description: "To the fullest extent permitted by law, Denxéro and its affiliates shall not be liable for any direct, indirect, incidental, consequential, or any other damages arising from your use of, or inability to use, this app. This includes, but is not limited to, damages for loss of profits, goodwill, data, or other intangible losses."
                         )
                         
                         disclaimerItem(
@@ -58,19 +57,19 @@ struct TermsAndConditionScreen: View {
                         disclaimerItem(
                             number: "6.",
                             title: "Age Restrictions",
-                            description: "The App is intended for use by individuals who have reached the age of majority as defined by the laws of their country or region. By using the app, you confirm that you meet this age requirement. If you are under the age of majority, you must obtain parental or guardian consent before using the app."
+                            description: "This app is intended for use by individuals who have reached the age of majority as defined by the laws of their country or region. By using this app, the user confirms that they have met this age requirement. If the user is under the age of majority, they must obtain parental or guardian consent before using this app."
                         )
                         
                         disclaimerItem(
                             number: "7.",
                             title: "Updates to Terms and Conditions",
-                            description: "Denxéro reserves the right to modify or update these terms and conditions at any time without prior notice. It is your responsibility to review the disclaimer periodically for any changes. Continued use of the app following any modifications indicates your acceptance of the new terms."
+                            description: "Denxéro reserves the right to modify or update these terms and conditions at any time without prior notice. It is the user’s responsibility to review the disclaimer periodically for any changes. Continued use of this app following any modifications indicates your acceptance of the new terms."
                         )
                         
                         disclaimerItem(
                             number: "8.",
                             title: "Acceptance of Terms",
-                            description: "By using the app, you agree to abide by this disclaimer and all other associated agreements and policies."
+                            description: "By using this app, user agrees to abide by this disclaimer and all other associated agreements and policies."
                         )
                     }
                     .background(
@@ -89,12 +88,12 @@ struct TermsAndConditionScreen: View {
                 geo.contentOffset.y
             } action: { oldValue, newValue in
                 yOffset = newValue
-                if yOffset > 1050 {
+                if yOffset > 800 {
                     isButtonEnabled = true
                 }
             }
             if (!isOnlyShowing){
-                Text("By pressing “I Accept” button, you agree to the terms and conditions of using Fear Exposure AR app.")
+                Text("By pressing “I Accept” the user agrees to the disclaimer and have therefore read the Terms and Conditions to using Fear Exposure AR.")
                     .font(.footnote)
                     .padding(EdgeInsets(top: 8, leading: 10, bottom: 0, trailing: 10))
                 
