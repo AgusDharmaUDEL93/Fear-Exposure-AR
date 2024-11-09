@@ -22,19 +22,16 @@
     "Age" : {
 
     },
-    "Always consult with a qualified healthcare provider or psychologist before starting any new treatment or therapy program, including the use of this app. By using the Denxéro AR Exposure Therapy App (\"Fear Exposure AR or FEAR\"), you acknowledge and agree to the following terms:" : {
-
-    },
     "Answer Here" : {
 
     },
     "Apply Changes" : {
 
     },
-    "By pressing “I Accept” button, you agree to the terms and conditions of using Fear Exposure AR app." : {
+    "By pressing “I Accept” the user agrees to the disclaimer and have therefore read the Terms and Conditions to using Fear Exposure AR." : {
 
     },
-    "By using the Denxéro AR Exposure Therapy App (\"Fear Exposure AR or FEAR\"), you acknowledge and agree that your use of the app is at your sole risk. Denxéro Team and its affiliates are not responsible or liable for any direct, indirect, incidental, consequential, or any other damages arising from your use of the app." : {
+    "By using the Denxéro AR Exposure Therapy app (\"Fear Exposure AR or FEAR\"), the user acknowledges and agrees to the following terms:" : {
 
     },
     "Cancel" : {
@@ -94,6 +91,9 @@
     "Question Category" : {
 
     },
+    "Recommendation" : {
+
+    },
     "Reveal Object" : {
 
     },
@@ -143,6 +143,9 @@
 
     },
     "Your Name" : {
+
+    },
+    "Your Recommended Exposure Method" : {
 
     }
   },

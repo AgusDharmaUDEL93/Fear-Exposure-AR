@@ -32,7 +32,7 @@ let phobiasData : [Phobia] = [
     ),
     Phobia(
         id: 3,
-        name: "Crocodylophobia",
+        name: "Herpetophobia",
         displayName: "Crocodile",
         isAnimal: true,
         description: "Intense fear of Crocodile",
