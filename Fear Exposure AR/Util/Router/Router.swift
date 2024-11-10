@@ -14,12 +14,10 @@ class Router  {
     
     public enum Destination  : Codable, Hashable {
         case theraphy
-        case theraphyType
         case reflection
         case summary
         case arPlayground
         case picturePlayground
-        case userInfo
         case termCondition(isOnlyShowing : Bool = false)
         case introductionPhobia
         case assessment

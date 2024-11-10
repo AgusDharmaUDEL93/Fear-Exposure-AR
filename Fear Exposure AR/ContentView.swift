@@ -66,14 +66,12 @@ struct ContentView: View {
                             PicturePlaygroundScreen()
                         case .theraphy:
                             TherapyScreen()
-                        case .theraphyType:
-                            TherapyTypeScreen()
+                
                         case .reflection:
                             ReflectionScreen()
                         case .summary:
                             SummaryScreen()
-                        case .userInfo:
-                            UserInfoScreen()
+                       
                         case .termCondition (let isOnlyShowing):
                             TermsAndConditionScreen(isOnlyShowing: isOnlyShowing )
                         case .introductionPhobia:
