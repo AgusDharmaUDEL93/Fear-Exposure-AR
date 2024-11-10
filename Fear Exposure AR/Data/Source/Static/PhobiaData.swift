@@ -5,6 +5,8 @@
 //  Created by Putu Agus Dharma Kusuma on 07/11/24.
 //
 
+import RealityKit
+
 let phobiasData : [Phobia] = [
     Phobia(
         id: 0,
@@ -12,7 +14,10 @@ let phobiasData : [Phobia] = [
         displayName: "Snakes",
         isAnimal: true,
         description: "Intense fear of Snakes",
-        fearedObject: FearedObject()
+        fearedObject: FearedObject(
+            baseModel: try? ModelEntity.loadModel(named: "base_snake.usdz"),
+            animation: try? ModelEntity.loadModel(named: "animation_snake.usdz").availableAnimations.first
+        )
     ),
     Phobia(
         id: 1,
