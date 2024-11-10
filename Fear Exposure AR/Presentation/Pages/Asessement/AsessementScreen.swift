@@ -10,6 +10,7 @@ import SwiftUI
 struct AsessementScreen : View {
     
     @Environment(Router.self) private var router
+    @Environment(SettingUtils.self) private var settings
     @State var viewModel : AsessementViewModel  = AsessementViewModel()
     
     var body: some View {
@@ -32,6 +33,8 @@ struct AsessementScreen : View {
                             .padding(.bottom, 12)
                         
                         VStack(spacing: 28) {
+                            
+                            // 1
                             QuestionAsessement(
                                 number: 1,
                                 question: "How intense is your fear when exposed to the object?",
@@ -39,10 +42,10 @@ struct AsessementScreen : View {
                                     "None", "Slightly", "Mild", "Terrified"
                                 ],
                                 onChangedSelectedOption: { data in
-                                    
+                                    viewModel.onChangedAnswer(number: 1, answer: data)
                                 }
                             )
-                            
+                            // 2
                             QuestionAsessement(
                                 number: 2,
                                 question: "When in fear, I experience physical symptoms (sweating, rapid heartbeat, shortness of breath).",
@@ -50,10 +53,11 @@ struct AsessementScreen : View {
                                     "Yes", "No"
                                 ],
                                 onChangedSelectedOption: { data in
-                                    
+                                    viewModel.onChangedAnswer(number: 2, answer: data)
                                 }
                             )
                             
+                            // 3
                             QuestionAsessement(
                                 number: 3,
                                 question: "I have tried attending therapy to help manage my phobia.",
@@ -61,10 +65,11 @@ struct AsessementScreen : View {
                                     "Yes", "No"
                                 ],
                                 onChangedSelectedOption: { data in
-                                    
+                                    viewModel.onChangedAnswer(number: 3, answer: data)
                                 }
                             )
                             
+                            // 4
                             QuestionAsessement(
                                 number: 4,
                                 question: "I have other mental health conditions that might affect my phobia.",
@@ -73,7 +78,7 @@ struct AsessementScreen : View {
                                     "Yes", "No"
                                 ],
                                 onChangedSelectedOption: { data in
-                                    
+                                    viewModel.onChangedAnswer(number: 4, answer: data)
                                 }
                             )
                         }
@@ -88,6 +93,8 @@ struct AsessementScreen : View {
                             .padding(.bottom, 12)
                         
                         VStack(spacing: 28) {
+                            
+                            // 5
                             QuestionAsessement(
                                 number: 1,
                                 question: "Are you willing to be exposed to a 2D cartoon image of the feared object.",
@@ -95,10 +102,11 @@ struct AsessementScreen : View {
                                     "Yes", "No"
                                 ],
                                 onChangedSelectedOption: { data in
-                                    
+                                    viewModel.onChangedAnswer(number: 5, answer: data)
                                 }
                             )
                             
+                            // 6
                             QuestionAsessement(
                                 number: 2,
                                 question: "Are you willing to be exposed to a 3D representation of the feared object using Augmented reality?",
@@ -106,11 +114,11 @@ struct AsessementScreen : View {
                                     "Yes", "No"
                                 ],
                                 onChangedSelectedOption: { data in
-                                    
+                                    viewModel.onChangedAnswer(number: 6, answer: data)
                                 }
                             )
                             
-                            
+                            // 7
                             QuestionAsessement(
                                 number: 3,
                                 question: "Are you willing to have the 3D object approach to you?",
@@ -118,7 +126,7 @@ struct AsessementScreen : View {
                                     "Yes", "No"
                                 ],
                                 onChangedSelectedOption: { data in
-                                    
+                                    viewModel.onChangedAnswer(number: 7, answer: data)
                                 }
                             )
                         }
@@ -132,7 +140,8 @@ struct AsessementScreen : View {
                         Spacer()
                             .frame(height: 16)
                         Button(action: {
-                            router.navigate(to: .theraphyType)
+                            viewModel.processAnswers(id: settings.phobiaId)
+                            router.navigate(to: .recommendation)
                         }, label: {
                             Text ("Submit")
                                 .font(.body)
@@ -143,6 +152,7 @@ struct AsessementScreen : View {
                         .buttonStyle(.borderedProminent)
                         .background(Color(Theme.background.rawValue))
                         .frame(maxWidth: .infinity)
+                        .disabled(viewModel.answers.count != 7)
                         Spacer()
                             .frame(height: 32)
                             .frame(maxWidth: geometry.size.width)
@@ -159,6 +169,7 @@ struct AsessementScreen : View {
             ToolbarItem(placement : .topBarLeading){
                 Button(action: {
                     router.navigateBack()
+                   
                 }, label: {
                     HStack {
                         Image(systemName: "chevron.left")
@@ -180,4 +191,5 @@ struct AsessementScreen : View {
     }
     .accentColor(Color(Theme.primary500.rawValue))
     .environment(Router())
+    .environment(SettingUtils())
 }

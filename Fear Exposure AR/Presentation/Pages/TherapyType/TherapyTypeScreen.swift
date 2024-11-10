@@ -15,7 +15,7 @@ struct TherapyTypeScreen : View {
         GeometryReader { geometry in
             ScrollView {
                 VStack (alignment:.leading, spacing: 16) {
-                    CardTherapyType(
+                    CardTypeOld(
                         title: "Pictures",
                         description: "View photos of your feared object to gradually reduce your fear response.",
                         image: "photo",
@@ -24,7 +24,7 @@ struct TherapyTypeScreen : View {
                         }
                     )
 
-                    CardTherapyType(
+                    CardTypeOld(
                         title: "AR",
                         description: "Use AR to see and interact with snakes in a more realistic environment.",
                         image: "arkit",

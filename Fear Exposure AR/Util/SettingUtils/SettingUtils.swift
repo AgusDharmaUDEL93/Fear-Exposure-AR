@@ -10,6 +10,7 @@ import Observation
 @Observable
 class  SettingUtils {
     var phobiaId : Int = -1
+    var recommendation : Recommendation = .picture
     var scale : Float = 0
     var volume : Float = 0
     var isObjectFollowUser : Bool = false

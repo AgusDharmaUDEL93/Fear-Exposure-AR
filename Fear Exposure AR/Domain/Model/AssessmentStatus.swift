@@ -7,6 +7,7 @@
 
 struct AssessmentStatus {
     var phobiaId : Int? // Unique
+    var recommendation : Recommendation = .picture
     var scale : Float = 1
     var volume : Float = 0
     var isObjectFollowUser : Bool = false

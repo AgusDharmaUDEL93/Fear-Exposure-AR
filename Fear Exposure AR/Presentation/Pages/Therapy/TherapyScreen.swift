@@ -21,7 +21,6 @@ struct TherapyScreen : View {
                     description: "Description of this screen and its purpose."
                 )
                 ScrollView {
-                    
                     Spacer()
                         .frame(height: 16)
                     LazyVGrid (columns: [
@@ -37,7 +36,7 @@ struct TherapyScreen : View {
                                     if ( viewModel.getAssessmentStatus(phobiaId: phobia.id) == nil){
                                         router.navigate(to: .assessment)
                                     } else {
-                                        router.navigate(to: .theraphyType)
+                                        router.navigate(to: .recommendation)
                                     }
                                     
                                     settingUtils.phobiaId = phobia.id

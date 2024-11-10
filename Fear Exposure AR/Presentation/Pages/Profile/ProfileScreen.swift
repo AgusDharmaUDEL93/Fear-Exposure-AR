@@ -66,13 +66,6 @@ struct ProfileScreen : View {
                             }
                         )
                         ListTextProfile(
-                            label: "Notification",
-                            image: "bell",
-                            onAction: {
-                                
-                            }
-                        )
-                        ListTextProfile(
                             label: "Language",
                             image: "globe",
                             onAction: {

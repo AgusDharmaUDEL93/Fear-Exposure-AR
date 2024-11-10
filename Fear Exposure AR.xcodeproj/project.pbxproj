@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23AD9EFE2CBD12E5000D3B8D /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 23AD9EFD2CBD12E5000D3B8D /* FocusEntity */; };
+		233288802CE0AE2500B8912D /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 2332887F2CE0AE2500B8912D /* FocusEntity */; };
 		23D9B55C2CDDA94B006F7332 /* Fear Exposure AR Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 23D9B5392CDDA94A006F7332 /* Fear Exposure AR Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -110,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23AD9EFE2CBD12E5000D3B8D /* FocusEntity in Frameworks */,
+				233288802CE0AE2500B8912D /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +208,7 @@
 			);
 			name = "Fear Exposure AR";
 			packageProductDependencies = (
-				23AD9EFD2CBD12E5000D3B8D /* FocusEntity */,
+				2332887F2CE0AE2500B8912D /* FocusEntity */,
 			);
 			productName = "Fear Exposure AR";
 			productReference = 23AD9E772CBCDC68000D3B8D /* Fear Exposure AR.app */;
@@ -373,7 +373,7 @@
 			mainGroup = 23AD9E6E2CBCDC68000D3B8D;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				23AD9EFB2CBD12BB000D3B8D /* XCRemoteSwiftPackageReference "FocusEntity" */,
+				2332887E2CE0AE1800B8912D /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 23AD9E782CBCDC68000D3B8D /* Products */;
@@ -989,7 +989,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		23AD9EFB2CBD12BB000D3B8D /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+		2332887E2CE0AE1800B8912D /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/maxxfrazer/FocusEntity.git";
 			requirement = {
@@ -1000,9 +1000,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		23AD9EFD2CBD12E5000D3B8D /* FocusEntity */ = {
+		2332887F2CE0AE2500B8912D /* FocusEntity */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 23AD9EFB2CBD12BB000D3B8D /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			package = 2332887E2CE0AE1800B8912D /* XCRemoteSwiftPackageReference "FocusEntity" */;
 			productName = FocusEntity;
 		};
 /* End XCSwiftPackageProductDependency section */

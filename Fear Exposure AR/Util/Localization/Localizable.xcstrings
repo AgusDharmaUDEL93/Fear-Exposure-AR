@@ -4,6 +4,12 @@
     "" : {
 
     },
+    "    • Angela Melia Gunawan\n    • Devon\n    • Jaya Pranata\n    • Shannon Chrestella Valencia\n    • Tifara Levi, S.Psi" : {
+
+    },
+    "    • Dr. Efendi Rimba Sp.KJ\n    • Dr. Harsono Wiradinata Sp.KJ\n    • Jessica Christina Widihgdo, S.Psi., M.Psi\n    • Stefani Virlia, S.Psi., M.Psi" : {
+
+    },
     "-" : {
 
     },
@@ -17,6 +23,15 @@
 
     },
     "A message should be a short, complete sentence." : {
+
+    },
+    "A special thank you to everyone who contributed suggestions and feedback to help improve our app:" : {
+
+    },
+    "About" : {
+
+    },
+    "Acknowledgments" : {
 
     },
     "Age" : {
@@ -43,6 +58,9 @@
     "Cancel" : {
 
     },
+    "Choose Therapy" : {
+
+    },
     "Congratulations! You have completed your session!" : {
 
     },
@@ -59,6 +77,9 @@
 
     },
     "End Therapy Session?" : {
+
+    },
+    "FEAR is an iOS app designed to support individuals with phobias in confronting and managing their fears. Utilizing Digital Systematic Desensitization, or Exposure Therapy, FEAR gradually introduces users to feared objects in both 2D images and immersive 3D AR formats. By tracking heart rate via Apple Watch integration, FEAR provides a clear and measurable way to monitor progress and improvements over time, helping users on their journey to overcome their fears." : {
 
     },
     "Feeling Neutral" : {
@@ -91,6 +112,9 @@
     "Name" : {
 
     },
+    "Our sincere appreciation goes to those who participated in user testing and interviews, providing valuable insights to refine the user experience:" : {
+
+    },
     "Place & Start" : {
 
     },
@@ -106,7 +130,10 @@
     "Question Category" : {
 
     },
-    "Recommendation" : {
+    "Recomended" : {
+
+    },
+    "Retake Assessment" : {
 
     },
     "Reveal Object" : {
@@ -119,6 +146,9 @@
 
     },
     "Session Settings" : {
+
+    },
+    "Special Thanks" : {
 
     },
     "Start your session by revealing your object" : {
@@ -145,6 +175,12 @@
     "User Info" : {
 
     },
+    "User Testing and Interviews" : {
+
+    },
+    "We extend our heartfelt thanks to our friends and families who supported us, both directly and indirectly, throughout the development of this app. We are also incredibly grateful to the Apple Developer Academy @UC for their invaluable support and guidance." : {
+
+    },
     "What do you feel during this session?" : {
 
     },
@@ -158,9 +194,6 @@
 
     },
     "Your Name" : {
-
-    },
-    "Your Recommended Exposure Method" : {
 
     }
   },

@@ -23,6 +23,7 @@ class Router  {
         case termCondition(isOnlyShowing : Bool = false)
         case introductionPhobia
         case assessment
+        case recommendation
     }
     
     func navigate(to destination: Destination) {

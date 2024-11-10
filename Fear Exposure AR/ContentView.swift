@@ -80,6 +80,8 @@ struct ContentView: View {
                             IntroductionPhobiaScreen()
                         case .assessment:
                             AsessementScreen()
+                        case .recommendation:
+                            RecommendationScreen()
                         }
                     }
                 )

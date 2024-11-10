@@ -13,7 +13,7 @@ struct ARPlaygroundScreen : View {
     @State var viewModel = ARPlaygroundViewModel()
     @Environment(Router.self) private var router
     @Environment(SettingUtils.self) private var settingUtils
-
+    @State var phoneConnectivityManager : PhoneConnectivityManager = PhoneConnectivityManager.shared
     
     var body : some View {
         GeometryReader { geometry in
@@ -111,6 +111,7 @@ struct ARPlaygroundScreen : View {
                                             action : {
                                                 viewModel.stopTimer()
                                                 viewModel.clearItem()
+                                                phoneConnectivityManager.stopSession()
                                             },
                                             label : {
                                                 Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
@@ -141,6 +142,7 @@ struct ARPlaygroundScreen : View {
                                     viewModel.startTimer(block: { timer in
                                         viewModel.countTimer()
                                     })
+                                    phoneConnectivityManager.startSession()
                                 },
                                 label: {
                                     Label(
@@ -201,6 +203,8 @@ struct ARPlaygroundScreen : View {
                 Button ("End Session", role: .destructive, action: {
                     viewModel.clearItem()
                     viewModel.toogleConfirmationDialog()
+                    phoneConnectivityManager.stopSession()
+                    print(phoneConnectivityManager.heartRateData)
                     router.navigate(to: .reflection)
                 })
                 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardTherapyType : View {
+struct CardTypeOld : View {
     
     let title : String
     let description : String
@@ -45,7 +45,7 @@ struct CardTherapyType : View {
 }
 
 #Preview {
-    CardTherapyType(
+    CardTypeOld(
         title: "Pictures", description: "View photos of your feared object to gradually reduce your fear response.", image: "photo",
         action: {
             

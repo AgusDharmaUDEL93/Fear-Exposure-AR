@@ -9,6 +9,7 @@ extension AssessmentStatus {
     func toAssessmentStatusDto () -> AssessmentStatusDto {
         return AssessmentStatusDto(
             phobiaId: phobiaId,
+            recommendation: recommendation.rawValue,
             scale: scale,
             volume: volume,
             isObjectFollowUser: isObjectFollowUser
