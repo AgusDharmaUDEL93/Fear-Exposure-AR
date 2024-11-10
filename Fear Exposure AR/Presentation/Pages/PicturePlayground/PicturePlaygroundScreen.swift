@@ -53,6 +53,7 @@ struct PicturePlaygroundScreen : View {
                         Button(action: {
                             isObjectRevealed = false
                             viewModel.currentZoom = minZoom
+                            
                         }) {
                             HStack {
                                 Image(systemName: "x.circle.fill")

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		233288802CE0AE2500B8912D /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 2332887F2CE0AE2500B8912D /* FocusEntity */; };
+		233289CB2CE0F70300B8912D /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 233289CA2CE0F70300B8912D /* WrappingHStack */; };
 		23D9B55C2CDDA94B006F7332 /* Fear Exposure AR Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 23D9B5392CDDA94A006F7332 /* Fear Exposure AR Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				233289CB2CE0F70300B8912D /* WrappingHStack in Frameworks */,
 				233288802CE0AE2500B8912D /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +211,7 @@
 			name = "Fear Exposure AR";
 			packageProductDependencies = (
 				2332887F2CE0AE2500B8912D /* FocusEntity */,
+				233289CA2CE0F70300B8912D /* WrappingHStack */,
 			);
 			productName = "Fear Exposure AR";
 			productReference = 23AD9E772CBCDC68000D3B8D /* Fear Exposure AR.app */;
@@ -374,6 +377,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				2332887E2CE0AE1800B8912D /* XCRemoteSwiftPackageReference "FocusEntity" */,
+				233289C92CE0F6F700B8912D /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 23AD9E782CBCDC68000D3B8D /* Products */;
@@ -997,6 +1001,14 @@
 				minimumVersion = 2.5.1;
 			};
 		};
+		233289C92CE0F6F700B8912D /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ksemianov/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1004,6 +1016,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2332887E2CE0AE1800B8912D /* XCRemoteSwiftPackageReference "FocusEntity" */;
 			productName = FocusEntity;
+		};
+		233289CA2CE0F70300B8912D /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 233289C92CE0F6F700B8912D /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

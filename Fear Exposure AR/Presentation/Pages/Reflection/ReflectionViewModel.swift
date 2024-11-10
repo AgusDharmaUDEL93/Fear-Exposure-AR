@@ -13,6 +13,9 @@ class ReflectionViewModel {
     var beforeText = ""
     var afterText = ""
     
+    var feelingBeforeSelected : Feeling = .unknown
+    var feelingAfterSelected : FeelingAfter = .unknown
+    
     func onChangedIsActiveStatus (targetIndex : Int) {
         if (targetIndex > 4) {
             return

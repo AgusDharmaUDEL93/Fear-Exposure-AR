@@ -34,6 +34,9 @@
     "Acknowledgments" : {
 
     },
+    "after this session" : {
+
+    },
     "Answer Here" : {
 
     },
@@ -70,6 +73,9 @@
     "Duration: 20 Mins" : {
 
     },
+    "during this session" : {
+
+    },
     "End Session" : {
 
     },
@@ -86,9 +92,6 @@
 
     },
     "Heart rate: 72-120 BPM" : {
-
-    },
-    "How do you feel about facing the fear-inducing situation or object outside of the therapy session?" : {
 
     },
     "How do you feel now compared to before the therapy session began?" : {
@@ -166,7 +169,7 @@
     "We extend our heartfelt thanks to our friends and families who supported us, both directly and indirectly, throughout the development of this app. We are also incredibly grateful to the Apple Developer Academy @UC for their invaluable support and guidance." : {
 
     },
-    "What do you feel during this session?" : {
+    "What do you feel %@?" : {
 
     },
     "You’re Doing Great!" : {

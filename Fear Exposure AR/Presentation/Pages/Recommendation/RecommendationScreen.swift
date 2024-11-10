@@ -95,6 +95,7 @@ struct RecommendationScreen: View {
                 settings.isObjectFollowUser = result.isObjectFollowUser
             }
         }
+        .navigationBarBackButtonHidden()
         .toolbar(content: {
             ToolbarItem(placement : .topBarLeading){
                 Button(action: {

@@ -6,25 +6,42 @@
 //
 
 enum Feeling : Int {
-    case veryHappy = 4
-    case happy = 3
-    case neutral = 2
-    case notHappy = 1
-    case crying = 0
+    case unknown = -1
+    case terrified = 0
+    case frightened = 1
+    case scared = 2
+    case neutral = 3
     
     func getEmoji () -> String {
         return switch self {
-            
-        case .veryHappy:
-            "😊"
-        case .happy:
-            "🙂"
+        case .unknown:
+            ""
+        case .terrified:
+            "😰"
+        case .frightened:
+            "😨"
+        case .scared:
+            "😧"
         case .neutral:
             "😐"
-        case .notHappy:
-            "☹️"
-        case .crying:
-            "😭"
+            
+        }
+        
+        
+    }
+    func getLabel () -> String {
+        return switch self {
+        case .unknown:
+            ""
+        case .terrified:
+            "Terrified"
+        case .frightened:
+            "Frightened"
+        case .scared:
+            "Scared"
+        case .neutral:
+            "Neutral"
+            
         }
     }
 }
