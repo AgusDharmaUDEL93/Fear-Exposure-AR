@@ -2,7 +2,7 @@
 //  WatchConnectivityManager.swift
 //  Fear Exposure AR
 //
-//  Created by Steven Ongkowidjojo on 08/11/24.
+//  Created by Steven Ongkowidjojo on 10/11/24.
 //
 
 import Foundation
@@ -186,8 +186,4 @@ class WatchConnectivityManager: NSObject, ObservableObject, WCSessionDelegate {
     
     // WCSessionDelegate required methods
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {}
-    
-    func sessionDidDeactivate(_ session: WCSession) {}
 }
