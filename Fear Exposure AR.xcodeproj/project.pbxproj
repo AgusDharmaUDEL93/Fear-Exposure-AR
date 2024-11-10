@@ -788,6 +788,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Fear Exposure AR Watch";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "This app requires permission to record user's heart rate";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app requires permission to update user's heart rate";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "dev.denxero.Fear-Exposure-AR";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -818,6 +821,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Fear Exposure AR Watch";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "This app requires permission to record user's heart rate";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app requires permission to update user's heart rate";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "dev.denxero.Fear-Exposure-AR";
 				LD_RUNPATH_SEARCH_PATHS = (
