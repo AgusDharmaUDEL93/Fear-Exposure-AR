@@ -8,5 +8,11 @@ import Observation
 
 @Observable
 class SettingsARViewModel {
+    var sliderValue : Float = 0
+    var isObjectFollow : Bool = false
     
+    func setSettingValue (sliderValue : Float, isObjectFollow : Bool) {
+        self.sliderValue = sliderValue
+        self.isObjectFollow = isObjectFollow
+    }
 }

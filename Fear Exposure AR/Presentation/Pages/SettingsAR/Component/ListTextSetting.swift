@@ -11,12 +11,11 @@ struct ListTextSetting : View {
     
     let title : String
     let description : String
+    let onClick : () -> Void
     
     var body: some View {
         Button (
-            action : {
-                
-            },
+            action : onClick,
             label : {
                 VStack  {
                     Spacer()
@@ -47,7 +46,10 @@ struct ListTextSetting : View {
 #Preview {
     ListTextSetting(
         title: "Scale Object",
-        description: "Resize feared object to make it bigger or smaller."
+        description: "Resize feared object to make it bigger or smaller.",
+        onClick: {
+            
+        }
     )
     .padding(.horizontal, 16)
 }

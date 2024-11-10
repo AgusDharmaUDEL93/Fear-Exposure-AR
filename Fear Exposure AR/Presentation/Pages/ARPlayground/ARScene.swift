@@ -12,12 +12,15 @@ import FocusEntity
 class ARScene : ARView {
     
     var focusEntity : FocusEntity?
+    private var followTimer: Timer?
+    private let minimumDistance: Float = 0.2
+    private let speed = 3
     
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
         
         focusEntity = FocusEntity(on: self, style: .classic(color: .yellow))
-                
+        
         config()
     }
     
@@ -25,7 +28,7 @@ class ARScene : ARView {
         super.init(frame: frameRect, cameraMode: cameraMode, automaticallyConfigureSession: automaticallyConfigureSession)
         
         focusEntity = FocusEntity(on: self, style: .classic(color: .yellow))
-                
+        
         config()
     }
     
@@ -33,8 +36,50 @@ class ARScene : ARView {
         super.init(coder: decoder)
         
         focusEntity = FocusEntity(on: self, style: .classic(color: .yellow))
-                
+        
         config()
+    }
+    
+    
+    func startFollowingUser(fearedObject: FearedObject) {
+        followTimer?.invalidate()
+        
+        followTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            self.updateObjectPosition(fearedObject: fearedObject)
+        }
+    }
+    
+    func stopFollowingUser() {
+        followTimer?.invalidate()
+        followTimer = nil
+    }
+    
+    private func updateObjectPosition(fearedObject: FearedObject) {
+        guard let entity = fearedObject.baseModel else { return }
+        
+        let userPosition = cameraTransform.translation
+        let objectPosition = entity.position(relativeTo: nil)
+        
+        let distance = simd_distance(userPosition, objectPosition)
+        
+        if distance <= minimumDistance {
+            return
+        }
+        // Hitung arah dan posisi baru objek jika lebih dari 1 meter
+        let direction = normalize(userPosition - objectPosition)
+        let newPosition = objectPosition + direction * Float(speed) * 0.1
+        
+        
+        let transform = Transform(scale: entity.scale, rotation: entity.transform.rotation, translation: newPosition)
+        
+        let resultan = sqrt(objectPosition.x * objectPosition.x + objectPosition.y * objectPosition.y + objectPosition.z * objectPosition.z)
+        
+        let duration =  TimeInterval(abs(resultan * Float(speed)))
+        
+        
+        
+        
+        entity.move(to: transform, relativeTo: nil, duration: duration)
     }
     
     private func config () {
@@ -49,5 +94,5 @@ class ARScene : ARView {
         self.session.run(config)
         
     }
-
+    
 }

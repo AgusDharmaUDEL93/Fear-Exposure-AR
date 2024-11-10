@@ -10,8 +10,8 @@ import SwiftUI
 struct TherapyScreen : View {
     
     @Environment(Router.self) private var router
+    @Environment(SettingUtils.self) private var settingUtils
     @State var viewModel = TherapyViewModel()
-    @Environment(SettingARUtils.self) private var settings
     
     var body : some View {
         GeometryReader { geometry in
@@ -32,8 +32,16 @@ struct TherapyScreen : View {
                             CardTherapy(
                                 title: phobia.description,
                                 caption: phobia.name,
+                                isAnimal: phobia.isAnimal,
                                 action: {
-                                    settings.object = phobia.fearedObject
+                                    if ( viewModel.getAssessmentStatus(phobiaId: phobia.id) == nil){
+                                        router.navigate(to: .assessment)
+                                    } else {
+                                        router.navigate(to: .theraphyType)
+                                    }
+                                    
+                                    settingUtils.phobiaId = phobia.id
+                                   
                                     
                                 }
                             )
@@ -58,6 +66,6 @@ struct TherapyScreen : View {
         TherapyScreen()
     }
     .environment(Router())
-    .environment(SettingARUtils())
+    .environment(SettingUtils())
     
 }

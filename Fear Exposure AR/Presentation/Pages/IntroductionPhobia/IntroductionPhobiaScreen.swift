@@ -11,7 +11,6 @@ struct IntroductionPhobiaScreen: View {
     
     @State var viewModel : IntroductionPhobiaViewModel = IntroductionPhobiaViewModel()
     @Environment(Router.self) private var router
-//    @Binding var isFirst : Bool
 
     
     var body: some View {

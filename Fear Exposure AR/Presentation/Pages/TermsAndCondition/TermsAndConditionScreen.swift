@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct TermsAndConditionScreen: View {
-    @State private var isButtonEnabled = false
-    @State private var contentHeight: CGFloat = 0
-    @State private var scrollViewOffset: CGFloat = 0
-    @State private var yOffset = 0.0
-    
+    @State private var hasScrolledToEnd = false
     var isOnlyShowing : Bool
     
     @Environment(Router.self) private var router
-
+    
     var body: some View {
         VStack {
-            ScrollView {
+            EndDetectionScrollView (.vertical, showIndicators: false, hasScrolledToEnd: $hasScrolledToEnd) {
                 VStack(alignment: .leading, spacing: 20) {
                     Text("By using the Denxéro AR Exposure Therapy app (\"Fear Exposure AR or FEAR\"), the user acknowledges and agrees to the following terms:")
                     
@@ -73,10 +69,10 @@ struct TermsAndConditionScreen: View {
                         )
                     }
                     .background(
-                        GeometryReader { geo in
+                        GeometryReader { geometry in
                             Color.clear
                                 .onAppear {
-                                    contentHeight = geo.size.height
+                                    print(geometry.size.height)
                                 }
                         }
                     )
@@ -84,14 +80,9 @@ struct TermsAndConditionScreen: View {
                 
                 .padding()
             }
-            .onScrollGeometryChange(for: Double.self) { geo in
-                geo.contentOffset.y
-            } action: { oldValue, newValue in
-                yOffset = newValue
-                if yOffset > 800 {
-                    isButtonEnabled = true
-                }
-            }
+    
+            
+            
             if (!isOnlyShowing){
                 Text("By pressing “I Accept” the user agrees to the disclaimer and have therefore read the Terms and Conditions to using Fear Exposure AR.")
                     .font(.footnote)
@@ -104,17 +95,18 @@ struct TermsAndConditionScreen: View {
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(isButtonEnabled ? Color(Theme.primary500.rawValue) : Color.gray)
+                        .background(hasScrolledToEnd ? Color(Theme.primary500.rawValue) : Color.gray)
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
                 .padding()
-                .disabled(!isButtonEnabled)
+                .disabled(!hasScrolledToEnd)
             }
         }
         .navigationTitle("Terms and Conditions")
         
     }
+    
     
     private func disclaimerItem(number: String, title: String, description: String) -> some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -133,14 +125,6 @@ struct TermsAndConditionScreen: View {
         }
     }
     
-    private func checkIfScrolledToBottom(geo: GeometryProxy) {
-        let scrollViewHeight = geo.size.height
-        if scrollViewOffset <= scrollViewHeight - contentHeight {
-            isButtonEnabled = true
-        } else {
-            isButtonEnabled = false
-        }
-    }
 }
 
 #Preview {
@@ -148,6 +132,8 @@ struct TermsAndConditionScreen: View {
         TermsAndConditionScreen(
             isOnlyShowing: false
         )
+
     }
     .environment(Router())
+
 }

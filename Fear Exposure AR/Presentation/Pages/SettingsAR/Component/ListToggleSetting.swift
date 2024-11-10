@@ -11,15 +11,15 @@ struct ListToggleSetting : View {
     
     let title : String
     let description : String
+    @Binding var isOn : Bool
     
     var body: some View {
         VStack  {
             Spacer()
                 .frame(height: 16)
             HStack {
-                
                 Toggle(
-                    isOn: .constant(true),
+                    isOn: $isOn,
                     label:  {
                         VStack (alignment : .leading) {
                             Text (title)
@@ -40,6 +40,6 @@ struct ListToggleSetting : View {
 }
 
 #Preview {
-    ListToggleSetting(title: "Snake Animation", description: "Description")
+    ListToggleSetting(title: "Snake Animation", description: "Description", isOn: .constant(true))
         .padding(16)
 }

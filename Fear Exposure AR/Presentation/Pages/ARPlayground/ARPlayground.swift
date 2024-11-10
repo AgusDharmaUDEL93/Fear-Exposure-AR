@@ -14,6 +14,11 @@ import Combine
 struct ARPlayground : UIViewRepresentable {
     
     @Binding var fearedObject : FearedObject
+    @Binding var scale : Float
+    @Binding var isObjectFollowUser : Bool
+    @Binding var isScaleObject : Bool
+    @Binding var arState : ARState
+    
     
     func makeUIView(context: Context) -> ARScene {
         let arView = ARScene(frame: .zero)
@@ -24,22 +29,39 @@ struct ARPlayground : UIViewRepresentable {
     func updateUIView(_ uiView: ARScene, context: Context) {
         uiView.focusEntity?.isEnabled = !fearedObject.isActive
         
-        if (fearedObject.isActive) {
+        switch arState {
+        case .placeObject:
             placeFearedObject(in: uiView)
-            return
+            arState = .initial
+        case .clearObject:
+            clearFearedObject(in: uiView)
+            arState = .initial
+        case .changeScale:
+            onScaleObject()
+        case .initial:
+            break
+        case .objectFollowUser:
+            uiView.startFollowingUser(fearedObject: fearedObject)
+            arState = .initial
+        case .objectNotFollowUser:
+            uiView.stopFollowingUser()
+            arState = .initial
         }
         
-        clearFearedObject(in: uiView)
-
+        
+        
     }
-    
     
     
     private func placeFearedObject (in uiView : ARScene) {
         
         guard let entity = fearedObject.baseModel else { return }
+      
         
         let entityAnchor = AnchorEntity(world: uiView.focusEntity?.position ?? SIMD3(x: 0, y: 0, z: 0) )
+        
+        entity.transform = Transform(scale: entity.transform.scale, rotation: entity.transform.rotation, translation: SIMD3(x: 0, y: 0, z: 0))
+        
         
         entityAnchor.addChild(entity)
         
@@ -52,7 +74,11 @@ struct ARPlayground : UIViewRepresentable {
         
     }
     
-    
+    private func onScaleObject () {
+        guard let entity = fearedObject.baseModel else { return }
+        entity.scale = SIMD3<Float>(repeating: (scale * 100) + 1)
+    }
+
     
     private func clearFearedObject (in uiView : ARScene){
         
@@ -61,6 +87,7 @@ struct ARPlayground : UIViewRepresentable {
         if let anchorEntity = entity.anchor {
             uiView.scene.removeAnchor(anchorEntity)
         }
+        
     }
     
     

@@ -11,5 +11,5 @@ struct Phobia {
     let displayName : String
     let isAnimal : Bool
     let description : String
-    let fearedObject : FearedObject
+    var fearedObject : FearedObject
 }

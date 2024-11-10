@@ -11,8 +11,8 @@ struct ContentView: View {
     
     @State var router = Router()
     @AppStorage("locale") private var locale = Locale.current.identifier
-    @State var settings = SettingARUtils()
     @State var viewModel = ContentViewViewModel()
+    @State var settingUtils = SettingUtils()
     
     var body: some View {
         NavigationStack (path : $router.navPath)  {
@@ -78,6 +78,8 @@ struct ContentView: View {
                             TermsAndConditionScreen(isOnlyShowing: isOnlyShowing )
                         case .introductionPhobia:
                             IntroductionPhobiaScreen()
+                        case .assessment:
+                            AsessementScreen()
                         }
                     }
                 )
@@ -86,7 +88,7 @@ struct ContentView: View {
         .tint(Color(Theme.primary500.rawValue))
         .environment(router)
         .environment(\.locale, .init(identifier: locale))
-        .environment(settings)
+        .environment(settingUtils)
         
     }
 }

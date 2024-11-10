@@ -8,29 +8,39 @@
 import SwiftUI
 
 struct SettingsARScreen : View {
+    
+    @State var viewModel : SettingsARViewModel = SettingsARViewModel()
+    @Environment(SettingUtils.self) private var settingUtils
+    @Binding var isScaleObject : Bool
+    @Binding var isOpenModalSheets : Bool
+    @State var isObjectFollow : Bool = false
+    var onScaleObject : () -> Void
+    var onToggleButton : (Bool) -> Void
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 ScrollView {
                     VStack (alignment : .leading) {
-                        
                         TitleSetting(title: "General")
                         ListTextSetting(
                             title: "Scale Object",
-                            description: "Resize feared object to make it bigger or smaller."
+                            description: "Resize feared object to make it bigger or smaller.",
+                            onClick: onScaleObject
                         )
-                        ListTextSetting(
-                            title: "Rotate Object",
-                            description: "Adjust the feared object to face any direction you prefer."
-                        )
+                       
                         ListSliderSetting(
                             title: "Feared Object Volume",
-                            description: "Adjust volume of sounds produced by the feared object."
+                            description: "Adjust volume of sounds produced by the feared object.",
+                            sliderValue: Binding(get: {
+                                settingUtils.volume
+                            }, set: {value in settingUtils.volume = value})
                         )
                         
                         ListToggleSetting(
-                            title: "Snake Animation",
-                            description: "Description"
+                            title: "Object Follow User",
+                            description: "Feared Object maintains distance with the user as they move",
+                            isOn: $isObjectFollow
                         )
                         Spacer()
                             .frame(height: 150)
@@ -42,7 +52,9 @@ struct SettingsARScreen : View {
                 VStack {
                     Spacer()
                     Button(action: {
-                        
+                        settingUtils.isObjectFollowUser = isObjectFollow
+                        onToggleButton(settingUtils.isObjectFollowUser)
+                        isOpenModalSheets = false
                     }, label: {
                         Text ("Apply Changes")
                             .font(.body)
@@ -65,13 +77,26 @@ struct SettingsARScreen : View {
         }
         .navigationTitle("Session Settings")
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear{
+            isObjectFollow = settingUtils.isObjectFollowUser
+        }
     }
 }
 
 #Preview {
     NavigationStack {
-        SettingsARScreen()
+        SettingsARScreen(
+            isScaleObject: .constant(true),
+            isOpenModalSheets: .constant(true),
+            onScaleObject: {
+                
+            },
+            onToggleButton: {value in
+                
+            }
+        )
     }
     .tint(Color(Theme.primary500.rawValue))
     .environment(Router())
+    .environment(SettingUtils())
 }

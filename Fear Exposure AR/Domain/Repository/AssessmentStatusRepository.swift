@@ -8,5 +8,7 @@
 protocol AssessmentStatusRepository {
     func getAssessmentStatus (id : Int) throws -> AssessmentStatusDto?
     
-    func updateAssessmentStatus (assessment : AssessmentStatus) throws
+    func updateAssessmentStatus (assessment : AssessmentStatusDto) throws
+    
+    func addAssessmentStatus (assessment : AssessmentStatusDto)
 }

@@ -7,22 +7,26 @@
 
 import Observation
 
+@MainActor
 @Observable
 class TherapyViewModel {
-    @MainActor
     @ObservationIgnored private var phobiaUseCases = PhobiasUseCases.shared
+    
+    @ObservationIgnored private var assessmentStatusUseCases = AssessmentStatusUseCases.shared
     
     var phobia : [Phobia] = .init()
     
-    @MainActor
     init () {
         getSelectedPhobia()
     }
 
-    @MainActor
     func getSelectedPhobia () {
         let selectedIdPhobia = phobiaUseCases.getPhobiaSelected.execute()
-        print(selectedIdPhobia)
         phobia = phobiaUseCases.getAllPhobia.execute(listId: selectedIdPhobia)
     }
+    
+    func getAssessmentStatus (phobiaId : Int) -> AssessmentStatus? {
+        return assessmentStatusUseCases.getAssessmentStatus.execute(id: phobiaId)
+    }
+    
 }

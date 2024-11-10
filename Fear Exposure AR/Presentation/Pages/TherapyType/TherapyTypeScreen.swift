@@ -23,20 +23,14 @@ struct TherapyTypeScreen : View {
                             router.navigate(to: .picturePlayground)
                         }
                     )
-                    CardTherapyType(
-                        title: "Video",
-                        description: "View videos of your feared object to gradually reduce your fear response.",
-                        image: "play.rectangle.fill",
-                        action: {
-                            
-                        }
-                    )
+
                     CardTherapyType(
                         title: "AR",
                         description: "Use AR to see and interact with snakes in a more realistic environment.",
                         image: "arkit",
                         action: {
-                                                    }
+                            router.navigate(to: .arPlayground)
+                        }
                     )
                     
                 }

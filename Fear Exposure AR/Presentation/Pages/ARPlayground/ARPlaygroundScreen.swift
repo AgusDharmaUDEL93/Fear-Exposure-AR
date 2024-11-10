@@ -6,80 +6,130 @@
 //
 
 import SwiftUI
+import RealityKit
 
 struct ARPlaygroundScreen : View {
     
     @State var viewModel = ARPlaygroundViewModel()
     @Environment(Router.self) private var router
+    @Environment(SettingUtils.self) private var settingUtils
+
     
     var body : some View {
         GeometryReader { geometry in
             ZStack  {
                 ARPlayground(
-                    fearedObject: $viewModel.fearedObject
+                    fearedObject: Binding(get: {
+                        viewModel.phobia.fearedObject
+                    }, set: {value in }),
+                    scale: Binding(get: {
+                        settingUtils.scale
+                    }, set: {value in
+                        settingUtils.scale = value
+                    }),
+                    isObjectFollowUser: Binding(get: {
+                        settingUtils.isObjectFollowUser
+                    }, set: {value in settingUtils.isObjectFollowUser = value}),
+                    isScaleObject: $viewModel.isScaleObject,
+                    arState: $viewModel.arState
                 )
                 .ignoresSafeArea()
                 
                 Group {
-                    if (viewModel.fearedObject.isActive){
-                        VStack {
-                            Spacer()
-                            HStack (
-                                alignment : .bottom
-                            ) {
-                                Button(
-                                    action : {
-                                        viewModel.toogleConfirmationDialog()
-                                    },
-                                    label : {
-                                        Image(systemName: "door.left.hand.closed")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(height : 25)
-                                            .foregroundStyle(.white)
-                                            .padding(20)
-                                            .background(.black.opacity(0.75))
-                                            .clipShape(Circle())
-                                    })
+                    if (viewModel.phobia.fearedObject.isActive){
+                        if (viewModel.isScaleObject){
+                            VStack {
                                 Spacer()
-                                VStack {
-                                    Button(
-                                        action : {
-                                            // TODO : Modal Sheet Open
-                                            viewModel.openModalSheet()
-                                        },
-                                        label : {
-                                            Image(systemName: "slider.horizontal.3")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(height : 25)
-                                                .foregroundStyle(.white)
-                                                .padding(20)
-                                                .background(.black.opacity(0.75))
-                                                .clipShape(Circle())
-                                        }
-                                    )
-                                    Button(
-                                        action : {
-                                            viewModel.stopTimer()
-                                            viewModel.clearItem()
-                                        },
-                                        label : {
-                                            Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(height : 25)
-                                                .foregroundStyle(.white)
-                                                .padding(20)
-                                                .background(.black.opacity(0.75))
-                                                .clipShape(Circle())
-                                        }
-                                    )
-                                }
+                                Slider(value: Binding(get: {
+                                    settingUtils.scale
+                                }, set: { value in
+                                    settingUtils.scale = value
+                                }))
+                                Button(
+                                    action: {
+                                        viewModel.isDoneScaleObject()
+                                    },
+                                    label: {
+                                        Text(
+                                            "Done"
+                                        )
+                                        .font(.body)
+                                        .bold()
+                                        .frame(maxWidth: geometry.size.width)
+                                        .padding(.vertical, 6)
+                                        
+                                    }
+                                )
+                                .buttonStyle(.borderedProminent)
+                                .padding(.horizontal)
+                                .padding(.top)
+                                .padding(.bottom, 48)
+                                .frame(maxWidth: .infinity)
+                                .background(.black.opacity(0.75))
+                                .ignoresSafeArea()
                                 
                             }
-                            .padding(.horizontal)
+                           
+                        } else {
+                            VStack {
+                                Spacer()
+                                HStack (
+                                    alignment : .bottom
+                                ) {
+                                    Button(
+                                        action : {
+                                            viewModel.toogleConfirmationDialog()
+                                        },
+                                        label : {
+                                            Image(systemName: "door.left.hand.closed")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(height : 25)
+                                                .foregroundStyle(.white)
+                                                .padding(20)
+                                                .background(.black.opacity(0.75))
+                                                .clipShape(Circle())
+                                        })
+                                    Spacer()
+                                    VStack {
+                                        Button(
+                                            action : {
+                                                viewModel.openModalSheet()
+                                            },
+                                            label : {
+                                                Image(systemName: "slider.horizontal.3")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(height : 25)
+                                                    .foregroundStyle(.white)
+                                                    .padding(20)
+                                                    .background(.black.opacity(0.75))
+                                                    .clipShape(Circle())
+                                            }
+                                        )
+                                        Button(
+                                            action : {
+                                                viewModel.stopTimer()
+                                                viewModel.clearItem()
+                                            },
+                                            label : {
+                                                Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(height : 25)
+                                                    .foregroundStyle(.white)
+                                                    .padding(20)
+                                                    .background(.black.opacity(0.75))
+                                                    .clipShape(Circle())
+                                            }
+                                        )
+                                    }
+                                    
+                                }
+                                .padding(.horizontal)
+                            }
                         }
+
                         
                     } else {
                         VStack {
@@ -105,15 +155,15 @@ struct ARPlaygroundScreen : View {
                                 }
                             )
                             .buttonStyle(.borderedProminent)
-                            
+                            .padding(.horizontal)
+                            .padding(.top)
+                            .padding(.bottom, 48)
+                            .frame(maxWidth: .infinity)
+                            .background(.black.opacity(0.75))
+                            .ignoresSafeArea()
                             
                         }
-                        .padding(.horizontal)
-                        .padding(.top)
-                        .padding(.bottom, 48)
-                        .frame(maxWidth: .infinity)
-                        .background(.black.opacity(0.75))
-                        .ignoresSafeArea()
+                        
                         
                     }
                 }
@@ -137,7 +187,7 @@ struct ARPlaygroundScreen : View {
             
         }
         .toolbarBackground(.black.opacity(0.75), for: .navigationBar)
-        .toolbarBackground(viewModel.fearedObject.isActive ? .hidden : .visible, for: .navigationBar)
+        .toolbarBackground(viewModel.phobia.fearedObject.isActive ? .hidden : .visible, for: .navigationBar)
         .navigationBarBackButtonHidden()
         .alert(
             "End Therapy Session?",
@@ -165,9 +215,26 @@ struct ARPlaygroundScreen : View {
             viewModel.stopTimer()
             viewModel.resetTimer()
         })
+        .onAppear{
+            viewModel.getPhobiaById(id: settingUtils.phobiaId)
+        }
         .sheet(isPresented: $viewModel.isModalSheetOpen ){
             NavigationStack {
-                SettingsARScreen()
+                SettingsARScreen(
+                    isScaleObject: $viewModel.isScaleObject,
+                    isOpenModalSheets: $viewModel.isModalSheetOpen,
+                    onScaleObject: {
+                        viewModel.onScaledObject()
+                        viewModel.closeModalSheet()
+                    },
+                    onToggleButton: { value in
+                        if (value == true){
+                            viewModel.onObjectIsFollowUser()
+                        } else {
+                            viewModel.onObjectIsNotFollowUser()
+                        }
+                    }
+                )
             }
             
         }
@@ -178,6 +245,7 @@ struct ARPlaygroundScreen : View {
     NavigationStack {
         ARPlaygroundScreen()
             .environment(Router())
+            .environment(SettingUtils())
     }
     .tint(Color(Theme.primary500.rawValue))
 }

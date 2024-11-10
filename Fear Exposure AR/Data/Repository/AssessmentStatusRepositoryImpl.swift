@@ -7,6 +7,7 @@
 import SwiftData
 
 class AssessmentStatusRepositoryImpl : AssessmentStatusRepository {
+   
     
     private let modelContainer : ModelContainer
     private let modelContext : ModelContext
@@ -16,7 +17,7 @@ class AssessmentStatusRepositoryImpl : AssessmentStatusRepository {
     
     @MainActor
     private init(){
-        self.modelContainer = try! ModelContainer(for: PhobiaDto.self)
+        self.modelContainer = try! ModelContainer(for: PhobiaDto.self, AssessmentStatusDto.self)
         self.modelContext = modelContainer.mainContext
     }
     
@@ -28,16 +29,21 @@ class AssessmentStatusRepositoryImpl : AssessmentStatusRepository {
         }
     }
     
-    func updateAssessmentStatus(assessment: AssessmentStatus) throws {
+    func updateAssessmentStatus(assessment: AssessmentStatusDto) throws {
         
         do {
             modelContext.delete(try getAssessmentStatus(id: assessment.phobiaId ?? -1) ?? AssessmentStatusDto(phobiaId: -1))
-            modelContext.insert(assessment.toAssessmentStatusDto())
+            modelContext.insert(assessment)
             try modelContext.save()
         } catch {
             throw error
         }
     }
+    
+    func addAssessmentStatus(assessment: AssessmentStatusDto) {
+        modelContext.insert(assessment)
+    }
+    
     
     
 }

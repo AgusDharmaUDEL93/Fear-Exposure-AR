@@ -9,7 +9,6 @@ extension AssessmentStatusDto {
     func toAssessmentStatus () -> AssessmentStatus {
         return AssessmentStatus(
             phobiaId: phobiaId,
-            isDoneScreening: isDoneScreening,
             scale: scale,
             volume: volume,
             isObjectFollowUser: isObjectFollowUser

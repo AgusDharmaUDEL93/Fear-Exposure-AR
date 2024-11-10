@@ -21,7 +21,8 @@ class Router  {
         case picturePlayground
         case userInfo
         case termCondition(isOnlyShowing : Bool = false)
-        case introductionPhobia 
+        case introductionPhobia
+        case assessment
     }
     
     func navigate(to destination: Destination) {

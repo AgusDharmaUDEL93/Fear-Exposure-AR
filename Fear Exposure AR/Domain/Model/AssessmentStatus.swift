@@ -7,7 +7,6 @@
 
 struct AssessmentStatus {
     var phobiaId : Int? // Unique
-    var isDoneScreening : Bool = false
     var scale : Float = 1
     var volume : Float = 0
     var isObjectFollowUser : Bool = false
