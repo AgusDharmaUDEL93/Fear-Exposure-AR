@@ -23,6 +23,7 @@ class LogRepositoryImpl : LogRepository {
     
     
     func addLog(log: LogSessionDto) {
+        print("Log repository Data Get : \(log.phobiaName)")
         modelContext.insert(log)
     }
     

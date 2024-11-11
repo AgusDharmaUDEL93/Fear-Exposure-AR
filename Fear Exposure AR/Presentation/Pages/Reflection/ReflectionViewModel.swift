@@ -32,10 +32,11 @@ class ReflectionViewModel {
     }
     
     @MainActor
-    func onSubmitData(phobiaId : Int, heartRate : [Double], duration : Double) {
+    func onSubmitData(phobiaId : Int, phobiaName : String, heartRate : [Double], duration : Double) {
         logUseCases.addLog.execute(
             log: LogSession(
                 phobiaId: phobiaId,
+                phobiaName: phobiaName,
                 duration: duration,
                 feelingDuring: feelingBeforeSelected,
                 feelingAfter: feelingAfterSelected,

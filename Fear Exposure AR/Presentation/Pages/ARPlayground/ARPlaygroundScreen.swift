@@ -211,7 +211,7 @@ struct ARPlaygroundScreen : View {
                     viewModel.toogleConfirmationDialog()
                     phoneConnectivityManager.stopSession()
                     viewModel.stopTimer()
-                                        
+                    print("AR Playground : \(viewModel.phobia.name)")
                     router.navigate(to: .reflection(phobiaId: viewModel.phobia.id, phobiaName: viewModel.phobia.name, heartRate: viewModel.heartRateData, duration: viewModel.timerCount))
                 })
                 
@@ -219,7 +219,7 @@ struct ARPlaygroundScreen : View {
                 
             },
             message: {
-                Text("A message should be a short, complete sentence. \(viewModel.heartRateData)")
+                Text("Are you sure want to end this session?")
             }
         )
         .onChange(of: phoneConnectivityManager.currentHeartRate, initial: true, {_, value  in

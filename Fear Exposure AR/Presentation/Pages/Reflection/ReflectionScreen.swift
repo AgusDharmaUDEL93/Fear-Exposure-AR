@@ -65,7 +65,7 @@ struct ReflectionScreen: View {
                     
                     Button(
                         action: {
-                            viewModel.onSubmitData(phobiaId: phobiaId, heartRate: heartRate, duration: duration)
+                            viewModel.onSubmitData(phobiaId: phobiaId, phobiaName: phobiaName, heartRate: heartRate, duration: duration)
                             router.navigate(to: .complete)
                         },
                         label: {

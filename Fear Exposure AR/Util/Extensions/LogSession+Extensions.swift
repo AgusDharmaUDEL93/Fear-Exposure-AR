@@ -39,6 +39,7 @@ extension LogSession {
             FeelingAfter.unknown.rawValue
         }
         
+        print("Phobia Dto Conversion : \(phobiaName)")
         
         return LogSessionDto(
             logId : logId ?? UUID(),

@@ -14,6 +14,9 @@ class GetAllLogs {
     
     func execute () -> [LogSession]{
         do {
+            for log in try logRepository.getAllLog() {
+                print(log.phobiaName)
+            }
             return (try logRepository.getAllLog()).map { $0.toLogSession() }
         } catch {
             return []
