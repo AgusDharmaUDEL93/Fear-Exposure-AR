@@ -28,6 +28,8 @@ class PicturePlaygroundViewModel {
     var timerCount : Double = 0.0
     @ObservationIgnored private let counter : Double = 1.0
     
+    var heartRateData : [Double] = []
+    
     var phobia : Phobia = Phobia(
         id: 0,
         name: "Ophidiophobia",
@@ -44,6 +46,12 @@ class PicturePlaygroundViewModel {
     func getPhobiaById (id : Int){
         if let data = phobiaUseCases.getPhobiaById.execute(id: id) {
             phobia = data
+        }
+    }
+    
+    func onChangedHeartRateData (value : Double){
+        if (value != 0){
+            heartRateData.append(value)
         }
     }
 

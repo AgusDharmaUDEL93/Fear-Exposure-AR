@@ -73,7 +73,7 @@ struct CardLog : View {
                             .font(.subheadline)
                             .foregroundStyle(Color(hex: 0x666666))
                     } else {
-                        Text("Avg Heart rate: \(heartRate) BPM")
+                        Text("Avg Heart rate: \(NSString(format : "%.1f", heartRate) ) BPM")
                             .font(.subheadline)
                             .foregroundStyle(Color(hex: 0x666666))
                     }

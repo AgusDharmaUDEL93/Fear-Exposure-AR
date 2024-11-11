@@ -78,6 +78,8 @@ struct ContentView: View {
                             AsessementScreen()
                         case .recommendation:
                             RecommendationScreen()
+                        case .complete:
+                            CompleteScreen()
                         }
                     }
                 )

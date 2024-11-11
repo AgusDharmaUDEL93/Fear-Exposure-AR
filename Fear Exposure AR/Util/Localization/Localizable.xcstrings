@@ -53,7 +53,7 @@
     "Avg Heart rate: - BPM" : {
 
     },
-    "Avg Heart rate: %lf BPM" : {
+    "Avg Heart rate: %@ BPM" : {
 
     },
     "By pressing “I Accept” the user agrees to the disclaimer and have therefore read the Terms and Conditions to using Fear Exposure AR." : {
@@ -66,6 +66,9 @@
 
     },
     "Choose Therapy" : {
+
+    },
+    "Congratulations on completing your session!" : {
 
     },
     "Congratulations! You have completed your session!" : {
@@ -135,10 +138,16 @@
     "Recomended" : {
 
     },
+    "Redirecting to your session results in %lld seconds..." : {
+
+    },
     "Retake Assessment" : {
 
     },
     "Reveal Object" : {
+
+    },
+    "See Test Result" : {
 
     },
     "Session Reflection" : {

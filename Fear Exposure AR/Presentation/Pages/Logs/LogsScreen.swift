@@ -37,6 +37,9 @@ struct LogsScreen : View {
                                     duration: log.duration,
                                     date: log.dateTime
                                 )
+                                
+                                Spacer()
+                                    .frame(height: 16)
                             }
                         }
                         

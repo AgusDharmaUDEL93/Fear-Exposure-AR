@@ -18,7 +18,7 @@ struct AsessementScreen : View {
             
             VStack {
                 TitleScreen(
-                    title: "Fear Asessement",
+                    title: "Fear Assessement",
                     description: "Please complete this assessment form to help us tailor the therapy to your specific needs."
                 )
                 ScrollView {

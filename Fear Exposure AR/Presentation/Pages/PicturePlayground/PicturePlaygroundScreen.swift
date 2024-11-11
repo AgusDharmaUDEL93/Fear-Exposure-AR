@@ -99,6 +99,7 @@ struct PicturePlaygroundScreen : View {
                                 viewModel.startTimer(block: { timer in
                                     viewModel.countTimer()
                                 })
+                                phoneConnectivityManager.sendMessage(["action": "start", "elapsedTime": phoneConnectivityManager.elapsedTime])
                             },
                             label: {
                                 Label(
@@ -154,9 +155,9 @@ struct PicturePlaygroundScreen : View {
                         
                         viewModel.toogleConfirmationDialog()
                         viewModel.stopTimer()
-                        print(viewModel.timerCount)
-                        print(phoneConnectivityManager.heartRateData)
-                        router.navigate(to: .reflection (phobiaId : viewModel.phobia.id, phobiaName: viewModel.phobia.name , heartRate: phoneConnectivityManager.heartRateData, duration: viewModel.timerCount))
+                        phoneConnectivityManager.stopSession()
+                       
+                        router.navigate(to: .reflection (phobiaId : viewModel.phobia.id, phobiaName: viewModel.phobia.name , heartRate: viewModel.heartRateData, duration: viewModel.timerCount))
                         
                     })
                     
@@ -169,6 +170,9 @@ struct PicturePlaygroundScreen : View {
             )
             
         }
+        .onChange(of: phoneConnectivityManager.currentHeartRate, initial: true, {_, value  in
+            viewModel.onChangedHeartRateData(value: value)
+        })
         .onAppear{
             viewModel.resetTimer()
         }

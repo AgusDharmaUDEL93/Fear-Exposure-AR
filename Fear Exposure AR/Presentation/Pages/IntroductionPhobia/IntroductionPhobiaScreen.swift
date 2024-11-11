@@ -56,7 +56,6 @@ struct IntroductionPhobiaScreen: View {
                     Button(action: {
                         viewModel.onSubmitPhobia()
                         router.navigateToRoot()
-//                        isFirst = false
                     }, label: {
                         Text ("Submit")
                             .font(.body)

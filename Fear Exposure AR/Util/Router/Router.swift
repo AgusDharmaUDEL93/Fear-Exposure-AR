@@ -22,6 +22,7 @@ class Router  {
         case introductionPhobia
         case assessment
         case recommendation
+        case complete
     }
     
     func navigate(to destination: Destination) {

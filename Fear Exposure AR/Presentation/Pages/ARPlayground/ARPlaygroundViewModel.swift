@@ -44,10 +44,18 @@ class ARPlaygroundViewModel {
     
     var isModalSheetOpen : Bool = false
     
+    var heartRateData : [Double] = []
+    
     @MainActor
     func getPhobiaById (id : Int){
         if let data = phobiaUseCases.getPhobiaById.execute(id: id) {
             phobia = data
+        }
+    }
+    
+    func onChangedHeartRateData (value : Double){
+        if (value != 0){
+            heartRateData.append(value)
         }
     }
     

@@ -13,7 +13,7 @@ struct ARPlaygroundScreen : View {
     @State var viewModel = ARPlaygroundViewModel()
     @Environment(Router.self) private var router
     @Environment(SettingUtils.self) private var settingUtils
-    @State var phoneConnectivityManager : PhoneConnectivityManager = PhoneConnectivityManager.shared
+    @ObservedObject var phoneConnectivityManager : PhoneConnectivityManager = PhoneConnectivityManager.shared
     
     var body : some View {
         GeometryReader { geometry in
@@ -34,6 +34,7 @@ struct ARPlaygroundScreen : View {
                     arState: $viewModel.arState
                 )
                 .ignoresSafeArea()
+                
                 
                 Group {
                     if (viewModel.phobia.fearedObject.isActive){
@@ -86,7 +87,7 @@ struct ARPlaygroundScreen : View {
                                                 .scaledToFit()
                                                 .frame(height : 25)
                                                 .foregroundStyle(.white)
-                                                .padding(20)
+                                                .padding(22)
                                                 .background(.black.opacity(0.75))
                                                 .clipShape(Circle())
                                         })
@@ -135,6 +136,7 @@ struct ARPlaygroundScreen : View {
                     } else {
                         VStack {
                             Spacer()
+                            // TODO : START SESSESSION
                             Button(
                                 action: {
                                     viewModel.placeItem()
@@ -143,6 +145,8 @@ struct ARPlaygroundScreen : View {
                                         viewModel.countTimer()
                                     })
                                     phoneConnectivityManager.startSession()
+                                    phoneConnectivityManager.sendMessage(["action": "start", "elapsedTime": phoneConnectivityManager.elapsedTime])
+                            
                                 },
                                 label: {
                                     Label(
@@ -180,6 +184,7 @@ struct ARPlaygroundScreen : View {
                     HStack {
                         Image(systemName: "chevron.left")
                         Text("Today")
+                       
                     }
                     
                 })
@@ -200,22 +205,26 @@ struct ARPlaygroundScreen : View {
                     viewModel.toogleConfirmationDialog()
                 })
                 
+                // TODO : END SESSION
                 Button ("End Session", role: .destructive, action: {
                     viewModel.clearItem()
                     viewModel.toogleConfirmationDialog()
                     phoneConnectivityManager.stopSession()
                     viewModel.stopTimer()
-                    print(viewModel.timerCount)
-                    router.navigate(to: .reflection(phobiaId: viewModel.phobia.id, phobiaName: viewModel.phobia.name, heartRate: phoneConnectivityManager.heartRateData, duration: viewModel.timerCount))
+                                        
+                    router.navigate(to: .reflection(phobiaId: viewModel.phobia.id, phobiaName: viewModel.phobia.name, heartRate: viewModel.heartRateData, duration: viewModel.timerCount))
                 })
                 
                 
                 
             },
             message: {
-                Text("A message should be a short, complete sentence.")
+                Text("A message should be a short, complete sentence. \(viewModel.heartRateData)")
             }
         )
+        .onChange(of: phoneConnectivityManager.currentHeartRate, initial: true, {_, value  in
+            viewModel.onChangedHeartRateData(value: value)
+        })
         .onAppear{
             viewModel.getPhobiaById(id: settingUtils.phobiaId)
             viewModel.resetTimer()
