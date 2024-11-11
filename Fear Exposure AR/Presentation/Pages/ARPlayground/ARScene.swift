@@ -13,7 +13,7 @@ class ARScene : ARView {
     
     var focusEntity : FocusEntity?
     private var followTimer: Timer?
-    private let minimumDistance: Float = 0.2
+    private let minimumDistance: Float = 1
     private let speed = 3
     
     required init(frame frameRect: CGRect) {
@@ -65,7 +65,7 @@ class ARScene : ARView {
         if distance <= minimumDistance {
             return
         }
-        // Hitung arah dan posisi baru objek jika lebih dari 1 meter
+
         let direction = normalize(userPosition - objectPosition)
         let newPosition = objectPosition + direction * Float(speed) * 0.1
         
@@ -76,8 +76,9 @@ class ARScene : ARView {
         
         let duration =  TimeInterval(abs(resultan * Float(speed)))
         
+        guard let animation = fearedObject.animation else { return }
         
-        
+        entity.playAnimation(animation.repeat())
         
         entity.move(to: transform, relativeTo: nil, duration: duration)
     }

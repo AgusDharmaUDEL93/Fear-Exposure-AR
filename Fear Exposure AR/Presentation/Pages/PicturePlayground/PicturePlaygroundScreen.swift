@@ -14,15 +14,31 @@ struct PicturePlaygroundScreen : View {
     @State var phoneConnectivityManager : PhoneConnectivityManager = PhoneConnectivityManager.shared
     @Environment(SettingUtils.self) var settings
     
+    @State private var selection = 0
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
                 if viewModel.isObjectReveal {
-                    Image("image/data/image_snake")
-                        .resizable()
-                        .scaledToFit()
-                        .padding(80)
-                        .scaleEffect(viewModel.currentZoom + viewModel.totalZoom)
+                    
+                    TabView (selection : $selection) {
+                        Image("image/data/image_snake")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(80)
+                            .scaleEffect(viewModel.currentZoom + viewModel.totalZoom)
+                        Image("image/data/image_snake")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(80)
+                            .scaleEffect(viewModel.currentZoom + viewModel.totalZoom)
+                        Image("image/data/image_snake")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(80)
+                            .scaleEffect(viewModel.currentZoom + viewModel.totalZoom)
+                    }
+                    .tabViewStyle(.page)
                     
                     VStack {
                         Spacer()
@@ -156,7 +172,7 @@ struct PicturePlaygroundScreen : View {
                         viewModel.toogleConfirmationDialog()
                         viewModel.stopTimer()
                         phoneConnectivityManager.stopSession()
-                       
+                        
                         router.navigate(to: .reflection (phobiaId : viewModel.phobia.id, phobiaName: viewModel.phobia.name , heartRate: viewModel.heartRateData, duration: viewModel.timerCount))
                         
                     })

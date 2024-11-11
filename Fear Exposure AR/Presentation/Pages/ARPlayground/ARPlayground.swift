@@ -67,10 +67,7 @@ struct ARPlayground : UIViewRepresentable {
         
         uiView.scene.addAnchor(entityAnchor)
         
-        guard let animation = fearedObject.animation else { return }
-        
-        entity.playAnimation(animation.repeat())
-        
+     
         
     }
     
