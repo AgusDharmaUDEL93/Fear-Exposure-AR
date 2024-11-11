@@ -22,7 +22,7 @@ struct CardTheraphyType : View {
             VStack {
                 if (isRecomended){
                     HStack {
-                        Text("Recomended")
+                        Text("Recommended")
                             .padding(.vertical, 4)
                             .padding(.horizontal, 8)
                             .background(Color(Theme.primary500.rawValue))
