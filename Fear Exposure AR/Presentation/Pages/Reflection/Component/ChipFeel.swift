@@ -18,7 +18,7 @@ struct ChipFeel : View {
             action : onSelected,
             label: {
                 Text(label)
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, 15)
                     .padding(.vertical, 8)
                     .background(
                         isSelected ? Color(Theme.primary100.rawValue) : .clear

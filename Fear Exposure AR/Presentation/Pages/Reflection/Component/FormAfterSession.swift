@@ -15,7 +15,6 @@ struct FormAfterSession : View {
     var body: some View {
         WrappingHStack (alignment : .leading) {
             
-            
             ChipFeel(
                 label: FeelingAfter.relieved.getLabel(),
                 isSelected: Binding(

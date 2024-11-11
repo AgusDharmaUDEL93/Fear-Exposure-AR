@@ -37,6 +37,7 @@ struct ContentView: View {
             }
             .background(connectivityManagerWatch.isSessionRunning ? Color.red : Color.green)
             .cornerRadius(24)
+            .disabled(true)
         }
         .onAppear {
             requestAuthorization()

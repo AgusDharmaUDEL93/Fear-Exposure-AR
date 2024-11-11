@@ -87,7 +87,7 @@ struct ARPlaygroundScreen : View {
                                                 .scaledToFit()
                                                 .frame(height : 25)
                                                 .foregroundStyle(.white)
-                                                .padding(22)
+                                                .padding(23)
                                                 .background(.black.opacity(0.75))
                                                 .clipShape(Circle())
                                         })
@@ -136,7 +136,7 @@ struct ARPlaygroundScreen : View {
                     } else {
                         VStack {
                             Spacer()
-                            // TODO : START SESSESSION
+                            // TODO : START SESSION
                             Button(
                                 action: {
                                     viewModel.placeItem()
@@ -146,7 +146,6 @@ struct ARPlaygroundScreen : View {
                                     })
                                     phoneConnectivityManager.startSession()
                                     phoneConnectivityManager.sendMessage(["action": "start", "elapsedTime": phoneConnectivityManager.elapsedTime])
-                            
                                 },
                                 label: {
                                     Label(
@@ -176,23 +175,6 @@ struct ARPlaygroundScreen : View {
                 
             }
         }
-        .toolbar{
-            ToolbarItem(placement : .topBarLeading){
-                Button(action: {
-                    router.navigateBack()
-                }, label: {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                        Text("Today")
-                       
-                    }
-                    
-                })
-                .foregroundStyle(.white)
-                Spacer()
-            }
-            
-        }
         .toolbarBackground(.black.opacity(0.75), for: .navigationBar)
         .toolbarBackground(viewModel.phobia.fearedObject.isActive ? .hidden : .visible, for: .navigationBar)
         .navigationBarBackButtonHidden()
@@ -214,9 +196,6 @@ struct ARPlaygroundScreen : View {
                     print("AR Playground : \(viewModel.phobia.name)")
                     router.navigate(to: .reflection(phobiaId: viewModel.phobia.id, phobiaName: viewModel.phobia.name, heartRate: viewModel.heartRateData, duration: viewModel.timerCount))
                 })
-                
-                
-                
             },
             message: {
                 Text("Are you sure want to end this session?")
@@ -247,7 +226,6 @@ struct ARPlaygroundScreen : View {
                     }
                 )
             }
-            
         }
     }
 }
