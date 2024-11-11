@@ -15,8 +15,8 @@ let phobiasData : [Phobia] = [
         isAnimal: true,
         description: "Intense fear of Snakes",
         fearedObject: FearedObject(
-            baseModel: try? ModelEntity.loadModel(named: "base_snake.usdz"),
-            animation: try? ModelEntity.loadModel(named: "animation_snake.usdz").availableAnimations.first
+            baseModel: try? ModelEntity.loadModel(named: "snake.usdz"),
+            animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first
         )
     ),
     Phobia(
@@ -25,7 +25,10 @@ let phobiasData : [Phobia] = [
         displayName: "Cockroaches",
         isAnimal: true,
         description: "Intense fear of Cockroaches",
-        fearedObject: FearedObject()
+        fearedObject: FearedObject(
+            baseModel: try? ModelEntity.loadModel(named: "snake.usdz"),
+            animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first
+        )
     ),
     Phobia(
         id: 2,
@@ -33,7 +36,10 @@ let phobiasData : [Phobia] = [
         displayName: "Dog",
         isAnimal: true,
         description: "Intense fear of Dog",
-        fearedObject: FearedObject()
+        fearedObject: FearedObject(
+            baseModel: try? ModelEntity.loadModel(named: "dog.usdz"),
+            animation: try? ModelEntity.loadModel(named: "dog.usdz").availableAnimations.first
+        )
     ),
     Phobia(
         id: 3,
@@ -41,7 +47,10 @@ let phobiasData : [Phobia] = [
         displayName: "Crocodile",
         isAnimal: true,
         description: "Intense fear of Crocodile",
-        fearedObject: FearedObject()
+        fearedObject: FearedObject(
+            baseModel: try? ModelEntity.loadModel(named: "crocodile.usdz"),
+            animation: try? ModelEntity.loadModel(named: "crocodile.usdz").availableAnimations.first
+        )
     ),
     Phobia(
         id: 4,
@@ -49,7 +58,10 @@ let phobiasData : [Phobia] = [
         displayName: "Balloon",
         isAnimal: false,
         description: "Intense fear of Balloon",
-        fearedObject: FearedObject()
+        fearedObject: FearedObject(
+            baseModel: try? ModelEntity.loadModel(named: "ballon.usdz"),
+            animation: try? ModelEntity.loadModel(named: "ballon.usdz").availableAnimations.first
+        )
     ),
     Phobia(
         id: 5,
@@ -57,7 +69,10 @@ let phobiasData : [Phobia] = [
         displayName: "Spiders",
         isAnimal: true,
         description: "Intense fear of Spiders",
-        fearedObject: FearedObject()
+        fearedObject: FearedObject(
+            baseModel: try? ModelEntity.loadModel(named: "spider.usdz"),
+            animation: try? ModelEntity.loadModel(named: "spider.usdz").availableAnimations.first
+        )
     ),
     Phobia(
         id: 6,
@@ -65,6 +80,9 @@ let phobiasData : [Phobia] = [
         displayName: "Gecko",
         isAnimal: true,
         description: "Intense fear of Gecko",
-        fearedObject: FearedObject()
+        fearedObject: FearedObject(
+            baseModel: try? ModelEntity.loadModel(named: "gecko.usdz"),
+            animation: try? ModelEntity.loadModel(named: "gecko.usdz").availableAnimations.first
+        )
     ),
 ]
