@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct LogsScreen : View {
+    
+    @State var viewModel : LogsViewModel = LogsViewModel()
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -21,7 +24,25 @@ struct LogsScreen : View {
                         Spacer()
                             .frame(maxWidth: geometry.size.width)
                         
-                        CardLog()
+                        if (viewModel.log.isEmpty){
+                            
+                        } else {
+                            ForEach(viewModel.log, id: \.logId){ log in
+                                
+                                CardLog(
+                                    phobiaName: "\(log.phobiaName ?? "") Therapy",
+                                    feeling: .terrified,
+                                    notes: log.notes,
+                                    heartRate: log.heartRate.isEmpty ? -1 : (log.heartRate.reduce(0, +)/Double(log.heartRate.count)),
+                                    duration: log.duration,
+                                    date: log.dateTime
+                                )
+                            }
+                        }
+                        
+                        
+                        
+                        
                         
                     }
                     .frame(maxWidth: .infinity)
@@ -31,6 +52,9 @@ struct LogsScreen : View {
                 }
             }
             
+        }
+        .onAppear{
+            viewModel.getAllLog()
         }
         .ignoresSafeArea()
     }

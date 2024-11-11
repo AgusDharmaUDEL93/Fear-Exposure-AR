@@ -204,8 +204,9 @@ struct ARPlaygroundScreen : View {
                     viewModel.clearItem()
                     viewModel.toogleConfirmationDialog()
                     phoneConnectivityManager.stopSession()
-                    print(phoneConnectivityManager.heartRateData)
-                    router.navigate(to: .reflection)
+                    viewModel.stopTimer()
+                    print(viewModel.timerCount)
+                    router.navigate(to: .reflection(phobiaId: viewModel.phobia.id, phobiaName: viewModel.phobia.name, heartRate: phoneConnectivityManager.heartRateData, duration: viewModel.timerCount))
                 })
                 
                 
@@ -215,12 +216,9 @@ struct ARPlaygroundScreen : View {
                 Text("A message should be a short, complete sentence.")
             }
         )
-        .onDisappear(perform: {
-            viewModel.stopTimer()
-            viewModel.resetTimer()
-        })
         .onAppear{
             viewModel.getPhobiaById(id: settingUtils.phobiaId)
+            viewModel.resetTimer()
         }
         .sheet(isPresented: $viewModel.isModalSheetOpen ){
             NavigationStack {

@@ -51,7 +51,7 @@ struct RecommendationScreen: View {
                             .frame(height: 16)
                         VStack {
                             Button(action: {
-                                if (viewModel.isPictureRecomended){
+                                if (viewModel.isPictureSelected){
                                     router.navigate(to: .picturePlayground)
                                 } else {
                                     router.navigate(to: .arPlayground)
@@ -85,6 +85,7 @@ struct RecommendationScreen: View {
                         .padding(.horizontal, 16)
                         
                     }
+                    .padding(.bottom, 36)
                 }
                 
             }
@@ -111,6 +112,7 @@ struct RecommendationScreen: View {
                 Spacer()
             }
         })
+        .ignoresSafeArea()
     }
 }
 

@@ -9,16 +9,22 @@ import SwiftUI
 
 struct CardLog : View {
     
-    
+    let phobiaName : String
+    let feeling : Feeling
+    let notes : String
+    let heartRate : Double
+    let duration : Double
+    var isAnimal : Bool = true
+    let date : Date
     
     var body: some View {
         VStack {
             HStack  {
-                Image(systemName: "pawprint.fill")
+                Image(systemName: isAnimal ? "pawprint.fill" : "shippingbox.fill")
                     .font(.subheadline)
                 Spacer()
                     .frame(width: 8)
-                Text("Arachnophobia Therapy")
+                Text(phobiaName)
                     .font(.subheadline)
                     .bold()
                    
@@ -34,23 +40,23 @@ struct CardLog : View {
             // TODO : FIX THE 0X66666 COLOR
             VStack (spacing : 16) {
                 HStack {
-                    Text("😭")
+                    Text(feeling.getEmoji())
                         .font(.system(size: 34))
                         .fontWeight(.semibold)
                     Spacer()
                         .frame(width: 8)
                     VStack (alignment : .leading) {
-                        Text("Feeling Neutral")
+                        Text(feeling.getLabel())
                             .font(.body)
                             .bold()
-                        Text("at November 16, 18:30 PM")
+                        Text("at \( date.formatted(date: .long, time: .omitted)), \(date.formatted(date: .omitted, time: .shortened))")
                             .font(.caption)
                             .foregroundStyle(Color(hex: 0x666666))
                     }
                     Spacer()
                 }
                 
-                Text ("Today’s session went better than I expected. I managed to look at photos of small spiders without that usual rush of panic.")
+                Text (notes)
                     .lineLimit(3)
                     .font(.subheadline)
                     .foregroundStyle(Color(hex: 0x666666))
@@ -62,9 +68,16 @@ struct CardLog : View {
                         .font(.body)
                     Spacer()
                         .frame(width: 8)
-                    Text("Heart rate: 72-120 BPM")
-                        .font(.subheadline)
-                        .foregroundStyle(Color(hex: 0x666666))
+                    if (heartRate == -1){
+                        Text("Avg Heart rate: - BPM")
+                            .font(.subheadline)
+                            .foregroundStyle(Color(hex: 0x666666))
+                    } else {
+                        Text("Avg Heart rate: \(heartRate) BPM")
+                            .font(.subheadline)
+                            .foregroundStyle(Color(hex: 0x666666))
+                    }
+                   
                     Spacer()
                 }
                 HStack {
@@ -73,10 +86,11 @@ struct CardLog : View {
                         .font(.body)
                     Spacer()
                         .frame(width: 8)
-                    Text("Duration: 20 Mins")
+                    Text("Duration: \( Int(duration/60) ) Minutes \( (Int(duration) % 60) ) Seconds")
                         .font(.subheadline)
                         .foregroundStyle(Color(hex: 0x666666))
                     Spacer()
+                    
                 }
                
                 
@@ -92,5 +106,6 @@ struct CardLog : View {
 }
 
 #Preview {
-    CardLog()
+    CardLog(phobiaName: "Arachnophobia Therapy", feeling: .terrified, notes: "Today’s session went better than I expected. I managed to look at photos of small spiders without that usual rush of panic.", heartRate: 75, duration: 5, date: .now)
+        .padding()
 }

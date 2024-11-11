@@ -10,15 +10,14 @@ import SwiftUI
 struct PicturePlaygroundScreen : View {
     
     @State var viewModel = PicturePlaygroundViewModel()
-    @State private var magnification: CGFloat = 1.0
-    @State private var isObjectRevealed: Bool = false
-    let minZoom: CGFloat = 0
-    let maxZoom: CGFloat = 1
+    @Environment(Router.self) var router
+    @State var phoneConnectivityManager : PhoneConnectivityManager = PhoneConnectivityManager.shared
+    @Environment(SettingUtils.self) var settings
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                if isObjectRevealed {
+                if viewModel.isObjectReveal {
                     Image("image/data/image_snake")
                         .resizable()
                         .scaledToFit()
@@ -28,88 +27,102 @@ struct PicturePlaygroundScreen : View {
                     VStack {
                         Spacer()
                         
-                        VStack(spacing: 16) {
-                            Text("Gradually increase the size of the snake")
-                                .font(.subheadline)
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 40)
-                                .padding(.vertical, 8)
-                                .background(Color.black.opacity(0.7))
-                                .cornerRadius(8)
-                            
-                            HStack {
-                                Text("-")
-                                    .font(.title)
-                                
-                                Slider(value: $viewModel.currentZoom, in: minZoom...maxZoom)
-                                    .accentColor(Color(Theme.primary500.rawValue))
-                                
-                                Text("+")
-                                    .font(.title)
-                            }
-                            .padding(.horizontal, 20)
-                        }
-                        
-                        Button(action: {
-                            isObjectRevealed = false
-                            viewModel.currentZoom = minZoom
-                            
-                        }) {
-                            HStack {
-                                Image(systemName: "x.circle.fill")
-                                Text("End Session")
-                            }
-                            .font(.headline)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color(Theme.primary500.rawValue))
+                        Text("Gradually increase the size of the snake")
+                            .font(.subheadline)
                             .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(8)
+                            .background(Color.black.opacity(0.7))
                             .cornerRadius(8)
-                        }
-                        .padding(.horizontal, 16)
                         
-                        Spacer().frame(height: 32)
+                        HStack {
+                            Text("-")
+                                .font(.title)
+                            Spacer()
+                            Slider(value: $viewModel.currentZoom)
+                                .accentColor(Color(Theme.primary500.rawValue))
+                            Spacer()
+                            Text("+")
+                                .font(.title)
+                        }
+                        
+                        Button(
+                            action: {
+                                viewModel.toogleConfirmationDialog()
+                            },
+                            label: {
+                                Label(
+                                    "End Session",
+                                    systemImage:  "x.circle.fill"
+                                )
+                                .font(.body)
+                                .bold()
+                                .frame(maxWidth: geometry.size.width)
+                                .padding(.vertical, 6)
+                                
+                            }
+                        )
+                        .buttonStyle(.borderedProminent)
+                        .frame(maxWidth: .infinity)
+                        
+                        Spacer()
+                            .frame(height: 32)
                     }
-                    .padding(EdgeInsets(top: 0, leading: 8, bottom: 12, trailing: 8))
+                    .padding(.horizontal)
+                    .padding(.bottom, 12)
+                    
                 } else {
                     VStack {
-                        Spacer().frame(height: 380)
+                        Spacer()
                         
                         Rectangle()
                             .stroke(Color.black, lineWidth: 8)
                             .frame(width: 100, height: 100)
                         
-                        Spacer().frame(height: 252)
-                        
-                        VStack(spacing: 12) {
-                            Text("Start your session by revealing your object")
-                                .font(.subheadline)
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 36)
-                                .padding(.vertical, 8)
-                                .background(Color.black.opacity(0.7))
-                                .cornerRadius(8)
-                            
-                            Button(action: {
-                                isObjectRevealed = true
-                            }) {
-                                HStack {
-                                    Image(systemName: "play.fill")
-                                        .font(.headline)
-                                    Text("Reveal Object")
-                                        .font(.headline)
-                                }
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(Color(Theme.primary500.rawValue))
-                                .foregroundColor(.white)
-                                .cornerRadius(8)
-                            }
-                            .padding(.horizontal, 20)
-                        }
-                        
                         Spacer()
                     }
+                    VStack {
+                        Spacer()
+                        
+                        Text("Start your session by revealing your object")
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(8)
+                            .background(Color.black.opacity(0.7))
+                            .cornerRadius(8)
+                        Spacer()
+                            .frame(height: 16)
+                        Button(
+                            action: {
+                                viewModel.onRevealObject()
+                                viewModel.startTimer(block: { timer in
+                                    viewModel.countTimer()
+                                })
+                            },
+                            label: {
+                                Label(
+                                    "Reveal Object",
+                                    systemImage: "play.fill"
+                                )
+                                .font(.body)
+                                .bold()
+                                .frame(maxWidth: geometry.size.width)
+                                .padding(.vertical, 6)
+                                
+                            }
+                        )
+                        .buttonStyle(.borderedProminent)
+                        .frame(maxWidth: .infinity)
+                        
+                        
+                        
+                        Spacer().frame(height: 32)
+                    }
+                    .padding(.horizontal)
+                    .padding(.bottom, 12)
+                    
+                    
                 }
             }
             .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
@@ -117,25 +130,57 @@ struct PicturePlaygroundScreen : View {
             .gesture(
                 MagnificationGesture()
                     .onChanged { value in
-                        let delta = value - magnification
                         
-                        // Apply zoom with bounds check
-                        let newZoom = viewModel.currentZoom + delta
-                        if newZoom >= minZoom && newZoom <= maxZoom {
-                            viewModel.currentZoom = newZoom
-                        }
+                        viewModel.onMagnifierGesture(value: value)
                         
-                        magnification = value
                     }
                     .onEnded { _ in
-                        magnification = 1.0
+                        viewModel.onEndedMagnifier()
                     }
             )
+            .alert(
+                "End Therapy Session?",
+                isPresented: $viewModel.isConfirmationDialogShow,
+                actions: {
+                    
+                    Button("Cancel", role: .cancel, action: {
+                        viewModel.toogleConfirmationDialog()
+                    })
+                    
+                    Button ("End Session", role: .destructive, action: {
+                        viewModel.onDisapearObject()
+                        
+                        viewModel.onResetZoom()
+                        
+                        viewModel.toogleConfirmationDialog()
+                        viewModel.stopTimer()
+                        print(viewModel.timerCount)
+                        print(phoneConnectivityManager.heartRateData)
+                        router.navigate(to: .reflection (phobiaId : viewModel.phobia.id, phobiaName: viewModel.phobia.name , heartRate: phoneConnectivityManager.heartRateData, duration: viewModel.timerCount))
+                        
+                    })
+                    
+                    
+                    
+                },
+                message: {
+                    Text("A message should be a short, complete sentence.")
+                }
+            )
+            
+        }
+        .onAppear{
+            viewModel.resetTimer()
         }
         .ignoresSafeArea(.all)
     }
 }
 
 #Preview {
-    PicturePlaygroundScreen()
+    NavigationStack {
+        PicturePlaygroundScreen()
+    }
+    .tint(Color(Theme.primary500.rawValue))
+    .environment(Router())
+    .environment(SettingUtils())
 }

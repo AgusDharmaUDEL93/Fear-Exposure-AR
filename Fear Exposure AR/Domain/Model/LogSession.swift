@@ -10,8 +10,9 @@ import Foundation
 struct LogSession {
     var logId : UUID?
     var phobiaId : Int?
+    var phobiaName : String?
     var dateTime : Date = .now
-    var duration : Float = 0
+    var duration : Double = 0
     var feelingDuring : Feeling = .unknown
     var feelingAfter : FeelingAfter = .unknown
     var notes : String

@@ -18,7 +18,7 @@ class PhobiaRepositoryImpl : PhobiaRepository {
     
     @MainActor
     private init(){
-        self.modelContainer = try! ModelContainer(for: PhobiaDto.self, AssessmentStatusDto.self)
+        self.modelContainer = try! ModelContainer(for: PhobiaDto.self, AssessmentStatusDto.self, LogSessionDto.self)
         self.modelContext = modelContainer.mainContext
     }
     

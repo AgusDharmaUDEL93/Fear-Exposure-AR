@@ -10,9 +10,13 @@ import SwiftUI
 struct ReflectionScreen: View {
     
     enum Field {
-        case before
-        case after
+        case field
     }
+    
+    var phobiaId : Int
+    var phobiaName : String
+    var heartRate : [Double]
+    var duration : Double
     
     @Environment(Router.self) private var router
     @State var viewModel = ReflectionViewModel()
@@ -40,7 +44,7 @@ struct ReflectionScreen: View {
                     FormAfterSession(
                         feelingAfterSelected: $viewModel.feelingAfterSelected
                     )
-                   
+                    
                     
                     Spacer()
                         .frame(height: 48)
@@ -51,26 +55,30 @@ struct ReflectionScreen: View {
                     Spacer()
                         .frame(height: 16)
                     
-                    TextField("Answer Here", text: $viewModel.beforeText, axis: .vertical)
+                    TextField("Answer Here", text: $viewModel.notes, axis: .vertical)
                         .lineLimit(5...10)
-                        .focused($focusedField, equals: .before)
+                        .focused($focusedField, equals: .field)
                         .textFieldStyle(.roundedBorder)
                         .multilineTextAlignment(.leading)
                     Spacer()
                         .frame(height: 48)
-                   
-                    Button(action: {
-                       
-                    }, label: {
-                        Text ("Submit")
-                            .font(.body)
-                            .bold()
-                            .frame(maxWidth: geometry.size.width)
-                            .padding(.vertical, 6)
-                    })
+                    
+                    Button(
+                        action: {
+                            viewModel.onSubmitData(phobiaId: phobiaId, heartRate: heartRate, duration: duration)
+                        },
+                        label: {
+                            Text ("Submit")
+                                .font(.body)
+                                .bold()
+                                .frame(maxWidth: geometry.size.width)
+                                .padding(.vertical, 6)
+                        }
+                    )
                     .buttonStyle(.borderedProminent)
                     .background(Color(Theme.background.rawValue))
                     .frame(maxWidth: .infinity)
+                    .disabled(viewModel.feelingBeforeSelected == .unknown || viewModel.feelingAfterSelected == .unknown || viewModel.notes.isEmpty)
                     
                 }
                 .frame(maxWidth: geometry.size.width, alignment: .leading)
@@ -94,7 +102,9 @@ struct ReflectionScreen: View {
 
 #Preview {
     NavigationStack {
-        ReflectionScreen()
+        ReflectionScreen(
+            phobiaId : 0, phobiaName: "Arachnophobia Therapy", heartRate: [], duration: 0
+        )
     }
     .environment(Router())
     .tint(Color(Theme.primary500.rawValue))

@@ -5,8 +5,12 @@
 //  Created by Putu Agus Dharma Kusuma on 10/11/24.
 //
 
+import Foundation
+
 protocol LogRepository {
     func addLog (log : LogSessionDto)
     
-    func getLogById()
+    func getLogById(id : UUID) throws -> LogSessionDto?
+    
+    func getAllLog() throws -> [LogSessionDto]
 }

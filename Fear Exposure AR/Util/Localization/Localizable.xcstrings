@@ -19,9 +19,6 @@
     "+" : {
 
     },
-    "😭" : {
-
-    },
     "A message should be a short, complete sentence." : {
 
     },
@@ -43,10 +40,20 @@
     "Apply Changes" : {
 
     },
-    "Arachnophobia Therapy" : {
+    "at %@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "at %1$@, %2$@"
+          }
+        }
+      }
+    },
+    "Avg Heart rate: - BPM" : {
 
     },
-    "at November 16, 18:30 PM" : {
+    "Avg Heart rate: %lf BPM" : {
 
     },
     "By pressing “I Accept” the user agrees to the disclaimer and have therefore read the Terms and Conditions to using Fear Exposure AR." : {
@@ -70,8 +77,15 @@
     "Done" : {
 
     },
-    "Duration: 20 Mins" : {
-
+    "Duration: %lld Minutes %lld Seconds" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Duration: %1$lld Minutes %2$lld Seconds"
+          }
+        }
+      }
     },
     "during this session" : {
 
@@ -85,13 +99,7 @@
     "FEAR is an iOS app designed to support individuals with phobias in confronting and managing their fears. Utilizing Digital Systematic Desensitization, or Exposure Therapy, FEAR gradually introduces users to feared objects in both 2D images and immersive 3D AR formats. By tracking heart rate via Apple Watch integration, FEAR provides a clear and measurable way to monitor progress and improvements over time, helping users on their journey to overcome their fears." : {
 
     },
-    "Feeling Neutral" : {
-
-    },
     "Gradually increase the size of the snake" : {
-
-    },
-    "Heart rate: 72-120 BPM" : {
 
     },
     "How do you feel now compared to before the therapy session began?" : {
@@ -158,9 +166,6 @@
 
     },
     "Today" : {
-
-    },
-    "Today’s session went better than I expected. I managed to look at photos of small spiders without that usual rush of panic." : {
 
     },
     "User Testing and Interviews" : {

@@ -43,12 +43,14 @@ extension LogSession {
         return LogSessionDto(
             logId : logId ?? UUID(),
             phobiaId : phobiaId,
+            phobiaName : phobiaName,
             dateTime : dateTime,
             duration : duration,
             feelingDuring : feeldur,
             feelingAfter : feelAft,
             notes : notes,
             heartRate : heartRate
+           
         )
     }
 }
