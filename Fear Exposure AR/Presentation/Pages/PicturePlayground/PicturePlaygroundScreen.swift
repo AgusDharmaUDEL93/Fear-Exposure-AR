@@ -20,29 +20,39 @@ struct PicturePlaygroundScreen : View {
         GeometryReader { geometry in
             ZStack {
                 if viewModel.isObjectReveal {
-                    
-                    TabView (selection : $selection) {
-                        Image("image/data/image_snake")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(80)
-                            .scaleEffect(viewModel.currentZoom + viewModel.totalZoom)
-                        Image("image/data/image_snake")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(80)
-                            .scaleEffect(viewModel.currentZoom + viewModel.totalZoom)
-                        Image("image/data/image_snake")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(80)
-                            .scaleEffect(viewModel.currentZoom + viewModel.totalZoom)
+                    ZStack {
+                        TabView (selection: $selection) {
+                            
+                            ForEach (0..<viewModel.phobia.fearedObject.image.count, id: \.self){ index in
+                                Image(viewModel.phobia.fearedObject.image[index])
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 100, height: 100)
+                                    .scaleEffect(viewModel.currentZoom + viewModel.totalZoom)
+                                    .tag(index)
+                            }
+                        }
+                        .tabViewStyle(.page)
                     }
-                    .tabViewStyle(.page)
+                    
                     
                     VStack {
                         Spacer()
-                        
+                        HStack {
+                            Circle()
+                                .frame(width: 10, height: 10)
+                                .foregroundStyle(selection == 0 ? .black : .gray)
+                            Circle()
+                                .frame(width: 10, height: 10)
+                                .foregroundStyle(selection == 1 ? .black : .gray)
+                            
+                            Circle()
+                                .frame(width: 10, height: 10)
+                                .foregroundStyle(selection == 2 ? .black : .gray)
+                            
+                        }
+                        Spacer()
+                            .frame(height: 16)
                         Text("Gradually increase the size of the snake")
                             .font(.subheadline)
                             .foregroundColor(.white)
@@ -191,6 +201,7 @@ struct PicturePlaygroundScreen : View {
         })
         .onAppear{
             viewModel.resetTimer()
+            viewModel.getPhobiaById(id: settings.phobiaId)
         }
         .ignoresSafeArea(.all)
     }

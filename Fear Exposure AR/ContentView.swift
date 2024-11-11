@@ -80,6 +80,10 @@ struct ContentView: View {
                             RecommendationScreen()
                         case .complete:
                             CompleteScreen()
+                        case .about:
+                            AboutScreen()
+                        case .detailResult(let id):
+                            DetailResultScreen(id : id)
                         }
                     }
                 )

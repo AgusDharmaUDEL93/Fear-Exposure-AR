@@ -10,13 +10,23 @@ import Foundation
 @Observable
 class CompleteViewModel {
     
+    @MainActor
+    private var logUseCases = LogUseCases.shared
+    
     var timer : Timer?
     @ObservationIgnored let maxTimer : Double = 5.0
     var timerCount : Double = 0.0
     @ObservationIgnored private let counter : Double = 1.0
     
+    var resultId : UUID?
+    
     init() {
         timerCount = maxTimer
+    }
+    
+    @MainActor
+    func getResultId () {
+        resultId = logUseCases.getAllLogs.execute().first?.logId
     }
     
     

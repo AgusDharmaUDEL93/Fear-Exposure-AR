@@ -102,7 +102,7 @@ struct ProfileScreen : View {
                             label: "About",
                             image: "info.circle",
                             onAction: {
-                                
+                                router.navigate(to: .about)
                             },
                             isBottom: true,
                             selectedItem: "Version 1.0.0 (Latest)"

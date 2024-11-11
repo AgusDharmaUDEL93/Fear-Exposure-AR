@@ -37,8 +37,13 @@ class PicturePlaygroundViewModel {
         isAnimal: true,
         description: "Intense fear of Snakes",
         fearedObject: FearedObject(
-            baseModel: try? ModelEntity.loadModel(named: "base_snake.usdz"),
-            animation: try? ModelEntity.loadModel(named: "animation_snake.usdz").availableAnimations.first
+            baseModel: try? ModelEntity.loadModel(named: "snake.usdz"),
+            animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first,
+            image: [
+                "image/data/snake/snake1",
+                "image/data/snake/snake2",
+                "image/data/snake/snake3"
+            ]
         )
     )
     
@@ -85,22 +90,6 @@ class PicturePlaygroundViewModel {
     func onResetZoom () {
         currentZoom = minZoom
     }
-//
-//    func onChangedZoom (_ value : Double) {
-//        currentZoom = value - 1
-//    }
-//    
-//    func onEndedZoom () {
-//        totalZoom += currentZoom
-//        currentZoom = 0
-//        print("here")
-//    }
-//    
-//    func onResetZoom () {
-//        currentZoom = 0.0
-//        totalZoom = 1.0
-//        print("here 2")
-//    }
     
     
     func countTimer () {

@@ -10,6 +10,7 @@ import SwiftUI
 struct LogsScreen : View {
     
     @State var viewModel : LogsViewModel = LogsViewModel()
+    @Environment(Router.self) var router
     
     var body: some View {
         GeometryReader { geometry in
@@ -18,15 +19,21 @@ struct LogsScreen : View {
                     title: "Session Log",
                     description: "Description of this screen and its purpose."
                 )
-                ScrollView {
-                    
-                    VStack (alignment: .leading) {
+                if (viewModel.log.isEmpty){
+                    VStack (alignment: .center) {
                         Spacer()
-                            .frame(maxWidth: geometry.size.width)
+                        Text("No Data Logs")
+                        Spacer()
+                    }
+                    .frame(maxWidth: geometry.size.width)
+                } else {
+                    
+                    ScrollView {
                         
-                        if (viewModel.log.isEmpty){
+                        VStack (alignment: .leading) {
+                            Spacer()
+                                .frame(maxWidth: geometry.size.width)
                             
-                        } else {
                             ForEach(viewModel.log, id: \.logId){ log in
                                 
                                 CardLog(
@@ -35,23 +42,30 @@ struct LogsScreen : View {
                                     notes: log.notes,
                                     heartRate: log.heartRate.isEmpty ? -1 : (log.heartRate.reduce(0, +)/Double(log.heartRate.count)),
                                     duration: log.duration,
-                                    date: log.dateTime
+                                    date: log.dateTime,
+                                    action: {
+                                        if let logId = log.logId {
+                                            router.navigate(to: .detailResult(id: logId))
+                                        }
+                                       
+                                    }
                                 )
                                 
                                 Spacer()
                                     .frame(height: 16)
                             }
+                            
+                            
+                            
+                            
+                            
+                            
                         }
-                        
-                        
-                        
-                        
-                        
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal, 16)
+                        Spacer()
+                            .frame(height: 110)
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal, 16)
-                    Spacer()
-                        .frame(height: 110)
                 }
             }
             

@@ -37,7 +37,11 @@ struct CompleteScreen : View {
                     Divider()
                     
                     Button(action: {
-                        router.navigateToRoot()
+                        if let resultId = viewModel.resultId {
+                            router.navigate(to: .detailResult(id: resultId))
+                        } else {
+                            router.navigateToRoot()
+                        }
                     }, label: {
                         Text ("See Test Result")
                             .font(.body)
@@ -62,9 +66,18 @@ struct CompleteScreen : View {
                 if (viewModel.timerCount == 0){
                     viewModel.stopTimer()
                     viewModel.resetTimer()
-                    router.navigateToRoot()
+                    if let resultId = viewModel.resultId {
+                        router.navigate(to: .detailResult(id: resultId))
+                    } else {
+                        router.navigateToRoot()
+                    }
                 }
             })
+            viewModel.getResultId()
+        }
+        .onDisappear{
+            viewModel.stopTimer()
+            viewModel.resetTimer()
         }
         
     }

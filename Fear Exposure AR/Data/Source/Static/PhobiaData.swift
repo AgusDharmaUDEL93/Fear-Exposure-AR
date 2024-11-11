@@ -16,7 +16,12 @@ let phobiasData : [Phobia] = [
         description: "Intense fear of Snakes",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "snake.usdz"),
-            animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first
+            animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first,
+            image: [
+                "image/data/snake/snake1",
+                "image/data/snake/snake2",
+                "image/data/snake/snake3"
+            ]
         )
     ),
     Phobia(
@@ -27,7 +32,12 @@ let phobiasData : [Phobia] = [
         description: "Intense fear of Cockroaches",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "snake.usdz"),
-            animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first
+            animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first,
+            image: [
+                "image/data/snake/snake1",
+                "image/data/snake/snake2",
+                "image/data/snake/snake3"
+            ]
         )
     ),
     Phobia(
@@ -38,7 +48,12 @@ let phobiasData : [Phobia] = [
         description: "Intense fear of Dog",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "dog.usdz"),
-            animation: try? ModelEntity.loadModel(named: "dog.usdz").availableAnimations.first
+            animation: try? ModelEntity.loadModel(named: "dog.usdz").availableAnimations.first,
+            image: [
+                "image/data/dog/dog1",
+                "image/data/dog/dog2",
+                "image/data/dog/dog3"
+            ]
         )
     ),
     Phobia(
@@ -49,7 +64,12 @@ let phobiasData : [Phobia] = [
         description: "Intense fear of Crocodile",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "crocodile.usdz"),
-            animation: try? ModelEntity.loadModel(named: "crocodile.usdz").availableAnimations.first
+            animation: try? ModelEntity.loadModel(named: "crocodile.usdz").availableAnimations.first,
+            image: [
+                "image/data/crocodile/crocodile1",
+                "image/data/crocodile/crocodile2",
+                "image/data/crocodile/crocodile3"
+            ]
         )
     ),
     Phobia(
@@ -60,7 +80,12 @@ let phobiasData : [Phobia] = [
         description: "Intense fear of Balloon",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "ballon.usdz"),
-            animation: try? ModelEntity.loadModel(named: "ballon.usdz").availableAnimations.first
+            animation: try? ModelEntity.loadModel(named: "ballon.usdz").availableAnimations.first,
+            image: [
+                "image/data/balloon/balloon1",
+                "image/data/balloon/balloon2",
+                "image/data/balloon/balloon3"
+            ]
         )
     ),
     Phobia(
@@ -71,7 +96,12 @@ let phobiasData : [Phobia] = [
         description: "Intense fear of Spiders",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "spider.usdz"),
-            animation: try? ModelEntity.loadModel(named: "spider.usdz").availableAnimations.first
+            animation: try? ModelEntity.loadModel(named: "spider.usdz").availableAnimations.first,
+            image: [
+                "image/data/spider/spider1",
+                "image/data/spider/spider2",
+                "image/data/spider/spider3"
+            ]
         )
     ),
     Phobia(
@@ -82,7 +112,12 @@ let phobiasData : [Phobia] = [
         description: "Intense fear of Gecko",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "gecko.usdz"),
-            animation: try? ModelEntity.loadModel(named: "gecko.usdz").availableAnimations.first
+            animation: try? ModelEntity.loadModel(named: "gecko.usdz").availableAnimations.first,
+            image: [
+                "image/data/gecko/gecko1",
+                "image/data/gecko/gecko2",
+                "image/data/gecko/gecko3"
+            ]
         )
     ),
 ]

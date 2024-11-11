@@ -23,6 +23,8 @@ class Router  {
         case assessment
         case recommendation
         case complete
+        case about
+        case detailResult (id : UUID)
     }
     
     func navigate(to destination: Destination) {
