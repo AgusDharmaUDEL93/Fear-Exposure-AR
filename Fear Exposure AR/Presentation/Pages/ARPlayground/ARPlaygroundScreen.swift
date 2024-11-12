@@ -103,7 +103,7 @@ struct ARPlaygroundScreen : View {
                                                     .scaledToFit()
                                                     .frame(height : 25)
                                                     .foregroundStyle(.white)
-                                                    .padding(20)
+                                                    .padding(16)
                                                     .background(.black.opacity(0.75))
                                                     .clipShape(Circle())
                                             }

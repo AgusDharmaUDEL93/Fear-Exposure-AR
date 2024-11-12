@@ -25,6 +25,7 @@ class Router  {
         case complete
         case about
         case detailResult (id : UUID)
+        case privacyNotice
     }
     
     func navigate(to destination: Destination) {

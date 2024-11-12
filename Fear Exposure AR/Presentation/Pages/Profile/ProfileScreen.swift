@@ -91,13 +91,13 @@ struct ProfileScreen : View {
                                 router.navigate(to: .termCondition(isOnlyShowing: true))
                             }
                         )
-//                        ListTextProfile(
-//                            label: "Privacy Notice",
-//                            image: "lock.shield",
-//                            onAction: {
-//                                
-//                            }
-//                        )
+                        ListTextProfile(
+                            label: "Privacy Notice",
+                            image: "lock.shield",
+                            onAction: {
+                                router.navigate(to: .privacyNotice)
+                            }
+                        )
                         ListTextProfile(
                             label: "About",
                             image: "info.circle",

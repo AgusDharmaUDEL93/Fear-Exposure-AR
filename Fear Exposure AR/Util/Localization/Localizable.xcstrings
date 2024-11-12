@@ -59,6 +59,9 @@
         }
       }
     },
+    "At Denxéro, we are committed to protecting your privacy. The Denxéro AR Exposure Therapy App (\"Fear Exposure AR or FEAR\") does not collect, store, or share any personal data with third parties. All information related to your use of the app remains solely on your device. Denxéro will not access, analyze, or distribute any of your personal data. We encourage you to maintain the confidentiality of any information saved within the app. By using this app, you acknowledge and consent to these privacy practices and agree to take responsibility for securing your device and data." : {
+
+    },
     "Average" : {
 
     },
@@ -69,9 +72,6 @@
 
     },
     "By pressing “I Accept” the user agrees to the disclaimer and have therefore read the Terms and Conditions to using Fear Exposure AR." : {
-
-    },
-    "By using the Denxéro AR Exposure Therapy app (\"Fear Exposure AR or FEAR\"), the user acknowledges and agrees to the following terms:" : {
 
     },
     "Cancel" : {
@@ -156,6 +156,9 @@
     "Place & Start" : {
 
     },
+    "Privacy Notice" : {
+
+    },
     "Profile" : {
 
     },
@@ -215,6 +218,9 @@
 
     },
     "Terms and Conditions" : {
+
+    },
+    "The Fear Exposure AR (FEAR) app has been evaluated by licensed psychologists. Credits in the about section for further information. \n\nBy using the Denxéro AR Exposure Therapy app (\"Fear Exposure AR or FEAR\"), the user acknowledges and agrees to the following terms:" : {
 
     },
     "Theraphy" : {

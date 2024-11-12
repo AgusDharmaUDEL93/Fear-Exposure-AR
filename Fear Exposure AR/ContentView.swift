@@ -84,6 +84,8 @@ struct ContentView: View {
                             AboutScreen()
                         case .detailResult(let id):
                             DetailResultScreen(id : id)
+                        case .privacyNotice:
+                            PrivacyNoticeScreen()
                         }
                     }
                 )

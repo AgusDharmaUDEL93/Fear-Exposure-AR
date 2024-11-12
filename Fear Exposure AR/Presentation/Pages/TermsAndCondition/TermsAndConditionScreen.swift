@@ -17,7 +17,7 @@ struct TermsAndConditionScreen: View {
         VStack {
             EndDetectionScrollView (.vertical, showIndicators: false, hasScrolledToEnd: $hasScrolledToEnd) {
                 VStack(alignment: .leading, spacing: 20) {
-                    Text("By using the Denxéro AR Exposure Therapy app (\"Fear Exposure AR or FEAR\"), the user acknowledges and agrees to the following terms:")
+                    Text("The Fear Exposure AR (FEAR) app has been evaluated by licensed psychologists. Credits in the about section for further information. \n\nBy using the Denxéro AR Exposure Therapy app (\"Fear Exposure AR or FEAR\"), the user acknowledges and agrees to the following terms:")
                     
                     Group {
                         disclaimerItem(
@@ -64,6 +64,12 @@ struct TermsAndConditionScreen: View {
                         
                         disclaimerItem(
                             number: "8.",
+                            title: "Potential Side Effects",
+                            description: "By using the app, users may temporarily increase anxiety, distress, or physical symptoms like elevated heart rate as part of the exposure process. If symptoms worsen or become difficult to manage, consult a licensed psychologist or psychiatrist."
+                        )
+                        
+                        disclaimerItem(
+                            number: "9.",
                             title: "Acceptance of Terms",
                             description: "By using this app, user agrees to abide by this disclaimer and all other associated agreements and policies."
                         )
@@ -77,7 +83,6 @@ struct TermsAndConditionScreen: View {
                         }
                     )
                 }
-                
                 .padding()
             }
     
