@@ -17,7 +17,7 @@ struct LogsScreen : View {
             VStack {
                 TitleScreen(
                     title: "Session Log",
-                    description: "Description of this screen and its purpose."
+                    description: "Review your previous session reflections"
                 )
                 if (viewModel.log.isEmpty){
                     VStack (alignment: .center) {

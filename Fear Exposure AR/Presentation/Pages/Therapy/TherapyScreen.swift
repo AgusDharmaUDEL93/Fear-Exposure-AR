@@ -18,7 +18,7 @@ struct TherapyScreen : View {
             VStack {
                 TitleScreen(
                     title: "Therapies",
-                    description: "Description of this screen and its purpose."
+                    description: "Add or remove phobias from Profile tab"
                 )
                 ScrollView {
                     Spacer()

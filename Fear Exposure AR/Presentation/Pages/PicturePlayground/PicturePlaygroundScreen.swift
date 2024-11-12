@@ -22,7 +22,6 @@ struct PicturePlaygroundScreen : View {
                 if viewModel.isObjectReveal {
                     ZStack {
                         TabView (selection: $selection) {
-                            
                             ForEach (0..<viewModel.phobia.fearedObject.image.count, id: \.self){ index in
                                 Image(viewModel.phobia.fearedObject.image[index])
                                     .resizable()
