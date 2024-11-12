@@ -13,6 +13,12 @@
     "-" : {
 
     },
+    "%@ BPM" : {
+
+    },
+    "%@ Therapy" : {
+
+    },
     "%lld." : {
 
     },
@@ -52,6 +58,9 @@
           }
         }
       }
+    },
+    "Average" : {
+
     },
     "Avg Heart rate: - BPM" : {
 
@@ -105,7 +114,19 @@
     "FEAR is an iOS app designed to support individuals with phobias in confronting and managing their fears. Utilizing Digital Systematic Desensitization, or Exposure Therapy, FEAR gradually introduces users to feared objects in both 2D images and immersive 3D AR formats. By tracking heart rate via Apple Watch integration, FEAR provides a clear and measurable way to monitor progress and improvements over time, helping users on their journey to overcome their fears." : {
 
     },
+    "Feeling %@" : {
+
+    },
     "Gradually increase the size of the snake" : {
+
+    },
+    "Heart Rate" : {
+
+    },
+    "Heart Rate: %.1f" : {
+
+    },
+    "Highest" : {
 
     },
     "How do you feel now compared to before the therapy session began?" : {
@@ -118,6 +139,15 @@
 
     },
     "Logs" : {
+
+    },
+    "Lowest" : {
+
+    },
+    "No Data Logs" : {
+
+    },
+    "Note" : {
 
     },
     "Our sincere appreciation goes to those who participated in user testing and interviews, providing valuable insights to refine the user experience:" : {
@@ -153,6 +183,19 @@
     "See Test Result" : {
 
     },
+    "Session Date: %@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Session Date: %1$@, %2$@"
+          }
+        }
+      }
+    },
+    "Session Detail" : {
+
+    },
     "Session Reflection" : {
 
     },
@@ -175,6 +218,9 @@
 
     },
     "Theraphy" : {
+
+    },
+    "Time" : {
 
     },
     "User Testing and Interviews" : {

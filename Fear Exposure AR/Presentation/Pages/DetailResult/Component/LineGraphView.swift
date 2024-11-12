@@ -32,20 +32,7 @@ struct LineGraphView: View {
             .chartXScale(domain: 0...(heartRateData.count > 1 ? heartRateData.count - 1 : 1))
             .chartYScale(domain: (heartRateData.min() ?? 50) - 10...((heartRateData.max() ?? 50) + 10))
             .frame(maxWidth: .infinity)
-            .gesture(
-                DragGesture()
-                    .onChanged { value in
-                        // Calculate the nearest point
-                        let touchX = value.location.x / (UIScreen.main.bounds.width * 0.95) * CGFloat(heartRateData.count - 1)
-                        selectedDataIndex = Int(round(touchX))
-                    }
-                    .onEnded { _ in
-                        // Optional: Reset selection after interaction
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            selectedDataIndex = nil
-                        }
-                    }
-            )
+            
             
             // Tooltip Overlay
             if let index = selectedDataIndex, index < heartRateData.count {

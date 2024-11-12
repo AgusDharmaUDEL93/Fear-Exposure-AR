@@ -55,6 +55,7 @@ class ARScene : ARView {
     }
     
     private func updateObjectPosition(fearedObject: FearedObject) {
+        print("Here")
         guard let entity = fearedObject.baseModel else { return }
         
         let userPosition = cameraTransform.translation
