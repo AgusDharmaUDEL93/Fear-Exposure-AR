@@ -13,7 +13,7 @@ class ARScene : ARView {
     
     var focusEntity : FocusEntity?
     private var followTimer: Timer?
-    private let minimumDistance: Float = 1
+    private let minimumDistance: Float = 2
     private let speed = 3
     
     required init(frame frameRect: CGRect) {
@@ -55,34 +55,32 @@ class ARScene : ARView {
     }
     
     private func updateObjectPosition(fearedObject: FearedObject) {
-        print("Here")
         guard let entity = fearedObject.baseModel else { return }
         
         let userPosition = cameraTransform.translation
         let objectPosition = entity.position(relativeTo: nil)
         
-        let distance = simd_distance(userPosition, objectPosition)
+        let resultan = simd_distance(userPosition, objectPosition)
         
-        if distance <= minimumDistance {
-            return
-        }
-
-        let direction = normalize(userPosition - objectPosition)
-        let newPosition = objectPosition + direction * Float(speed) * 0.1
+//        let resultan = sqrt(objectPosition.x * objectPosition.x + objectPosition.y * objectPosition.y + objectPosition.z * objectPosition.z)
         
+        let deltaDistanceFromRadius = resultan - minimumDistance
         
+        let positionX = (minimumDistance * objectPosition.x +  deltaDistanceFromRadius * userPosition.x) / (resultan)
+        
+        let positionZ = (minimumDistance * objectPosition.z + deltaDistanceFromRadius * userPosition.z) / (resultan)
+        
+        let newPosition = SIMD3(x: positionX, y: objectPosition.y , z: positionZ)
+                
         let transform = Transform(scale: entity.scale, rotation: entity.transform.rotation, translation: newPosition)
         
-        let resultan = sqrt(objectPosition.x * objectPosition.x + objectPosition.y * objectPosition.y + objectPosition.z * objectPosition.z)
         
         let duration =  TimeInterval(abs(resultan * Float(speed)))
         
-        guard let animation = fearedObject.animation else { return }
-        
-        entity.playAnimation(animation.repeat())
-        
         entity.move(to: transform, relativeTo: nil, duration: duration)
+        
     }
+    
     
     private func config () {
         let config = ARWorldTrackingConfiguration()

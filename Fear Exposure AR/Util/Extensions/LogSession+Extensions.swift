@@ -38,9 +38,7 @@ extension LogSession {
         case .unknown:
             FeelingAfter.unknown.rawValue
         }
-        
-        print("Phobia Dto Conversion : \(phobiaName)")
-        
+                
         return LogSessionDto(
             logId : logId ?? UUID(),
             phobiaId : phobiaId,

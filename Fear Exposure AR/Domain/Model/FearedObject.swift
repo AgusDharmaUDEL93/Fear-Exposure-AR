@@ -11,5 +11,5 @@ struct FearedObject {
     var animation : AnimationResource?
     var isActive : Bool = false
     var image : [String] = []
-    var audio : AudioResource?
+    var audio : String?
 }

@@ -52,9 +52,11 @@ struct SettingsARScreen : View {
                 VStack {
                     Spacer()
                     Button(action: {
-                        settingUtils.isObjectFollowUser = isObjectFollow
                         onToggleButton(settingUtils.isObjectFollowUser)
+                        viewModel.updateAssessmentStatus(id: settingUtils.phobiaId, isObjectFollow: isObjectFollow)
+                        
                         isOpenModalSheets = false
+                        
                     }, label: {
                         Text ("Apply Changes")
                             .font(.body)
@@ -70,15 +72,13 @@ struct SettingsARScreen : View {
                     .frame(maxWidth: .infinity)
                 }
                 .ignoresSafeArea()
-                
-
-                
+    
             }
         }
         .navigationTitle("Session Settings")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear{
-            isObjectFollow = settingUtils.isObjectFollowUser
+            viewModel.getAssessmentStatus(id: settingUtils.phobiaId)
         }
     }
 }

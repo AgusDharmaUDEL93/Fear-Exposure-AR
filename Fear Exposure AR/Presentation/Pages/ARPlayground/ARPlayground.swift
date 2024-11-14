@@ -16,7 +16,6 @@ struct ARPlayground : UIViewRepresentable {
     @Binding var fearedObject : FearedObject
     @Binding var scale : Float
     @Binding var isObjectFollowUser : Bool
-    @Binding var isScaleObject : Bool
     @Binding var arState : ARState
     
     
@@ -32,7 +31,17 @@ struct ARPlayground : UIViewRepresentable {
         switch arState {
         case .placeObject:
             placeFearedObject(in: uiView)
-            arState = .initial
+            if (isObjectFollowUser){
+                arState = .objectFollowUser
+                
+                guard let entity = fearedObject.baseModel else { return }
+                
+                guard let animation = fearedObject.animation else { return }
+                
+                entity.playAnimation(animation.repeat())
+            } else {
+                arState = .initial
+            }
         case .clearObject:
             clearFearedObject(in: uiView)
             arState = .initial
@@ -41,9 +50,20 @@ struct ARPlayground : UIViewRepresentable {
         case .initial:
             break
         case .objectFollowUser:
+            print("Object Follow")
+            guard let entity = fearedObject.baseModel else { return }
+            
+            guard let animation = fearedObject.animation else { return }
+            
+            entity.playAnimation(animation.repeat())
+
             uiView.startFollowingUser(fearedObject: fearedObject)
             arState = .initial
         case .objectNotFollowUser:
+            guard let entity = fearedObject.baseModel else { return }
+
+            entity.stopAllAnimations()
+            
             uiView.stopFollowingUser()
             arState = .initial
         }

@@ -121,4 +121,22 @@ class ARPlaygroundViewModel {
     func onObjectIsNotFollowUser () {
         arState = .objectNotFollowUser
     }
+    
+    @MainActor
+    func onUpdateScale (id : Int, scale : Float) {
+        let assesmentData = assessmentUseCases.getAssessmentStatus.execute(id: id)
+        
+        if let assessment = assesmentData {
+            let updatedData = AssessmentStatus(
+                phobiaId: assessment.phobiaId,
+                recommendation: assessment.recommendation,
+                scale: scale,
+                volume: assessment.volume,
+                isObjectFollowUser: assessment.isObjectFollowUser
+                
+            )
+            assessmentUseCases.updateAssessmentStatus.execute(assessment:  updatedData)
+            
+        }
+    }
 }

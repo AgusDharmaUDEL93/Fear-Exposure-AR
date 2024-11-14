@@ -18,22 +18,21 @@ struct ARPlaygroundScreen : View {
     var body : some View {
         GeometryReader { geometry in
             ZStack  {
-                ARPlayground(
-                    fearedObject: Binding(get: {
-                        viewModel.phobia.fearedObject
-                    }, set: {value in }),
-                    scale: Binding(get: {
-                        settingUtils.scale
-                    }, set: {value in
-                        settingUtils.scale = value
-                    }),
-                    isObjectFollowUser: Binding(get: {
-                        settingUtils.isObjectFollowUser
-                    }, set: {value in settingUtils.isObjectFollowUser = value}),
-                    isScaleObject: $viewModel.isScaleObject,
-                    arState: $viewModel.arState
-                )
-                .ignoresSafeArea()
+                //                ARPlayground(
+                //                    fearedObject: Binding(get: {
+                //                        viewModel.phobia.fearedObject
+                //                    }, set: {value in }),
+                //                    scale: Binding(get: {
+                //                        settingUtils.scale
+                //                    }, set: {value in
+                //                        settingUtils.scale = value
+                //                    }),
+                //                    isObjectFollowUser: Binding(get: {
+                //                        settingUtils.isObjectFollowUser
+                //                    }, set: {value in settingUtils.isObjectFollowUser = value}),
+                //                    arState: $viewModel.arState
+                //                )
+                //                .ignoresSafeArea()
                 
                 
                 Group {
@@ -41,27 +40,43 @@ struct ARPlaygroundScreen : View {
                         if (viewModel.isScaleObject){
                             VStack {
                                 Spacer()
-                                Slider(value: Binding(get: {
-                                    settingUtils.scale
-                                }, set: { value in
-                                    settingUtils.scale = value
-                                }))
-                                Button(
-                                    action: {
-                                        viewModel.isDoneScaleObject()
-                                    },
-                                    label: {
-                                        Text(
-                                            "Done"
-                                        )
-                                        .font(.body)
-                                        .bold()
-                                        .frame(maxWidth: geometry.size.width)
-                                        .padding(.vertical, 6)
+                                VStack {
+                                    HStack {
+                                        Text("-")
+                                            .font(.title)
+                                            .foregroundStyle(.white)
+                                        Spacer()
+                                        Slider(value: Binding(get: {
+                                            settingUtils.scale
+                                        }, set: { value in
+                                            settingUtils.scale = value
+                                        }))
+                                        Spacer()
+                                        Text("+")
+                                            .font(.title)
+                                            .foregroundStyle(.white)
                                         
                                     }
-                                )
-                                .buttonStyle(.borderedProminent)
+                                    
+                                    Button(
+                                        action: {
+                                            viewModel.onUpdateScale(id: settingUtils.phobiaId, scale: settingUtils.scale)
+                                            viewModel.isDoneScaleObject()
+                                            
+                                        },
+                                        label: {
+                                            Text(
+                                                "Done"
+                                            )
+                                            .font(.body)
+                                            .bold()
+                                            .frame(maxWidth: geometry.size.width)
+                                            .padding(.vertical, 6)
+                                            
+                                        }
+                                    )
+                                    .buttonStyle(.borderedProminent)
+                                }
                                 .padding(.horizontal)
                                 .padding(.top)
                                 .padding(.bottom, 48)
@@ -69,8 +84,11 @@ struct ARPlaygroundScreen : View {
                                 .background(.black.opacity(0.75))
                                 .ignoresSafeArea()
                                 
+                                
+                                
                             }
-                           
+                            
+                            
                         } else {
                             VStack {
                                 Spacer()
@@ -131,7 +149,7 @@ struct ARPlaygroundScreen : View {
                                 .padding(.horizontal)
                             }
                         }
-
+                        
                         
                     } else {
                         VStack {

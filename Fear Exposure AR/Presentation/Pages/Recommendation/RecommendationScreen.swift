@@ -94,6 +94,9 @@ struct RecommendationScreen: View {
             viewModel.getAssessmentData(id: settings.phobiaId)
             if let result = viewModel.assessmentResult {
                 settings.isObjectFollowUser = result.isObjectFollowUser
+                settings.scale = result.scale
+                print(result.isObjectFollowUser)
+                print(result.recommendation)
             }
         }
         .navigationBarBackButtonHidden()
