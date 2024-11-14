@@ -2,52 +2,164 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(Empty string)"
+          }
+        }
+      }
     },
     "    • Angela Melia Gunawan\n    • Devon\n    • Jaya Pranata\n    • Shannon Chrestella Valencia\n    • Tifara Levi, S.Psi" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "    • Angela Melia Gunawan\n    • Devon\n    • Jaya Pranata\n    • Shannon Chrestella Valencia\n    • Tifara Levi, S.Psi"
+          }
+        }
+      }
     },
     "    • Dr. Efendi Rimba Sp.KJ\n    • Dr. Harsono Wiradinata Sp.KJ\n    • Jessica Christina Widihgdo, S.Psi., M.Psi\n    • Stefani Virlia, S.Psi., M.Psi" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "    • Dr. Efendi Rimba Sp.KJ\n    • Dr. Harsono Wiradinata Sp.KJ\n    • Jessica Christina Widihgdo, S.Psi., M.Psi\n    • Stefani Virlia, S.Psi., M.Psi"
+          }
+        }
+      }
     },
     "-" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-"
+          }
+        }
+      }
     },
     "%@ BPM" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ BPM"
+          }
+        }
+      }
     },
     "%@ Therapy" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Terapi"
+          }
+        }
+      }
     },
     "%lld." : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld."
+          }
+        }
+      }
     },
     "+" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+"
+          }
+        }
+      }
     },
     "A message should be a short, complete sentence." : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pesan harus berupa kalimat pendek yang lengkap."
+          }
+        }
+      }
     },
     "A special thank you to everyone who contributed suggestions and feedback to help improve our app:" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ucapan terima kasih kepada semua orang yang telah memberikan saran dan masukan untuk membantu meningkatkan aplikasi kami:"
+          }
+        }
+      }
     },
     "About" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tentang"
+          }
+        }
+      }
     },
     "Acknowledgments" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ucapan Terima Kasih"
+          }
+        }
+      }
     },
     "after this session" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "setelah sesi ini"
+          }
+        }
+      }
     },
     "Answer Here" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jawab disini"
+          }
+        }
+      }
     },
     "Apply Changes" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terapkan Perubahan"
+          }
+        }
+      }
     },
     "Are you sure want to end this session?" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apakah Anda yakin ingin mengakhiri sesi ini?"
+          }
+        }
+      }
     },
     "at %@, %@" : {
       "localizations" : {
@@ -56,41 +168,124 @@
             "state" : "new",
             "value" : "at %1$@, %2$@"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "di %1$@, %2$@"
+          }
         }
       }
     },
     "At Denxéro, we are committed to protecting your privacy. The Denxéro AR Exposure Therapy App (\"Fear Exposure AR or FEAR\") does not collect, store, or share any personal data with third parties. All information related to your use of the app remains solely on your device. Denxéro will not access, analyze, or distribute any of your personal data. We encourage you to maintain the confidentiality of any information saved within the app. By using this app, you acknowledge and consent to these privacy practices and agree to take responsibility for securing your device and data." : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di Denxéro, kami berkomitmen untuk melindungi privasi Anda. Aplikasi Denxéro AR Exposure Therapy (\"Fear Exposure AR atau FEAR\") tidak mengumpulkan, menyimpan, atau membagikan data pribadi apa pun dengan pihak ketiga. Semua informasi yang terkait dengan penggunaan aplikasi oleh Anda tetap berada di perangkat Anda. Denxéro tidak akan mengakses, menganalisis, atau mendistribusikan data pribadi Anda. Kami mengharapkan Anda untuk menjaga kerahasiaan informasi apa pun yang tersimpan dalam aplikasi. Dengan menggunakan aplikasi ini, Anda mengakui dan menyetujui praktik privasi ini dan setuju untuk bertanggung jawab dalam mengamankan perangkat dan data Anda."
+          }
+        }
+      }
     },
     "Average" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rata-rata"
+          }
+        }
+      }
     },
     "Avg Heart rate: - BPM" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rata-rata denyut jantung: - BPM"
+          }
+        }
+      }
     },
     "Avg Heart rate: %@ BPM" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rata-rata denyut jantung: %@ BPM"
+          }
+        }
+      }
     },
     "By pressing “I Accept” the user agrees to the disclaimer and have therefore read the Terms and Conditions to using Fear Exposure AR." : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dengan menekan “Saya Terima”, pengguna setuju dengan pernyataan penyangkalan dan karenanya telah membaca Syarat dan Ketentuan penggunaan Fear Exposure AR."
+          }
+        }
+      }
     },
     "Cancel" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batal"
+          }
+        }
+      }
     },
     "Choose Therapy" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih Terapi"
+          }
+        }
+      }
     },
     "Congratulations on completing your session!" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selamat karena Anda telah menyelesaikan sesi Anda!"
+          }
+        }
+      }
     },
     "Congratulations! You have completed your session!" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selamat! Anda telah menyelesaikan sesi Anda!"
+          }
+        }
+      }
     },
     "Dark Mode" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode Gelap"
+          }
+        }
+      }
     },
     "Done" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selesai"
+          }
+        }
+      }
     },
     "Duration: %lld Minutes %lld Seconds" : {
       "localizations" : {
@@ -99,92 +294,306 @@
             "state" : "new",
             "value" : "Duration: %1$lld Minutes %2$lld Seconds"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durasi: %1$lld Menit %2$lld Detik"
+          }
         }
       }
     },
     "during this session" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "selama sesi ini"
+          }
+        }
+      }
     },
     "End Session" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akhiri Sesi"
+          }
+        }
+      }
     },
     "End Therapy Session?" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akhiri Sesi Terapi?"
+          }
+        }
+      }
     },
     "FEAR is an iOS app designed to support individuals with phobias in confronting and managing their fears. Utilizing Digital Systematic Desensitization, or Exposure Therapy, FEAR gradually introduces users to feared objects in both 2D images and immersive 3D AR formats. By tracking heart rate via Apple Watch integration, FEAR provides a clear and measurable way to monitor progress and improvements over time, helping users on their journey to overcome their fears." : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FEAR adalah aplikasi iOS yang dirancang untuk membantu individu dengan fobia dalam menghadapi dan mengelola ketakutan mereka. Dengan memanfaatkan Desensitisasi Sistematis Digital, atau Terapi Pemaparan, FEAR secara bertahap memperkenalkan pengguna pada objek yang ditakuti dalam bentuk gambar 2D dan format AR 3D yang imersif. Dengan melacak detak jantung melalui integrasi Apple Watch, FEAR menyediakan cara yang jelas dan terukur untuk memantau kemajuan dan peningkatan dari waktu ke waktu, membantu pengguna dalam perjalanan mereka untuk mengatasi ketakutan mereka."
+          }
+        }
+      }
     },
     "Feeling %@" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perasaan %@"
+          }
+        }
+      }
     },
     "Gradually increase the size of the snake" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tingkatkan ukuran ular secara bertahap"
+          }
+        }
+      }
     },
     "Heart Rate" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denyut Jantung"
+          }
+        }
+      }
     },
     "Heart Rate: %.1f" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denyut Jantung: %.1f"
+          }
+        }
+      }
     },
     "Highest" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tertinggi"
+          }
+        }
+      }
     },
     "How do you feel now compared to before the therapy session began?" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bagaimana perasaan Anda sekarang dibandingkan sebelum sesi terapi dimulai?"
+          }
+        }
+      }
     },
     "I Accept" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saya Terima"
+          }
+        }
+      }
     },
     "Languange" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Language"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bahasa"
+          }
+        }
+      }
     },
     "Logs" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat"
+          }
+        }
+      }
     },
     "Lowest" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terendah"
+          }
+        }
+      }
     },
     "No Data Logs" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada Riwayat"
+          }
+        }
+      }
     },
     "Note" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Catatan"
+          }
+        }
+      }
     },
     "Our sincere appreciation goes to those who participated in user testing and interviews, providing valuable insights to refine the user experience:" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penghargaan tulus kami berikan kepada mereka yang berpartisipasi dalam pengujian dan wawancara pengguna, memberikan wawasan berharga untuk menyempurnakan pengalaman pengguna:"
+          }
+        }
+      }
     },
     "Place & Start" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempatkan & Mulai"
+          }
+        }
+      }
     },
     "Privacy Notice" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pemberitahuan Privasi"
+          }
+        }
+      }
     },
     "Profile" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan"
+          }
+        }
+      }
     },
     "Progress Screen" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Halaman Progres"
+          }
+        }
+      }
     },
     "Putu Wira" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Putu Wira"
+          }
+        }
+      }
     },
     "Question Category" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategori Pertanyaan"
+          }
+        }
+      }
     },
     "Recommended" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rekomendasi"
+          }
+        }
+      }
     },
     "Redirecting to your session results in %lld seconds..." : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengalihkan ke sesi Anda menghasilkan %lld detik..."
+          }
+        }
+      }
     },
     "Retake Assessment" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ulang Penilaian"
+          }
+        }
+      }
     },
     "Reveal Object" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tampilkan Objek"
+          }
+        }
+      }
     },
     "See Test Result" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lihat Hasil Test"
+          }
+        }
+      }
     },
     "Session Date: %@, %@" : {
       "localizations" : {
@@ -193,53 +602,164 @@
             "state" : "new",
             "value" : "Session Date: %1$@, %2$@"
           }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanggal Sesi: %1$@, %2$@"
+          }
         }
       }
     },
     "Session Detail" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detail Sesi"
+          }
+        }
+      }
     },
     "Session Reflection" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refleksi Sesi"
+          }
+        }
+      }
     },
     "Session Settings" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan Sesi"
+          }
+        }
+      }
     },
     "Special Thanks" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terima Kasih Khusus"
+          }
+        }
+      }
     },
     "Start your session by revealing your object" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mulailah sesi Anda dengan menampilkan objek"
+          }
+        }
+      }
     },
     "Submit" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kirim"
+          }
+        }
+      }
     },
     "Technical Assessment" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penilaian Teknis"
+          }
+        }
+      }
     },
     "Terms and Conditions" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Syarat dan Ketentuan"
+          }
+        }
+      }
     },
     "The Fear Exposure AR (FEAR) app has been evaluated by licensed psychologists. Credits in the about section for further information. \n\nBy using the Denxéro AR Exposure Therapy app (\"Fear Exposure AR or FEAR\"), the user acknowledges and agrees to the following terms:" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikasi Fear Exposure AR (FEAR) telah dievaluasi oleh psikolog berlisensi. Kredit di bagian tentang untuk informasi lebih lanjut.\n\nDengan menggunakan aplikasi Denxéro AR Exposure Therapy (\"Fear Exposure AR atau FEAR\"), pengguna mengakui dan menyetujui persyaratan berikut:"
+          }
+        }
+      }
     },
     "Theraphy" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terapi"
+          }
+        }
+      }
     },
     "Time" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waktu"
+          }
+        }
+      }
     },
     "User Testing and Interviews" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengujian Pengguna dan Wawancara"
+          }
+        }
+      }
     },
     "We extend our heartfelt thanks to our friends and families who supported us, both directly and indirectly, throughout the development of this app. We are also incredibly grateful to the Apple Developer Academy @UC for their invaluable support and guidance." : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kami menyampaikan rasa terima kasih yang sebesar-besarnya kepada teman-teman dan keluarga yang telah mendukung kami, baik secara langsung maupun tidak langsung, selama pengembangan aplikasi ini. Kami juga sangat berterima kasih kepada Apple Developer Academy @UC atas dukungan dan bimbingan mereka yang sangat berharga."
+          }
+        }
+      }
     },
     "What do you feel %@?" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa yang kamu rasakan %@?"
+          }
+        }
+      }
     },
     "You’re Doing Great!" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamu Hebat!"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

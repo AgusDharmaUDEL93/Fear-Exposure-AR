@@ -147,4 +147,73 @@ let phobiasData : [Phobia] = [
             )
         )
     ),
+    Phobia(
+        id: 6,
+        name: "Katsaridaphobia",
+        displayName: "Cockroach",
+        isAnimal: true,
+        description: "Intense fear of Cockroach",
+        fearedObject: FearedObject(
+            baseModel: try? ModelEntity.loadModel(named: "cockroach.usdz"),
+            animation: try? ModelEntity.loadModel(named: "cockroach.usdz").availableAnimations.first,
+            image: [
+                "image/data/cockroach/cockroach1",
+                "image/data/cockroach/cockroach2",
+                "image/data/cockroach/cockroach3"
+            ],
+            audio: try? AudioFileResource.load(
+                named: "cockroach.m4a",
+                in: nil,
+                inputMode: .spatial,
+                loadingStrategy: .stream,
+                shouldLoop: true
+            )
+        )
+    ),
+    Phobia(
+        id: 7,
+        name: "Ailurophobia",
+        displayName: "Cat",
+        isAnimal: true,
+        description: "Intense fear of Cat",
+        fearedObject: FearedObject(
+            baseModel: try? ModelEntity.loadModel(named: "cat.usdz"),
+            animation: try? ModelEntity.loadModel(named: "cat.usdz").availableAnimations.first,
+            image: [
+                "image/data/cat/cat1",
+                "image/data/cat/cat2",
+                "image/data/cat/cat3"
+            ],
+            audio: try? AudioFileResource.load(
+                named: "cat.m4a",
+                in: nil,
+                inputMode: .spatial,
+                loadingStrategy: .stream,
+                shouldLoop: true
+            )
+        )
+    ),
+    Phobia(
+        id: 8,
+        name: "Musophobia",
+        displayName: "Rat",
+        isAnimal: true,
+        description: "Intense fear of Rat",
+        fearedObject: FearedObject(
+            baseModel: try? ModelEntity.loadModel(named: "rat.usdz"),
+            animation: try? ModelEntity.loadModel(named: "rat.usdz").availableAnimations.first,
+            image: [
+                "image/data/rat/rat1",
+                "image/data/rat/rat2",
+                "image/data/rat/rat3"
+            ],
+            audio: try? AudioFileResource.load(
+                named: "rat.m4a",
+                in: nil,
+                inputMode: .spatial,
+                loadingStrategy: .stream,
+                shouldLoop: true
+            )
+        )
+    )
 ]

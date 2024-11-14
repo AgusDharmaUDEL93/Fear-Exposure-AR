@@ -26,13 +26,13 @@ struct ContentView: View {
                                 Tab("Theraphy", systemImage: "heart") {
                                     TherapyScreen()
                                 }
-
+                                
                                 Tab("Logs", systemImage: "book.pages") {
                                     LogsScreen()
                                 }
                                 
-                                Tab("Profile", systemImage: "person") {
-                                    ProfileScreen()
+                                Tab("Settings", systemImage: "gearshape.fill") {
+                                    SettingsScreen()
                                 }
                             }
                         } else {
@@ -40,62 +40,58 @@ struct ContentView: View {
                                 TherapyScreen()
                                     .tabItem {
                                         Label("Theraphy", systemImage: "heart")
-                                            
                                     }
                                 LogsScreen()
                                     .tabItem {
                                         Label("Logs", systemImage: "book.pages")
                                     }
-                                ProfileScreen()
+                                SettingsScreen()
                                     .tabItem {
-                                        Label("Profile", systemImage: "person")
+                                        Label("Settings", systemImage: "gearshape.fill")
                                     }
                             }
-                            
                         }
                     }
                 }
             }
-                .navigationDestination(
-                    for: Router.Destination.self,
-                    destination:  { destination in
-                        switch destination {
-                        case .arPlayground:
-                            ARPlaygroundScreen()
-                        case .picturePlayground:
-                            PicturePlaygroundScreen()
-                        case .theraphy:
-                            TherapyScreen()
-                        case .reflection (let phobiaId, let phobiaName, let heartRate, let duration):
-                            ReflectionScreen(phobiaId: phobiaId, phobiaName: phobiaName, heartRate: heartRate, duration: duration)
-                        case .summary:
-                            SummaryScreen()
-                        case .termCondition (let isOnlyShowing):
-                            TermsAndConditionScreen(isOnlyShowing: isOnlyShowing )
-                        case .introductionPhobia:
-                            IntroductionPhobiaScreen()
-                        case .assessment:
-                            AsessementScreen()
-                        case .recommendation:
-                            RecommendationScreen()
-                        case .complete:
-                            CompleteScreen()
-                        case .about:
-                            AboutScreen()
-                        case .detailResult(let id):
-                            DetailResultScreen(id : id)
-                        case .privacyNotice:
-                            PrivacyNoticeScreen()
-                        }
+            .navigationDestination(
+                for: Router.Destination.self,
+                destination:  { destination in
+                    switch destination {
+                    case .arPlayground:
+                        ARPlaygroundScreen()
+                    case .picturePlayground:
+                        PicturePlaygroundScreen()
+                    case .theraphy:
+                        TherapyScreen()
+                    case .reflection (let phobiaId, let phobiaName, let heartRate, let duration):
+                        ReflectionScreen(phobiaId: phobiaId, phobiaName: phobiaName, heartRate: heartRate, duration: duration)
+                    case .summary:
+                        SummaryScreen()
+                    case .termCondition (let isOnlyShowing):
+                        TermsAndConditionScreen(isOnlyShowing: isOnlyShowing )
+                    case .introductionPhobia:
+                        IntroductionPhobiaScreen()
+                    case .assessment:
+                        AsessementScreen()
+                    case .recommendation:
+                        RecommendationScreen()
+                    case .complete:
+                        CompleteScreen()
+                    case .about:
+                        AboutScreen()
+                    case .detailResult(let id):
+                        DetailResultScreen(id : id)
+                    case .privacyNotice:
+                        PrivacyNoticeScreen()
                     }
-                )
-
+                }
+            )
         }
         .tint(Color(Theme.primary500.rawValue))
         .environment(router)
         .environment(\.locale, .init(identifier: locale))
         .environment(settingUtils)
-        
     }
 }
 
