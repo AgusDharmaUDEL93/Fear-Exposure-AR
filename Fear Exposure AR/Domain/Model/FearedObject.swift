@@ -5,11 +5,12 @@
 //  Created by Putu Agus Dharma Kusuma on 14/10/24.
 //
 import RealityKit
+import Foundation
 
 struct FearedObject {
     var baseModel : ModelEntity?
     var animation : AnimationResource?
     var isActive : Bool = false
     var image : [String] = []
-    var audio : String?
+    var audio : AudioResource?
 }

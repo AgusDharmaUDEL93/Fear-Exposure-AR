@@ -18,22 +18,26 @@ struct ARPlaygroundScreen : View {
     var body : some View {
         GeometryReader { geometry in
             ZStack  {
-                                ARPlayground(
-                                    fearedObject: Binding(get: {
-                                        viewModel.phobia.fearedObject
-                                    }, set: {value in }),
-                                    scale: Binding(get: {
-                                        settingUtils.scale
-                                    }, set: {value in
-                                        settingUtils.scale = value
-                                    }),
-                                    isObjectFollowUser: Binding(get: {
-                                        settingUtils.isObjectFollowUser
-                                    }, set: {value in settingUtils.isObjectFollowUser = value}),
-                                    arState: $viewModel.arState
-                                )
-                                .ignoresSafeArea()
-                
+                ARPlayground(
+                    fearedObject: Binding(get: {
+                        viewModel.phobia.fearedObject
+                    }, set: {value in }),
+                    scale: Binding(get: {
+                        settingUtils.scale
+                    }, set: {value in
+                        settingUtils.scale = value
+                    }),
+                    isObjectFollowUser: Binding(get: {
+                        settingUtils.isObjectFollowUser
+                    }, set: {value in settingUtils.isObjectFollowUser = value}),
+                    arState: $viewModel.arState,
+                    volume: Binding (get: {
+                        settingUtils.volume
+                    }, set: { value in
+                        settingUtils.volume = value
+                    })
+                )
+                .ignoresSafeArea()
                 
                 Group {
                     if (viewModel.phobia.fearedObject.isActive){

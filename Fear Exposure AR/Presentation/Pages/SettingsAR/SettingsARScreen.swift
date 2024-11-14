@@ -13,7 +13,6 @@ struct SettingsARScreen : View {
     @Environment(SettingUtils.self) private var settingUtils
     @Binding var isScaleObject : Bool
     @Binding var isOpenModalSheets : Bool
-    @State var isObjectFollow : Bool = false
     var onScaleObject : () -> Void
     var onToggleButton : (Bool) -> Void
     
@@ -32,15 +31,13 @@ struct SettingsARScreen : View {
                         ListSliderSetting(
                             title: "Feared Object Volume",
                             description: "Adjust volume of sounds produced by the feared object.",
-                            sliderValue: Binding(get: {
-                                settingUtils.volume
-                            }, set: {value in settingUtils.volume = value})
+                            sliderValue: $viewModel.volume
                         )
                         
                         ListToggleSetting(
                             title: "Object Follow User",
                             description: "Feared Object maintains distance with the user as they move",
-                            isOn: $isObjectFollow
+                            isOn: $viewModel.isObjectFollow
                         )
                         Spacer()
                             .frame(height: 150)
@@ -52,9 +49,11 @@ struct SettingsARScreen : View {
                 VStack {
                     Spacer()
                     Button(action: {
-                        settingUtils.isObjectFollowUser = isObjectFollow
+                        settingUtils.isObjectFollowUser = viewModel.isObjectFollow
+                        settingUtils.volume = viewModel.volume
+                        print(settingUtils.volume)
                         onToggleButton(settingUtils.isObjectFollowUser)
-                        viewModel.updateAssessmentStatus(id: settingUtils.phobiaId, isObjectFollow: isObjectFollow)
+                        viewModel.updateAssessmentStatus(id: settingUtils.phobiaId, isObjectFollow: settingUtils.isObjectFollowUser, volume:  settingUtils.volume)
                         
                         isOpenModalSheets = false
                         
@@ -80,7 +79,6 @@ struct SettingsARScreen : View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear{
             viewModel.getAssessmentStatus(id: settingUtils.phobiaId)
-            isObjectFollow = viewModel.isObjectFollow
         }
     }
 }

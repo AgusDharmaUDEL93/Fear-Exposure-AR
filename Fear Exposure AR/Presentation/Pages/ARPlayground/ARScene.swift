@@ -15,6 +15,7 @@ class ARScene : ARView {
     private var followTimer: Timer?
     private let minimumDistance: Float = 2
     private let speed = 4
+    var audioController : AudioPlaybackController?
     
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
@@ -65,7 +66,7 @@ class ARScene : ARView {
         let objectPosition = entity.position(relativeTo: nil)
         
         let resultan = simd_distance(userPosition, objectPosition)
-                
+        
         let deltaDistanceFromRadius = resultan - minimumDistance
         
         let positionX = (minimumDistance * objectPosition.x +  deltaDistanceFromRadius * userPosition.x) / (resultan)
@@ -73,7 +74,7 @@ class ARScene : ARView {
         let positionZ = (minimumDistance * objectPosition.z + deltaDistanceFromRadius * userPosition.z) / (resultan)
         
         let newPosition = SIMD3(x: positionX, y: objectPosition.y , z: positionZ)
-                
+        
         let transform = Transform(scale: entity.scale, rotation: entity.transform.rotation, translation: newPosition)
         
         
@@ -81,9 +82,8 @@ class ARScene : ARView {
         
         entity.move(to: transform, relativeTo: nil, duration: duration)
         
-        print("Update position")
-        
     }
+
     
     
     private func config () {

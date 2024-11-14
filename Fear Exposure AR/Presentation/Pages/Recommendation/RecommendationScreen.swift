@@ -95,6 +95,7 @@ struct RecommendationScreen: View {
             if let result = viewModel.assessmentResult {
                 settings.isObjectFollowUser = result.isObjectFollowUser
                 settings.scale = result.scale
+                settings.volume = result.volume
                 print("Object Follow User on Recommedation : \(result.isObjectFollowUser)")
                 print(settings.isObjectFollowUser)
                 print(result.recommendation)

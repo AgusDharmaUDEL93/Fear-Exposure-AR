@@ -13,6 +13,7 @@ class SettingsARViewModel {
     
     var sliderValue : Float = 0
     var isObjectFollow : Bool = false
+    var volume : Float = 0
     
     @MainActor
     func getAssessmentStatus(id : Int) {
@@ -20,16 +21,12 @@ class SettingsARViewModel {
         if let assessmentData = assessment {
             sliderValue = assessmentData.scale
             isObjectFollow = assessmentData.isObjectFollowUser
+            volume = assessmentData.volume
         }
     }
-    
-    func setSettingValue (sliderValue : Float, isObjectFollow : Bool) {
-        self.sliderValue = sliderValue
-        self.isObjectFollow = isObjectFollow
-    }
-    
+        
     @MainActor
-    func updateAssessmentStatus (id : Int, isObjectFollow : Bool) {
+    func updateAssessmentStatus (id : Int, isObjectFollow : Bool, volume : Float) {
         
         let assesmentData = assessmentUseCase.getAssessmentStatus.execute(id: id)
         
@@ -38,7 +35,7 @@ class SettingsARViewModel {
                 phobiaId: assessment.phobiaId,
                 recommendation: assessment.recommendation,
                 scale: assessment.scale,
-                volume: assessment.volume,
+                volume: volume,
                 isObjectFollowUser: isObjectFollow
                 
             )

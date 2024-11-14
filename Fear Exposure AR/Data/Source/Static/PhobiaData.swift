@@ -6,6 +6,7 @@
 //
 
 import RealityKit
+import Foundation
 
 let phobiasData : [Phobia] = [
     Phobia(
@@ -21,7 +22,14 @@ let phobiasData : [Phobia] = [
                 "image/data/snake/snake1",
                 "image/data/snake/snake2",
                 "image/data/snake/snake3"
-            ]
+            ],
+            audio: try? AudioFileResource.load(
+                named: "snake.m4a",
+                in: nil,
+                inputMode: .spatial,
+                loadingStrategy: .stream,
+                shouldLoop: true
+            )
         )
     ),
     Phobia(
@@ -37,7 +45,14 @@ let phobiasData : [Phobia] = [
                 "image/data/dog/dog1",
                 "image/data/dog/dog2",
                 "image/data/dog/dog3"
-            ]
+            ],
+            audio: try? AudioFileResource.load(
+                named: "dog.m4a",
+                in: nil,
+                inputMode: .spatial,
+                loadingStrategy: .stream,
+                shouldLoop: true
+            )
         )
     ),
     Phobia(
@@ -53,7 +68,14 @@ let phobiasData : [Phobia] = [
                 "image/data/crocodile/crocodile1",
                 "image/data/crocodile/crocodile2",
                 "image/data/crocodile/crocodile3"
-            ]
+            ],
+            audio: try? AudioFileResource.load(
+                named: "crocodile.m4a",
+                in: nil,
+                inputMode: .spatial,
+                loadingStrategy: .stream,
+                shouldLoop: true
+            )
         )
     ),
     Phobia(
@@ -69,7 +91,14 @@ let phobiasData : [Phobia] = [
                 "image/data/balloon/balloon1",
                 "image/data/balloon/balloon2",
                 "image/data/balloon/balloon3"
-            ]
+            ],
+            audio: try? AudioFileResource.load(
+                named: "balloon.m4a",
+                in: nil,
+                inputMode: .spatial,
+                loadingStrategy: .stream,
+                shouldLoop: true
+            )
         )
     ),
     Phobia(
@@ -85,7 +114,14 @@ let phobiasData : [Phobia] = [
                 "image/data/spider/spider1",
                 "image/data/spider/spider2",
                 "image/data/spider/spider3"
-            ]
+            ],
+            audio: try? AudioFileResource.load(
+                named: "spider.m4a",
+                in: nil,
+                inputMode: .spatial,
+                loadingStrategy: .stream,
+                shouldLoop: true
+            )
         )
     ),
     Phobia(
@@ -101,7 +137,14 @@ let phobiasData : [Phobia] = [
                 "image/data/gecko/gecko1",
                 "image/data/gecko/gecko2",
                 "image/data/gecko/gecko3"
-            ]
+            ],
+            audio: try? AudioFileResource.load(
+                named: "gecko.m4a",
+                in: nil,
+                inputMode: .spatial,
+                loadingStrategy: .stream,
+                shouldLoop: true
+            )
         )
     ),
 ]
