@@ -87,7 +87,9 @@ struct ARPlayground : UIViewRepresentable {
         
         let entityAnchor = AnchorEntity(world: uiView.focusEntity?.position ?? SIMD3(x: 0, y: 0, z: 0) )
         
-        entity.transform = Transform(scale: entity.transform.scale, rotation: entity.transform.rotation, translation: SIMD3(x: 0, y: 0, z: 0))
+        let initialScale = SIMD3<Float>(repeating: (scale * 100) + 1)
+        
+        entity.transform = Transform(scale: initialScale, rotation: entity.transform.rotation, translation: SIMD3(x: 0, y: 0, z: 0))
         
         entityAnchor.addChild(entity)
         
