@@ -14,7 +14,7 @@ class ARScene : ARView {
     var focusEntity : FocusEntity?
     private var followTimer: Timer?
     private let minimumDistance: Float = 2
-    private let speed = 3
+    private let speed = 4
     
     required init(frame frameRect: CGRect) {
         super.init(frame: frameRect)
@@ -30,6 +30,10 @@ class ARScene : ARView {
         focusEntity = FocusEntity(on: self, style: .classic(color: .yellow))
         
         config()
+    }
+    
+    deinit {
+        stopFollowingUser()
     }
     
     required init?(coder decoder: NSCoder) {
@@ -61,9 +65,7 @@ class ARScene : ARView {
         let objectPosition = entity.position(relativeTo: nil)
         
         let resultan = simd_distance(userPosition, objectPosition)
-        
-//        let resultan = sqrt(objectPosition.x * objectPosition.x + objectPosition.y * objectPosition.y + objectPosition.z * objectPosition.z)
-        
+                
         let deltaDistanceFromRadius = resultan - minimumDistance
         
         let positionX = (minimumDistance * objectPosition.x +  deltaDistanceFromRadius * userPosition.x) / (resultan)
@@ -78,6 +80,8 @@ class ARScene : ARView {
         let duration =  TimeInterval(abs(resultan * Float(speed)))
         
         entity.move(to: transform, relativeTo: nil, duration: duration)
+        
+        print("Update position")
         
     }
     

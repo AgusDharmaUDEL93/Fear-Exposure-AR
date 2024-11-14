@@ -68,8 +68,6 @@ struct ARPlayground : UIViewRepresentable {
             arState = .initial
         }
         
-        
-        
     }
     
     

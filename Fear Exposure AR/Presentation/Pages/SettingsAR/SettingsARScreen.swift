@@ -52,6 +52,7 @@ struct SettingsARScreen : View {
                 VStack {
                     Spacer()
                     Button(action: {
+                        settingUtils.isObjectFollowUser = isObjectFollow
                         onToggleButton(settingUtils.isObjectFollowUser)
                         viewModel.updateAssessmentStatus(id: settingUtils.phobiaId, isObjectFollow: isObjectFollow)
                         
@@ -79,6 +80,7 @@ struct SettingsARScreen : View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear{
             viewModel.getAssessmentStatus(id: settingUtils.phobiaId)
+            isObjectFollow = viewModel.isObjectFollow
         }
     }
 }

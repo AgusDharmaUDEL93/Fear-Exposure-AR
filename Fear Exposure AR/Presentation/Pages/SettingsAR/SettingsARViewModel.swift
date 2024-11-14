@@ -42,6 +42,8 @@ class SettingsARViewModel {
                 isObjectFollowUser: isObjectFollow
                 
             )
+            
+            print("On Updata Settings : \(updatedData.isObjectFollowUser)")
             assessmentUseCase.updateAssessmentStatus.execute(assessment:  updatedData)
             
         }
