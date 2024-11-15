@@ -22,8 +22,11 @@ struct TitleScreen : View {
                 .font(.largeTitle)
                 .bold()
                 .padding(.bottom, 4)
-            Text (description)
-                .font(.body)
+            if (!description.isEmpty){
+                Text (description)
+                    .font(.body)
+            }
+           
         }
         
         .foregroundStyle(Color(Theme.background.rawValue))

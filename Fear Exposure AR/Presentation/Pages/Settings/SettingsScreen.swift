@@ -18,21 +18,7 @@ struct SettingsScreen : View {
         GeometryReader { geometry in
             ScrollView {
                 VStack (alignment : .leading) {
-                    ZStack (alignment : .topLeading) {
-                        Color(Theme.primary500.rawValue)
-                            .frame(height: 250)
-                        VStack {
-                            Spacer()
-                                .frame(height: 50)
-                            Text("Settings")
-                                .font(.largeTitle)
-                                .bold()
-                                .padding(.top, 48)
-                                .padding(.horizontal, 16)
-                                .foregroundStyle(Color(Theme.background.rawValue))
-                        }
-                    }
-                    
+                    TitleScreen(title: "Settings", description: "")
                     VStack (alignment : .leading) {
                         TitleProfile(label: "General")
                         ListTextProfile(
@@ -84,23 +70,27 @@ struct SettingsScreen : View {
                 .background(Color(Theme.background.rawValue))
                 .frame(maxWidth: geometry.size.width)
             }
-            .background(Color(Theme.primary500.rawValue))
             .sheet(
                 isPresented: $viewModel.isSheetLanguageOpen,
                 content: {
-                    NavigationStack {
                         ModalLanguageProfile(languageSelected: viewModel.languageSelected, onTapList: { language in
                             viewModel.onChangedLanguage(language: language)
                             locale = language.rawValue
                             
                         })
-                        
-                    }
+
+                    .presentationDetents([.height(270)])
                 }
             )
         }
         .onAppear{
-            viewModel.languageSelected = Locale(identifier: locale)
+           
+            if (locale != Language.english.rawValue && locale != Language.indonesia.rawValue){
+                viewModel.languageSelected = Locale(identifier: Language.english.rawValue)
+            } else {
+                viewModel.languageSelected = Locale(identifier: locale)
+            }
+            
         }
         .ignoresSafeArea()
     }

@@ -62,6 +62,7 @@ struct ModalLanguageProfile : View {
         .frame(maxWidth: .infinity)
         .padding(.horizontal)
         .padding(.vertical, 24)
-        .presentationDetents([.height(270)])
+        .navigationTitle("")
+        .navigationBarBackButtonHidden()
     }
 }
