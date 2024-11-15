@@ -27,8 +27,8 @@ class ARPlaygroundViewModel {
         isAnimal: true,
         description: "Intense fear of Snakes",
         fearedObject: FearedObject(
-            baseModel: try? ModelEntity.loadModel(named: "base_snake.usdz"),
-            animation: try? ModelEntity.loadModel(named: "animation_snake.usdz").availableAnimations.first
+            baseModel: try? ModelEntity.loadModel(named: "snake.usdz"),
+            animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first
         )
     )
     

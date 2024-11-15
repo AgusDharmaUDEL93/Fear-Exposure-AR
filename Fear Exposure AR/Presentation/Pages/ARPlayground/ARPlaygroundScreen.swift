@@ -199,7 +199,7 @@ struct ARPlaygroundScreen : View {
         }
         .toolbarBackground(.black.opacity(0.75), for: .navigationBar)
         .toolbarBackground(viewModel.phobia.fearedObject.isActive ? .hidden : .visible, for: .navigationBar)
-        .navigationBarBackButtonHidden()
+        .navigationBarBackButtonHidden(true)
         .alert(
             "End Therapy Session?",
             isPresented: $viewModel.isConfirmationDialogShow,

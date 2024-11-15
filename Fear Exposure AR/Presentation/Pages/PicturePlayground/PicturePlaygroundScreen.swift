@@ -153,6 +153,7 @@ struct PicturePlaygroundScreen : View {
             }
             .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
             .background(Color.white)
+            .navigationBarBackButtonHidden(true)
             .gesture(
                 MagnificationGesture()
                     .onChanged { value in

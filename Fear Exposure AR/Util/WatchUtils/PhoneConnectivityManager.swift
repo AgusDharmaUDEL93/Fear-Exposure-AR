@@ -29,6 +29,10 @@ class PhoneConnectivityManager: NSObject, ObservableObject, WCSessionDelegate {
             let session = WCSession.default
             session.delegate = self
             session.activate()
+            
+            if session.isWatchAppInstalled {
+                session.sendMessage(["openApp": true], replyHandler: nil, errorHandler: nil)
+            }
         }
     }
     
@@ -101,7 +105,7 @@ class PhoneConnectivityManager: NSObject, ObservableObject, WCSessionDelegate {
             }
             if let startSession = message["startSession"] as? Bool, startSession {
                 self.startSessionOnPhone()
-                }
+            }
             if let heartRate = message["currentHeartRate"] as? Double {
                 DispatchQueue.main.async {
                     self.currentHeartRate = heartRate
@@ -114,9 +118,9 @@ class PhoneConnectivityManager: NSObject, ObservableObject, WCSessionDelegate {
     }
     
     private func resetHeartRateData() {
-            // Logic to reset heart rate data, handled in ContentViewPhone
-            NotificationCenter.default.post(name: Notification.Name("resetHeartRateData"), object: nil)
-        }
+        // Logic to reset heart rate data, handled in ContentViewPhone
+        NotificationCenter.default.post(name: Notification.Name("resetHeartRateData"), object: nil)
+    }
     
     func startSessionOnPhone() {
         isSessionRunning = true
@@ -124,12 +128,12 @@ class PhoneConnectivityManager: NSObject, ObservableObject, WCSessionDelegate {
     }
     
     func startTimer(from startTime: Date) {
-            elapsedTime = 0
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-                self.elapsedTime = Date().timeIntervalSince(startTime)
-            }
+        elapsedTime = 0
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            self.elapsedTime = Date().timeIntervalSince(startTime)
         }
-
+    }
+    
     func stopTimer() {
         print("iOS: Stopping timer") // Log timer stop action
         timer?.invalidate()

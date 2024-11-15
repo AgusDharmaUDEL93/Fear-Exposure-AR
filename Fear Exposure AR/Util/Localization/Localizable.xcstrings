@@ -500,6 +500,7 @@
       }
     },
     "Profile" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -526,6 +527,7 @@
       }
     },
     "Putu Wira" : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -640,6 +642,9 @@
           }
         }
       }
+    },
+    "Settings" : {
+
     },
     "Special Thanks" : {
       "localizations" : {

@@ -8,6 +8,7 @@
 import Foundation
 import WatchConnectivity
 import HealthKit
+import WatchKit
 
 class WatchConnectivityManager: NSObject, ObservableObject, WCSessionDelegate {
     @Published var currentHeartRate: Double = 0.0
@@ -51,15 +52,15 @@ class WatchConnectivityManager: NSObject, ObservableObject, WCSessionDelegate {
         startHeartRateMonitoring()
         sendMessage(["action": "start", "reset": true])
     }
-
+    
     func stopSession() {
-            isSessionRunning = false
-            stopTimer()
-            stopHeartRateMonitoring()
-            elapsedTime = 0
-            sendMessage(["action": "end", "reset": true])
+        isSessionRunning = false
+        stopTimer()
+        stopHeartRateMonitoring()
+        elapsedTime = 0
+        sendMessage(["action": "end", "reset": true])
     }
-
+    
     func sendElapsedTimeUpdate() {
         sendMessage(["action": "sync", "elapsedTime": elapsedTime, "reset": true])
     }
@@ -77,43 +78,43 @@ class WatchConnectivityManager: NSObject, ObservableObject, WCSessionDelegate {
             })
         }
     }
-
+    
     
     func startHeartRateMonitoring() {
-            let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate)!
-            let predicate = HKQuery.predicateForSamples(withStart: Date(), end: nil)
-
-            let query = HKAnchoredObjectQuery(type: heartRateType, predicate: predicate, anchor: nil, limit: HKObjectQueryNoLimit) { [weak self] (query, samples, deletedObjects, anchor, error) in
-                self?.processHeartRateSamples(samples)
-            }
-
-            query.updateHandler = { [weak self] (query, samples, deletedObjects, anchor, error) in
-                self?.processHeartRateSamples(samples)
-            }
-
-            heartRateQuery = query
-            healthStore.execute(query)
+        let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate)!
+        let predicate = HKQuery.predicateForSamples(withStart: Date(), end: nil)
+        
+        let query = HKAnchoredObjectQuery(type: heartRateType, predicate: predicate, anchor: nil, limit: HKObjectQueryNoLimit) { [weak self] (query, samples, deletedObjects, anchor, error) in
+            self?.processHeartRateSamples(samples)
         }
-
-        func stopHeartRateMonitoring() {
-            if let query = heartRateQuery {
-                healthStore.stop(query)
-                print("Heart rate monitoring stopped")
+        
+        query.updateHandler = { [weak self] (query, samples, deletedObjects, anchor, error) in
+            self?.processHeartRateSamples(samples)
+        }
+        
+        heartRateQuery = query
+        healthStore.execute(query)
+    }
+    
+    func stopHeartRateMonitoring() {
+        if let query = heartRateQuery {
+            healthStore.stop(query)
+            print("Heart rate monitoring stopped")
+        }
+    }
+    
+    func requestAuthorization() {
+        let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate)!
+        let typesToShare: Set = [heartRateType]
+        let typesToRead: Set = [heartRateType]
+        
+        healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { success, error in
+            if !success {
+                print("Authorization failed")
             }
         }
-
-        func requestAuthorization() {
-            let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate)!
-            let typesToShare: Set = [heartRateType]
-            let typesToRead: Set = [heartRateType]
-
-            healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { success, error in
-                if !success {
-                    print("Authorization failed")
-                }
-            }
-        }
-
+    }
+    
     // Handle receiving messages
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         DispatchQueue.main.async {
@@ -143,34 +144,40 @@ class WatchConnectivityManager: NSObject, ObservableObject, WCSessionDelegate {
                         self.elapsedTime = elapsedTime
                     }
                     self.sendMessage(message)
+                case "openApp":
+                    self.handleOpenApp()
                 default:
                     break
                 }
             }
         }
     }
-
+    
+    func handleOpenApp() {
+        WKExtension.shared().rootInterfaceController?.becomeCurrentPage()
+    }
+    
     func startTimer(from startTime: Date) {
-            elapsedTime = 0
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-                self.elapsedTime = Date().timeIntervalSince(startTime)
-            }
+        elapsedTime = 0
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            self.elapsedTime = Date().timeIntervalSince(startTime)
         }
-
-        func stopTimer() {
-            timer?.invalidate()
-            timer = nil
-        }
-
-        func formatTime(_ timeInterval: TimeInterval) -> String {
-            let minutes = Int(timeInterval) / 60
-            let seconds = Int(timeInterval) % 60
-            return String(format: "%02d:%02d", minutes, seconds)
-        }
-
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    func formatTime(_ timeInterval: TimeInterval) -> String {
+        let minutes = Int(timeInterval) / 60
+        let seconds = Int(timeInterval) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
     func processHeartRateSamples(_ samples: [HKSample]?) {
         guard let heartRateSamples = samples as? [HKQuantitySample] else { return }
-
+        
         if let sample = heartRateSamples.first {
             let heartRateUnit = HKUnit(from: "count/min")
             currentHeartRate = sample.quantity.doubleValue(for: heartRateUnit)
@@ -182,7 +189,7 @@ class WatchConnectivityManager: NSObject, ObservableObject, WCSessionDelegate {
             }
         }
     }
-
+    
     
     // WCSessionDelegate required methods
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
