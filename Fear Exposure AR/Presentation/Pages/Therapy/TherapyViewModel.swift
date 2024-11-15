@@ -23,8 +23,16 @@ class TherapyViewModel {
     }
 
     func getSelectedPhobia () {
-        let selectedIdPhobia = phobiaUseCases.getPhobiaSelected.execute()
-        phobia = phobiaUseCases.getAllPhobia.execute(listId: selectedIdPhobia)
+        
+        let result = phobiaUseCases.getPhobiaSelected.execute()
+        
+        switch result {
+        case .success(data: let data):
+            phobia = phobiaUseCases.getAllPhobia.execute(listId: data)
+        case .error(message: let message):
+            errorMessage = message
+        }
+        
     }
     
     func getAssessmentStatus (phobiaId : Int) -> AssessmentStatus? {

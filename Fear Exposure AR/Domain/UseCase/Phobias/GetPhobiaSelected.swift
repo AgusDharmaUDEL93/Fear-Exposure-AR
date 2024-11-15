@@ -12,15 +12,18 @@ class GetPhobiaSelected {
         self.phobiaRepository = phobiaRepository
     }
     
-    func execute () -> [Int] {
+    func execute () -> Result<[Int]> {
         do {
-            return (try phobiaRepository.getPhobiaSelected().map({
+            
+            let data = (try phobiaRepository.getPhobiaSelected().map({
                 $0.phobiaId ?? -1
             })).filter({
                 $0 != -1
             })
+            
+            return Result.success(data: data)
         } catch {
-            return []
+            return Result.error(message: "Cannot get phobia")
         }
     }
 }

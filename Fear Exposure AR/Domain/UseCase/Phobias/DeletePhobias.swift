@@ -12,11 +12,14 @@ class DeletePhobias {
         self.phobiaRepository = phobiaRepository
     }
     
-    func execute (id : Int) {
+    func execute (id : Int) -> Result<String?> {
         do {
             try phobiaRepository.deletePhobias(phobia: id )
+            
+            return Result.success(data: "Success delete phobia")
         } catch {
             // TODO : Error Handling
+            return Result.error(message: "Cannot delete phobia")
         }
     }
 }

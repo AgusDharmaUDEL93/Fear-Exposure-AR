@@ -12,11 +12,12 @@ class GetAllLogs {
         self.logRepository = logRepository
     }
     
-    func execute () -> [LogSession]{
+    func execute () -> Result<[LogSession]> {
         do {
-            return (try logRepository.getAllLog()).map { $0.toLogSession() }
+            let data = (try logRepository.getAllLog()).map { $0.toLogSession() }
+            return Result.success(data: data)
         } catch {
-            return []
+            return Result.error(message: "Data cannot be fetch")
         }
     }
 }

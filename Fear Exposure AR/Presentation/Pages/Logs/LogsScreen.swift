@@ -73,6 +73,31 @@ struct LogsScreen : View {
         .onAppear{
             viewModel.getAllLog()
         }
+        .alert(
+            "Error",
+            isPresented: Binding(
+                get: {
+                    viewModel.errorMessage != nil
+                },
+                set: { _ in
+                    
+                }
+            ),
+            actions: {
+                Button(
+                    role: .cancel,
+                    action: {
+                        viewModel.clearErrorMessage()
+                    },
+                    label: {
+                        Text("Okay")
+                    }
+                )
+            },
+            message: {
+                Text(viewModel.errorMessage ?? "Unexpected Error Occured")
+            }
+        )
         .ignoresSafeArea()
     }
 }

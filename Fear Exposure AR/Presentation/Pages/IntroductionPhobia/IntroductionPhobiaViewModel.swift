@@ -13,6 +13,7 @@ class IntroductionPhobiaViewModel {
     @ObservationIgnored private let phobiaUseCases = PhobiasUseCases.shared
     
     var selectedPhobia : [Int] = []
+    var errorMessage : String?
     
     init() {
         getSelectedPhobia()
@@ -24,8 +25,16 @@ class IntroductionPhobiaViewModel {
     }
     
     func getSelectedPhobia () {
-        phobiaUseCases.getPhobiaSelected.execute().forEach{ phobiaId in
-            selectedPhobia.append(phobiaId)
+        
+        let result = phobiaUseCases.getPhobiaSelected.execute()
+        
+        switch result {
+        case .success(data: let data):
+            data.forEach{ phobiaId in
+                selectedPhobia.append(phobiaId)
+            }
+        case .error(message: let message):
+            errorMessage = message
         }
     }
     
@@ -40,21 +49,44 @@ class IntroductionPhobiaViewModel {
     }
     
     func onSubmitPhobia () {
-        var selectedSavedPhobia = phobiaUseCases.getPhobiaSelected.execute()
         
-        for phobia in selectedSavedPhobia {
-            if (!selectedPhobia.contains(phobia)){
-                phobiaUseCases.deletePhobia.execute(id: phobia)
-            }
-        }
-    
-        for phobia in selectedPhobia {
-            if (!selectedSavedPhobia.contains(phobia)){
-                phobiaUseCases.addPhobia.execute(id: phobia)
-            }
-        }
+        var result = phobiaUseCases.getPhobiaSelected.execute()
         
-        selectedSavedPhobia = selectedPhobia
+        switch result {
+        case .success(data: let data):
+            
+            var selectedSavedPhobia = data
+            
+            for phobia in selectedSavedPhobia {
+                if (!selectedPhobia.contains(phobia)){
+                    deletePhobia(id: phobia)
+                }
+            }
+        
+            for phobia in selectedPhobia {
+                if (!selectedSavedPhobia.contains(phobia)){
+                    phobiaUseCases.addPhobia.execute(id: phobia)
+                }
+            }
+            
+            selectedSavedPhobia = selectedPhobia
+            
+        case .error(message: let message):
+            errorMessage = message
+        }
     }
     
+    private func deletePhobia (id : Int) {
+        let result = phobiaUseCases.deletePhobia.execute(id: id)
+        switch result {
+        case .success(data: let data):
+            print(data ?? "Data success deleted")
+        case .error(message: let message):
+            errorMessage = message
+        }
+    }
+    
+    func clearErrorMessage () {
+        errorMessage = nil
+    }
 }

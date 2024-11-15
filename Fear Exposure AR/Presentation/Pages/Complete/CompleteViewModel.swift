@@ -18,6 +18,8 @@ class CompleteViewModel {
     var timerCount : Double = 0.0
     @ObservationIgnored private let counter : Double = 1.0
     
+    var errorMessage : String?
+    
     var resultId : UUID?
     
     init() {
@@ -26,7 +28,15 @@ class CompleteViewModel {
     
     @MainActor
     func getResultId () {
-        resultId = logUseCases.getAllLogs.execute().first?.logId
+        
+        let result = logUseCases.getAllLogs.execute()
+        
+        switch result {
+        case .success(data: let data):
+            resultId = data.first?.logId
+        case .error(message: let message):
+            errorMessage = message
+        }
     }
     
     
@@ -45,6 +55,10 @@ class CompleteViewModel {
     
     func stopTimer () {
         timer?.invalidate()
+    }
+    
+    func clearErrorMessage () {
+        errorMessage = nil
     }
     
 }

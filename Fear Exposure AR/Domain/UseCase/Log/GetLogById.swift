@@ -14,11 +14,12 @@ class GetLogById {
         self.logRepository = logRepository
     }
     
-    func execute (id : UUID) -> LogSession? {
+    func execute (id : UUID) -> Result<LogSession?> {
         do {
-            return try logRepository.getLogById(id: id)?.toLogSession()
+            let data = try logRepository.getLogById(id: id)?.toLogSession()
+            return Result.success(data: data)
         } catch {
-            return nil
+            return Result.error(message: "Cannot get data by id")
         }
     }
 }

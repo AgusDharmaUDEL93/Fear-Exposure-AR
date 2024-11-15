@@ -14,6 +14,8 @@ class LogsViewModel {
     @ObservationIgnored
     private var logUseCases = LogUseCases.shared
     
+    var errorMessage : String?
+    
     @MainActor
     @ObservationIgnored
     private var phobiaUseCases = PhobiasUseCases.shared
@@ -22,12 +24,23 @@ class LogsViewModel {
     
     @MainActor
     func getAllLog () {
-        log = logUseCases.getAllLogs.execute()
+        let result = logUseCases.getAllLogs.execute()
+        
+        switch result {
+        case .success(data: let data):
+            log = data
+        case .error(message: let message):
+            errorMessage = message
+        }
     }
     
     @MainActor
     func getPhobiaById (id : Int) -> Phobia? {
         return phobiaUseCases.getPhobiaById.execute(id: id)
+    }
+    
+    func clearErrorMessage () {
+        errorMessage = nil
     }
     
 }
