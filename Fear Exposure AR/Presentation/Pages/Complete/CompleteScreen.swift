@@ -17,6 +17,8 @@ struct CompleteScreen : View {
             ZStack {
                 VStack {
                     Image("image/illustration/complete")
+                        .resizable()
+                        .scaledToFit()
                     Spacer()
                         .frame(height: 24)
                     Text ("Congratulations on completing your session!")
@@ -46,7 +48,7 @@ struct CompleteScreen : View {
                         Text ("See Test Result")
                             .font(.body)
                             .bold()
-                            .frame(maxWidth: geometry.size.width)
+                            .frame(maxWidth: .infinity)
                             .padding(.vertical, 6)
                     })
                     .buttonStyle(.borderedProminent)
@@ -54,7 +56,6 @@ struct CompleteScreen : View {
                     .padding(.top)
                     .padding(.bottom, 48)
                     .background(Color(Theme.background.rawValue))
-                    .frame(maxWidth: .infinity)
                 }
             }
             .ignoresSafeArea()

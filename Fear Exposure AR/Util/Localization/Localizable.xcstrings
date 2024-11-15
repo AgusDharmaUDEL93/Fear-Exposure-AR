@@ -333,6 +333,9 @@
         }
       }
     },
+    "Error" : {
+
+    },
     "FEAR is an iOS app designed to support individuals with phobias in confronting and managing their fears. Utilizing Digital Systematic Desensitization, or Exposure Therapy, FEAR gradually introduces users to feared objects in both 2D images and immersive 3D AR formats. By tracking heart rate via Apple Watch integration, FEAR provides a clear and measurable way to monitor progress and improvements over time, helping users on their journey to overcome their fears." : {
       "localizations" : {
         "id" : {
@@ -393,7 +396,11 @@
         }
       }
     },
+    "How do you feel %@?" : {
+
+    },
     "How do you feel now compared to before the therapy session began?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -468,6 +475,9 @@
           }
         }
       }
+    },
+    "Okay" : {
+
     },
     "Our sincere appreciation goes to those who participated in user testing and interviews, providing valuable insights to refine the user experience:" : {
       "localizations" : {
@@ -745,6 +755,9 @@
           }
         }
       }
+    },
+    "What are your thoughts during or about the therapy session?" : {
+
     },
     "What do you feel %@?" : {
       "localizations" : {

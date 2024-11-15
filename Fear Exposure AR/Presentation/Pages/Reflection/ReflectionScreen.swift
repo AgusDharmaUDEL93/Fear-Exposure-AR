@@ -37,7 +37,7 @@ struct ReflectionScreen: View {
                     Spacer()
                         .frame(height: 48)
                     
-                    Text ("What do you feel \(Text("after this session").bold())?")
+                    Text ("How do you feel \(Text("after this session").bold())?")
                         .font(.body)
                     Spacer()
                         .frame(height: 16)
@@ -49,7 +49,7 @@ struct ReflectionScreen: View {
                     Spacer()
                         .frame(height: 48)
                     
-                    Text("How do you feel now compared to before the therapy session began?")
+                    Text("What are your thoughts during or about the therapy session?")
                         .font(.body)
                         .bold()
                     Spacer()

@@ -12,11 +12,12 @@ class UpdateAssessmentStatus {
         self.assessmentStatusRepository = assessmentStatusRepository
     }
     
-    func execute (assessment : AssessmentStatus){
+    func execute (assessment : AssessmentStatus) -> Result<String> {
         do {
             try assessmentStatusRepository.updateAssessmentStatus(assessment: assessment.toAssessmentStatusDto())
+            return Result.success(data: "Success to update data assessment")
         } catch {
-            
+            return Result.error(message: "Cannot update data assessment")
         }
     }
 }

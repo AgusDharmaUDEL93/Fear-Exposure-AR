@@ -12,11 +12,12 @@ class GetAssessmentStatus {
         self.assessmentStatusRepository = assessmentStatusRepository
     }
     
-    func execute (id : Int) -> AssessmentStatus? {
+    func execute (id : Int) -> Result<AssessmentStatus?> {
         do {
-            return try assessmentStatusRepository.getAssessmentStatus(id: id)?.toAssessmentStatus()
+            let data = try assessmentStatusRepository.getAssessmentStatus(id: id)?.toAssessmentStatus()
+            return Result.success(data: data)
         } catch {
-            return nil
+            return Result.error(message: "Data assessment cannot be getted")
         }
     }
 }

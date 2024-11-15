@@ -11,8 +11,8 @@ import SwiftData
 class AssessmentStatusDto {
     var phobiaId : Int? // Unique
     var recommendation : Int?
-    var scale : Float = 1
-    var volume : Float = 0
+    var scale : Float = 0
+    var volume : Float = 0.5
     var isObjectFollowUser : Bool = false
     
     init(phobiaId: Int? = nil, recommendation : Int? = nil, scale: Float = 1, volume: Float = 0, isObjectFollowUser: Bool = false) {

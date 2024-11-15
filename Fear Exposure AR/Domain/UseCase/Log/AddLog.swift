@@ -13,9 +13,7 @@ class AddLog {
     }
     
     func execute (log : LogSession){
-        print("Use Case : \(log.phobiaName)")
         let data =  log.toLogSessionDto()
-        print("Data Use Case : \(data.phobiaName)")
         logRepository.addLog(log: data)
     }
 }

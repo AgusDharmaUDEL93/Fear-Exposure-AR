@@ -33,6 +33,8 @@ extension LogSessionDto {
             feelAft = FeelingAfter.better
         case FeelingAfter.neutral.rawValue :
             feelAft = FeelingAfter.neutral
+        case FeelingAfter.terrified.rawValue :
+            feelAft = FeelingAfter.terrified
         default:
             feelAft = FeelingAfter.unknown
         }

@@ -11,6 +11,8 @@ class SettingsARViewModel {
     @MainActor
     private var assessmentUseCase = AssessmentStatusUseCases.shared
     
+    var errorMessage : String?
+    
     var sliderValue : Float = 0
     var isObjectFollow : Bool = false
     var volume : Float = 0
@@ -18,11 +20,17 @@ class SettingsARViewModel {
     @MainActor
     func getAssessmentStatus(id : Int) {
         let assessment = assessmentUseCase.getAssessmentStatus.execute(id: id)
-        if let assessmentData = assessment {
-            sliderValue = assessmentData.scale
-            isObjectFollow = assessmentData.isObjectFollowUser
-            volume = assessmentData.volume
+        switch assessment {
+        case .success(data: let data):
+            if let assessmentData = data {
+                sliderValue = assessmentData.scale
+                isObjectFollow = assessmentData.isObjectFollowUser
+                volume = assessmentData.volume
+            }
+        case .error(message: let message):
+            errorMessage = message
         }
+        
     }
         
     @MainActor
@@ -30,24 +38,41 @@ class SettingsARViewModel {
         
         let assesmentData = assessmentUseCase.getAssessmentStatus.execute(id: id)
         
-        if let assessment = assesmentData {
-            let updatedData = AssessmentStatus(
-                phobiaId: assessment.phobiaId,
-                recommendation: assessment.recommendation,
-                scale: assessment.scale,
-                volume: volume,
-                isObjectFollowUser: isObjectFollow
+        switch assesmentData {
+            
+        case .success(data: let data):
+            if let assessment = data {
+                let updatedData = AssessmentStatus(
+                    phobiaId: assessment.phobiaId,
+                    recommendation: assessment.recommendation,
+                    scale: assessment.scale,
+                    volume: volume,
+                    isObjectFollowUser: isObjectFollow
+                    
+                )
+                                
+                updateAssessmentStatus(updatedData: updatedData)
                 
-            )
-            
-            print("On Updata Settings : \(updatedData.isObjectFollowUser)")
-            assessmentUseCase.updateAssessmentStatus.execute(assessment:  updatedData)
-            
+            }
+        case .error(message: let message):
+            errorMessage = message
         }
+    }
+    
+    @MainActor
+    private func updateAssessmentStatus (updatedData : AssessmentStatus){
+        let result = assessmentUseCase.updateAssessmentStatus.execute(assessment:  updatedData)
         
-       
-        
-        
-        
+        switch result  {
+            
+        case .success(data: let data):
+            print(data)
+        case .error(message: let message):
+            errorMessage = message
+        }
+    }
+    
+    func clearErrorMessage () {
+        errorMessage = nil
     }
 }

@@ -35,6 +35,8 @@ extension LogSession {
             FeelingAfter.neutral.rawValue
         case .better:
             FeelingAfter.better.rawValue
+        case .terrified:
+            FeelingAfter.terrified.rawValue
         case .unknown:
             FeelingAfter.unknown.rawValue
         }

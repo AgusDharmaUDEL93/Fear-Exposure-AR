@@ -223,6 +223,31 @@ struct ARPlaygroundScreen : View {
                 Text("Are you sure want to end this session?")
             }
         )
+        .alert(
+            "Error",
+            isPresented: Binding(
+                get: {
+                    viewModel.errorMessage != nil
+                },
+                set: { _ in
+                    
+                }
+            ),
+            actions: {
+                Button(
+                    role: .cancel,
+                    action: {
+                        viewModel.clearErrorMessage()
+                    },
+                    label: {
+                        Text("Okay")
+                    }
+                )
+            },
+            message: {
+                Text(viewModel.errorMessage ?? "Unexpected Error Occured")
+            }
+        )
         .onChange(of: phoneConnectivityManager.currentHeartRate, initial: true, {_, value  in
             viewModel.onChangedHeartRateData(value: value)
         })

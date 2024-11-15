@@ -14,19 +14,18 @@ struct FormAfterSession : View {
     
     var body: some View {
         WrappingHStack (alignment : .leading) {
-            
             ChipFeel(
-                label: FeelingAfter.relieved.getLabel(),
+                label: FeelingAfter.terrified.getLabel(),
                 isSelected: Binding(
                     get: {
-                        feelingAfterSelected == FeelingAfter.relieved
+                        feelingAfterSelected == FeelingAfter.terrified
                     },
                     set: { value in
                         
                     }
                 ),
                 onSelected: {
-                    feelingAfterSelected = FeelingAfter.relieved
+                    feelingAfterSelected = FeelingAfter.terrified
                 }
             )
             ChipFeel(
@@ -43,6 +42,21 @@ struct FormAfterSession : View {
                     feelingAfterSelected = FeelingAfter.afraid
                 }
             )
+            ChipFeel(
+                label: FeelingAfter.relieved.getLabel(),
+                isSelected: Binding(
+                    get: {
+                        feelingAfterSelected == FeelingAfter.relieved
+                    },
+                    set: { value in
+                        
+                    }
+                ),
+                onSelected: {
+                    feelingAfterSelected = FeelingAfter.relieved
+                }
+            )
+            
             ChipFeel(
                 label: FeelingAfter.neutral.getLabel(),
                 isSelected: Binding(
@@ -77,7 +91,7 @@ struct FormAfterSession : View {
 
 #Preview {
     FormAfterSession(
-        feelingAfterSelected: .constant(.afraid)
+        feelingAfterSelected: .constant(.terrified)
     )
     .padding()
     .tint(Color(Theme.primary500.rawValue))

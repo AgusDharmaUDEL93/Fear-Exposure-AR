@@ -10,6 +10,7 @@ enum FeelingAfter : Int {
     case afraid = 1
     case neutral = 2
     case better = 3
+    case terrified = 4
     case unknown = -1
     
     func getLabel () -> String {
@@ -22,6 +23,8 @@ enum FeelingAfter : Int {
             "Neutral"
         case .better:
             "Better"
+        case .terrified:
+            "Terrified"
         case .unknown:
             ""
         }

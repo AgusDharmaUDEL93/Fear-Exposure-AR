@@ -34,6 +34,8 @@ class ARPlaygroundViewModel {
     
     var isScaleObject : Bool = false
     
+    var errorMessage : String?
+    
     var arState : ARState = .initial
     
     var isConfirmationDialogShow : Bool = false
@@ -124,19 +126,41 @@ class ARPlaygroundViewModel {
     
     @MainActor
     func onUpdateScale (id : Int, scale : Float) {
-        let assesmentData = assessmentUseCases.getAssessmentStatus.execute(id: id)
-        
-        if let assessment = assesmentData {
-            let updatedData = AssessmentStatus(
-                phobiaId: assessment.phobiaId,
-                recommendation: assessment.recommendation,
-                scale: scale,
-                volume: assessment.volume,
-                isObjectFollowUser: assessment.isObjectFollowUser
-                
-            )
-            assessmentUseCases.updateAssessmentStatus.execute(assessment:  updatedData)
+        let result = assessmentUseCases.getAssessmentStatus.execute(id: id)
+
+        switch result {
             
+        case .success(data: let data):
+            if let assessment = data {
+                let updatedData = AssessmentStatus(
+                    phobiaId: assessment.phobiaId,
+                    recommendation: assessment.recommendation,
+                    scale: scale,
+                    volume: assessment.volume,
+                    isObjectFollowUser: assessment.isObjectFollowUser
+                    
+                )
+                updateAssessment(updatedData: updatedData)
+            }
+        case .error(message: let message):
+            errorMessage = message
         }
+    }
+    
+    @MainActor
+    private func updateAssessment (updatedData : AssessmentStatus){
+        let result = assessmentUseCases.updateAssessmentStatus.execute(assessment:  updatedData)
+        
+        switch result {
+            
+        case .success(data: let data):
+            print(data)
+        case .error(message: let message):
+            errorMessage = message
+        }
+    }
+    
+    func clearErrorMessage () {
+        errorMessage = nil
     }
 }

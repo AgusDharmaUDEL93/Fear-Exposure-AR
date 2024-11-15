@@ -14,6 +14,8 @@ class TherapyViewModel {
     
     @ObservationIgnored private var assessmentStatusUseCases = AssessmentStatusUseCases.shared
     
+    var errorMessage : String?
+    
     var phobia : [Phobia] = .init()
     
     init () {
@@ -26,7 +28,20 @@ class TherapyViewModel {
     }
     
     func getAssessmentStatus (phobiaId : Int) -> AssessmentStatus? {
-        return assessmentStatusUseCases.getAssessmentStatus.execute(id: phobiaId)
+        let result = assessmentStatusUseCases.getAssessmentStatus.execute(id: phobiaId)
+        
+        switch result {
+            
+        case .success(data: let data):
+            return data
+        case .error(message: let message):
+            errorMessage = message
+            return nil
+        }
+    }
+    
+    func clearErrorMessage () {
+        errorMessage = nil
     }
     
 }

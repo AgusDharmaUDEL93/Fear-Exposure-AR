@@ -13,6 +13,8 @@ class  RecommendationViewModel {
     @ObservationIgnored
     private let assessmentStatusUseCases = AssessmentStatusUseCases.shared
     
+    var errorMessage : String?
+    
     var isPictureRecomended : Bool = false
     var isARRecomended : Bool = false
     
@@ -23,18 +25,28 @@ class  RecommendationViewModel {
     
     @MainActor
     func getAssessmentData (id : Int) {
-        assessmentResult = assessmentStatusUseCases.getAssessmentStatus.execute(id: id)
-        if let result = assessmentResult {
-            switch result.recommendation {
-            case .picture:
-                isPictureRecomended = true
-            case .arStatic:
-                isARRecomended = true
-            case .arDinamic:
-                isARRecomended = true
-            }
-        }
         
+        let result = assessmentStatusUseCases.getAssessmentStatus.execute(id: id)
+        
+        switch result {
+            
+        case .success(data: let data):
+            assessmentResult = data
+            
+            if let resultData = assessmentResult {
+                switch resultData.recommendation {
+                case .picture:
+                    isPictureRecomended = true
+                case .arStatic:
+                    isARRecomended = true
+                case .arDinamic:
+                    isARRecomended = true
+                }
+            }
+        case .error(message: let message):
+            errorMessage = message
+        }
+                
     }
     
     func onSelectedPicture () {
@@ -45,5 +57,9 @@ class  RecommendationViewModel {
     func onSelectedAR () {
         isARSelected = true
         isPictureSelected = false
+    }
+    
+    func clearErrorMessage () {
+        errorMessage = nil
     }
 }
