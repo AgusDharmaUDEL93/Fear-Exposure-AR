@@ -18,8 +18,8 @@ struct IntroductionPhobiaScreen: View {
             ZStack {
                 VStack {
                     TitleScreen(
-                        title: "Phobia List",
-                        description: "Select all the phobias that apply to you. Don’t worry, you can update these choices later."
+                        title: String(localized: "Phobia List"),
+                        description: String(localized: "Select all the phobias that apply to you. Don’t worry, you can update these choices later.")
                     )
                     ScrollView {
                         

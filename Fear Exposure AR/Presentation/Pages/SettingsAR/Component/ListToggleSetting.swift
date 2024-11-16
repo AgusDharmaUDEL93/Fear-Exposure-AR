@@ -22,11 +22,11 @@ struct ListToggleSetting : View {
                     isOn: $isOn,
                     label:  {
                         VStack (alignment : .leading) {
-                            Text (title)
+                            Text (LocalizedStringKey(title))
                                 .font(.body)
                             Spacer()
                                 .frame(height: 8)
-                            Text (description)
+                            Text (LocalizedStringKey(description))
                                 .font(.caption)
                         }
                     }

@@ -183,7 +183,7 @@ struct PicturePlaygroundScreen : View {
                         viewModel.stopTimer()
                         phoneConnectivityManager.stopSession()
                         
-                        router.navigate(to: .reflection (phobiaId : viewModel.phobia.id, phobiaName: viewModel.phobia.name , heartRate: viewModel.heartRateData, duration: viewModel.timerCount))
+                        router.navigate(to: .reflection(phobiaId: viewModel.phobia.id, phobiaName: viewModel.phobia.name, heartRate: viewModel.heartRateData, duration: viewModel.timerCount))
                         
                     })
                     

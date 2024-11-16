@@ -16,14 +16,14 @@ struct RecommendationScreen: View {
     var body: some View {
         GeometryReader{ geometry in
             VStack {
-                TitleScreen(title: "Result", description: "Based on the results of your assessment, you are recommended to proceed to therapy using:")
+                TitleScreen(title: String(localized: "Result"), description: String(localized: "Based on the results of your assessment, you are recommended to proceed to therapy using:"))
                 ZStack (alignment : .bottom) {
                     ScrollView {
                         VStack {
 
                             CardTheraphyType(
-                                title: "Pictures",
-                                description: "View photos of your feared object to gradually reduce your fear response.",
+                                title: String(localized: "Pictures"),
+                                description: String(localized: "View photos of your feared object to gradually reduce your fear response."),
                                 image: "photo.fill",
                                 isRecomended: viewModel.isPictureRecomended,
                                 action: {
@@ -33,8 +33,8 @@ struct RecommendationScreen: View {
                             Spacer()
                                 .frame(height: 16)
                             CardTheraphyType(
-                                title: "AR",
-                                description: "Use AR to see and interact with snakes in a more realistic environment.",
+                                title: String(localized:  "AR"),
+                                description: String(localized: "Use AR to see and interact with snakes in a more realistic environment."),
                                 image: "arkit",
                                 isRecomended: viewModel.isARRecomended,
                                 action: {

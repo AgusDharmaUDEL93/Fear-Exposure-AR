@@ -17,7 +17,7 @@ struct ChipSelection : View {
         Group {
             if (isSelected){
                 Text(
-                    label
+                    LocalizedStringKey(label)
                 )
                 .foregroundColor(.black)
                 .padding(.vertical, 12)
@@ -30,7 +30,7 @@ struct ChipSelection : View {
                 )
             } else {
                 Text(
-                    label
+                    LocalizedStringKey(label)
                 )
                 .padding(.vertical, 12)
                 .frame(maxWidth: .infinity)

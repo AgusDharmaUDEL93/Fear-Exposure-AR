@@ -15,7 +15,6 @@ class Router  {
     public enum Destination  : Codable, Hashable {
         case theraphy
         case reflection ( phobiaId : Int, phobiaName : String, heartRate : [Double], duration : Double)
-        case summary
         case arPlayground
         case picturePlayground
         case termCondition(isOnlyShowing : Bool = false)

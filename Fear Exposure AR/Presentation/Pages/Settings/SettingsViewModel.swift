@@ -13,13 +13,6 @@ class SettingsViewModel {
     var isSheetLanguageOpen : Bool = false
     var languageSelected = Locale.current
     
-
-//    init(){
-//        if (languageSelected.identifier != Language.english.rawValue && languageSelected.identifier != Language.indonesia.rawValue){
-//            languageSelected = Locale(identifier: Language.english.rawValue)
-//        }
-//    }
-    
     func onChangedLanguage (language : Language) {
         switch (language){
         case .english:

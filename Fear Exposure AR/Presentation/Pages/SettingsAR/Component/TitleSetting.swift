@@ -12,7 +12,7 @@ struct TitleSetting : View {
     let title : String
     
     var body: some View {
-        Text (title)
+        Text (LocalizedStringKey(title))
             .font(.title3)
             .bold()
             .padding(.top, 32)

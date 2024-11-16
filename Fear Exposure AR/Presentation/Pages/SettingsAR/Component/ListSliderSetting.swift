@@ -17,11 +17,11 @@ struct ListSliderSetting : View {
         VStack ( alignment : .leading) {
             Spacer()
                 .frame(height: 16)
-            Text (title)
+            Text (LocalizedStringKey(title))
                 .font(.body)
             Spacer()
                 .frame(height: 8)
-            Text(description)
+            Text(LocalizedStringKey(description))
                 .font(.caption)
             Spacer()
                 .frame(height: 8)

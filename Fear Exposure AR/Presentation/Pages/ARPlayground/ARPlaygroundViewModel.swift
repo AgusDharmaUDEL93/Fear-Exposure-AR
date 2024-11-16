@@ -20,17 +20,7 @@ class ARPlaygroundViewModel {
     @MainActor
     @ObservationIgnored private let assessmentUseCases = AssessmentStatusUseCases.shared
     
-    var phobia : Phobia = Phobia(
-        id: 0,
-        name: "Ophidiophobia",
-        displayName: "Snakes",
-        isAnimal: true,
-        description: "Intense fear of Snakes",
-        fearedObject: FearedObject(
-            baseModel: try? ModelEntity.loadModel(named: "snake.usdz"),
-            animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first
-        )
-    )
+    var phobia : Phobia = Phobia.initial
     
     var isScaleObject : Bool = false
     

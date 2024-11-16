@@ -17,9 +17,9 @@ struct CardEmoji : View {
     var body: some View {
         Button(action : onSelected, label: {
             VStack {
-                Text(emoji)
+                Text(LocalizedStringKey(emoji))
                     .font(.system(size: 34))
-                Text(label)
+                Text(LocalizedStringKey(label))
                     .font(.subheadline)
             }
             .frame(maxWidth: .infinity)

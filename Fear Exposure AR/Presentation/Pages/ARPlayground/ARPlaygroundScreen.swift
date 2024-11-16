@@ -215,7 +215,7 @@ struct ARPlaygroundScreen : View {
                     viewModel.toogleConfirmationDialog()
                     phoneConnectivityManager.stopSession()
                     viewModel.stopTimer()
-                    print("AR Playground : \(viewModel.phobia.name)")
+                    
                     router.navigate(to: .reflection(phobiaId: viewModel.phobia.id, phobiaName: viewModel.phobia.name, heartRate: viewModel.heartRateData, duration: viewModel.timerCount))
                 })
             },

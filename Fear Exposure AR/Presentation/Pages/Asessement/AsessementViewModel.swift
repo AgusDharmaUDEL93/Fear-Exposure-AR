@@ -14,7 +14,8 @@ class AsessementViewModel {
     
     var answers: [Int : Int] = [:]
     var recommendation: AssessmentStatus? = nil
-
+    var errorMessage : String?
+    
     func onChangedAnswer (number : Int, answer : Int) {
         answers[number] = answer
     }
@@ -33,18 +34,18 @@ class AsessementViewModel {
         }
         
         // Assign scores based on intensity of fear
-            switch answers[1] {
-            case 0:
-                score += 0
-            case 1:
-                score += 1
-            case 2:
-                score += 2
-            case 3:
-                score += 3
-            default:
-                break
-            }
+        switch answers[1] {
+        case 0:
+            score += 0
+        case 1:
+            score += 1
+        case 2:
+            score += 2
+        case 3:
+            score += 3
+        default:
+            break
+        }
         
         
         // Add scores for physical symptoms, therapy, and mental health conditions
@@ -82,15 +83,38 @@ class AsessementViewModel {
         }
         
         if let recommendation = recommendation {
-            if (assessmentStatusUseCases.getAssessmentStatus.execute(id: id) != nil) {
-                assessmentStatusUseCases.updateAssessmentStatus.execute(assessment: recommendation)
-            } else {
-                assessmentStatusUseCases.addAssessmentStatus.execute(assessment: recommendation)
+            
+            let resultGetAssessment = assessmentStatusUseCases.getAssessmentStatus.execute(id: id)
+            
+            switch resultGetAssessment {
+            case .success(data: let data):
+                if (data != nil){
+                    updateAssessment(recomendation: recommendation)
+                } else {
+                    assessmentStatusUseCases.addAssessmentStatus.execute(assessment: recommendation)
+                }
+            case .error(message: let message):
+                errorMessage = message
             }
         }
         
-       
+        
         
     }
     
+    @MainActor
+    private func updateAssessment (recomendation : AssessmentStatus) {
+        let result = assessmentStatusUseCases.updateAssessmentStatus.execute(assessment: recomendation)
+        
+        switch result {
+        case .success(data: let data):
+            print(data)
+        case .error(message: let message):
+            errorMessage = message
+        }
+    }
+    
+    func clearErrorMessage () {
+        errorMessage = nil
+    }
 }

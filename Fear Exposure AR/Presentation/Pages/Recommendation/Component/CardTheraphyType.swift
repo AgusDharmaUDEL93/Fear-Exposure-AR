@@ -43,12 +43,12 @@ struct CardTheraphyType : View {
                     .frame(height: 16)
                 HStack {
                     VStack (alignment :.leading) {
-                        Text (title)
+                        Text (LocalizedStringKey(title))
                             .font(.body)
                             .bold()
                         Spacer()
                             .frame(height: 8)
-                        Text(description)
+                        Text(LocalizedStringKey(description))
                             .font(.subheadline)
                     }
                     Spacer()

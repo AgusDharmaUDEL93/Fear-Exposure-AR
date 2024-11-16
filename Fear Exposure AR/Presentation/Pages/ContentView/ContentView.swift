@@ -66,8 +66,6 @@ struct ContentView: View {
                         TherapyScreen()
                     case .reflection (let phobiaId, let phobiaName, let heartRate, let duration):
                         ReflectionScreen(phobiaId: phobiaId, phobiaName: phobiaName, heartRate: heartRate, duration: duration)
-                    case .summary:
-                        SummaryScreen()
                     case .termCondition (let isOnlyShowing):
                         TermsAndConditionScreen(isOnlyShowing: isOnlyShowing )
                     case .introductionPhobia:

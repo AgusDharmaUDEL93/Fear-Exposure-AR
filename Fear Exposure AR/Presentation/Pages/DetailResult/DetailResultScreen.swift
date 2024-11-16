@@ -22,7 +22,9 @@ struct DetailResultScreen : View {
                 Spacer()
                     .frame(width: 16)
                 VStack (alignment:.leading, spacing: 8) {
-                    Text ("Feeling \(viewModel.log.feelingDuring.getLabel())")
+                    
+                    
+                    Text ("Feeling \( Text(LocalizedStringKey(viewModel.log.feelingDuring.getLabel()) ) )")
                         .font(.title3)
                         .bold()
                     HStack {
@@ -103,9 +105,16 @@ struct DetailResultScreen : View {
                             Text("Average")
                                 .font(.caption)
                                 .foregroundStyle(.gray)
-                            Text("\( NSString( format : "%.1f", (viewModel.log.heartRate.reduce(0, +)/Double(viewModel.log.heartRate.count))) ) BPM")
-                                .font(.body)
-                                .bold()
+                            if (viewModel.log.heartRate.isEmpty){
+                                Text("0.0 BPM")
+                                    .font(.body)
+                                    .bold()
+                            } else {
+                                Text("\(NSString( format : "%.1f", ( viewModel.log.heartRate.reduce(0, +)/Double(viewModel.log.heartRate.count) )) ) BPM")
+                                    .font(.body)
+                                    .bold()
+                            }
+                            
                         }
                     }
                     Spacer()

@@ -12,24 +12,24 @@ struct SettingsScreen : View {
     @State var viewModel = SettingsViewModel()
     @AppStorage("locale") private var locale = Locale.current.identifier
     @Environment(Router.self) private var router
-
+    
     
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 VStack (alignment : .leading) {
-                    TitleScreen(title: "Settings", description: "")
+                    TitleScreen(title: String(localized: "Settings"), description: "")
                     VStack (alignment : .leading) {
-                        TitleProfile(label: "General")
+                        TitleSectionSetting(label: String(localized: "General"))
                         ListTextProfile(
-                            label: "Phobias",
+                            label: String(localized: "Phobias"),
                             image: "brain.filled.head.profile",
                             onAction: {
                                 router.navigate(to: .introductionPhobia)
                             }
                         )
                         ListTextProfile(
-                            label: "Language",
+                            label: String(localized: "Language") ,
                             image: "globe",
                             onAction: {
                                 viewModel.onOpenLanguageSheets()
@@ -38,23 +38,23 @@ struct SettingsScreen : View {
                             selectedItem: viewModel.getLanguageSeletedLabel()
                         )
                         
-                        TitleProfile(label: "Others")
+                        TitleSectionSetting(label: "Others")
                         ListTextProfile(
-                            label: "Terms & Conditions",
+                            label: String(localized: "Terms & Conditions"),
                             image: "doc.plaintext",
                             onAction: {
                                 router.navigate(to: .termCondition(isOnlyShowing: true))
                             }
                         )
                         ListTextProfile(
-                            label: "Privacy Notice",
+                            label: String(localized: "Privacy Notice"),
                             image: "lock.shield",
                             onAction: {
                                 router.navigate(to: .privacyNotice)
                             }
                         )
                         ListTextProfile(
-                            label: "About",
+                            label: String(localized: "About"),
                             image: "info.circle",
                             onAction: {
                                 router.navigate(to: .about)
@@ -73,18 +73,18 @@ struct SettingsScreen : View {
             .sheet(
                 isPresented: $viewModel.isSheetLanguageOpen,
                 content: {
-                        ModalLanguageProfile(languageSelected: viewModel.languageSelected, onTapList: { language in
-                            viewModel.onChangedLanguage(language: language)
-                            locale = language.rawValue
-                            
-                        })
-
+                    ModalLanguageProfile(languageSelected: viewModel.languageSelected, onTapList: { language in
+                        viewModel.onChangedLanguage(language: language)
+                        locale = language.rawValue
+                        
+                    })
+                    
                     .presentationDetents([.height(270)])
                 }
             )
         }
         .onAppear{
-           
+            
             if (locale != Language.english.rawValue && locale != Language.indonesia.rawValue){
                 viewModel.languageSelected = Locale(identifier: Language.english.rawValue)
             } else {

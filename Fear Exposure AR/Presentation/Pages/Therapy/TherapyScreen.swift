@@ -17,8 +17,8 @@ struct TherapyScreen : View {
         GeometryReader { geometry in
             VStack {
                 TitleScreen(
-                    title: "Therapies",
-                    description: "Add or remove phobias from Profile tab"
+                    title: String(localized: "Therapies"),
+                    description: String(localized: "Add or remove phobias from Settings tab")
                 )
                 ScrollView {
                     Spacer()
@@ -31,7 +31,7 @@ struct TherapyScreen : View {
                             CardTherapy(
                                 title: phobia.description,
                                 caption: phobia.name,
-                                isAnimal: phobia.isAnimal,
+                                image: phobia.image,
                                 action: {
                                     if ( viewModel.getAssessmentStatus(phobiaId: phobia.id) == nil){
                                         router.navigate(to: .assessment)

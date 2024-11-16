@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct TitleProfile : View {
+struct TitleSectionSetting : View {
     
     let label : String
     
     var body: some View {
-        Text(label)
+        Text(LocalizedStringKey(label))
             .font(.title3)
             .bold()
             .padding(.top, 32)

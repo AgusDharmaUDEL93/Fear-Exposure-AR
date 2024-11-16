@@ -50,7 +50,7 @@ class IntroductionPhobiaViewModel {
     
     func onSubmitPhobia () {
         
-        var result = phobiaUseCases.getPhobiaSelected.execute()
+        let result = phobiaUseCases.getPhobiaSelected.execute()
         
         switch result {
         case .success(data: let data):

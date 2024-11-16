@@ -18,12 +18,12 @@ struct TitleScreen : View {
             Spacer()
                 .frame(width: 0, height: isIgnoreSafeArea ? 120 : 80)
                 .frame(maxWidth: .infinity)
-            Text (title)
+            Text (LocalizedStringKey(title))
                 .font(.largeTitle)
                 .bold()
                 .padding(.bottom, 4)
             if (!description.isEmpty){
-                Text (description)
+                Text (LocalizedStringKey(description))
                     .font(.body)
             }
            

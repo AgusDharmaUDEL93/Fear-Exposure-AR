@@ -27,7 +27,7 @@ struct CardLog : View {
                         .font(.subheadline)
                     Spacer()
                         .frame(width: 8)
-                    Text(phobiaName)
+                    Text(LocalizedStringKey("\(phobiaName) Therapy"))
                         .font(.subheadline)
                         .bold()
                        
@@ -49,7 +49,7 @@ struct CardLog : View {
                         Spacer()
                             .frame(width: 8)
                         VStack (alignment : .leading) {
-                            Text(feeling.getLabel())
+                            Text(LocalizedStringKey(feeling.getLabel()))
                                 .font(.body)
                                 .bold()
                             Text("at \( date.formatted(date: .long, time: .omitted)), \(date.formatted(date: .omitted, time: .shortened))")

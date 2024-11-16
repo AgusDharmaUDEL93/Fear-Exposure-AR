@@ -12,7 +12,7 @@ struct CardTherapy : View {
     
     let title : String
     let caption : String
-    var isAnimal : Bool = true
+    let image : String
     let action : () -> Void
     
     var body: some View {
@@ -20,22 +20,27 @@ struct CardTherapy : View {
             action: action,
             label: {
                 ZStack (alignment: .bottomLeading) {
-                    Image(isAnimal ? "image/illustration/fear_animal" : "image/illustration/fear_object")
+                    Image(image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: 100, maxHeight: 100)
                         .offset(
                             x: -15,
                             y: 15
                         )
                     
                     VStack (alignment : .leading, spacing: 8) {
-                        Text(caption)
+                        Text(LocalizedStringKey(caption))
                             .font(.subheadline)
                             .italic()
-                        Text(title)
+                        Text(LocalizedStringKey(title))
                             .font(.headline)
                             .bold()
+                            .lineLimit(3, reservesSpace: true)
+                            
                         Spacer()
-                            .frame(height: 28)
                             .frame(maxWidth: .infinity)
+                        
                         HStack {
                             Spacer()
                             Image(systemName: "arrow.right.circle.fill")
@@ -68,13 +73,21 @@ struct CardTherapy : View {
         GridItem(.adaptive(minimum: 100))
     ]){
         CardTherapy(
-            title: "Intense fear of Spiders",
+            title: "Ketakutan besar terhadap Laba-laba",
             caption: "Arachnophobia",
+            image: "image/illustration/phobia/balloon",
             action: {
                 
             }
         )
-        
+        CardTherapy(
+            title: "Intense fear of Spiders",
+            caption: "Arachnophobia",
+            image: "image/illustration/phobia/balloon",
+            action: {
+                
+            }
+        )
     }
     
     .padding(16)

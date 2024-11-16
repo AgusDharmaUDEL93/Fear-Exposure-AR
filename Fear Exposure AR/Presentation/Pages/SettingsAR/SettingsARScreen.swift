@@ -21,22 +21,22 @@ struct SettingsARScreen : View {
             ZStack {
                 ScrollView {
                     VStack (alignment : .leading) {
-                        TitleSetting(title: "General")
+                        TitleSetting(title: String(localized:  "General"))
                         ListTextSetting(
-                            title: "Scale Object",
-                            description: "Resize feared object to make it bigger or smaller.",
+                            title: String(localized: "Scale Object"),
+                            description: String(localized: "Resize feared object to make it bigger or smaller."),
                             onClick: onScaleObject
                         )
                        
                         ListSliderSetting(
-                            title: "Feared Object Volume",
-                            description: "Adjust volume of sounds produced by the feared object.",
+                            title: String(localized: "Feared Object Volume"),
+                            description: String(localized: "Adjust volume of sounds produced by the feared object."),
                             sliderValue: $viewModel.volume
                         )
                         
                         ListToggleSetting(
-                            title: "Object Follow User",
-                            description: "Feared Object maintains distance with the user as they move",
+                            title: String(localized: "Object Follow User"),
+                            description: String(localized: "Feared Object maintains distance with the user as they move"),
                             isOn: $viewModel.isObjectFollow
                         )
                         Spacer()

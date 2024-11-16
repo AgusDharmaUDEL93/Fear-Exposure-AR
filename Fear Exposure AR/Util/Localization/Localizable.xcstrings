@@ -41,6 +41,16 @@
         }
       }
     },
+    "%@" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
     "%@ BPM" : {
       "localizations" : {
         "id" : {
@@ -56,7 +66,7 @@
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ Terapi"
+            "value" : "Terapi %@"
           }
         }
       }
@@ -77,6 +87,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "+"
+          }
+        }
+      }
+    },
+    "0.0 BPM" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0.0 BPM"
           }
         }
       }
@@ -111,6 +131,16 @@
         }
       }
     },
+    "Acceptance of Terms" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penerimaan Persyaratan"
+          }
+        }
+      }
+    },
     "Acknowledgments" : {
       "localizations" : {
         "id" : {
@@ -121,12 +151,52 @@
         }
       }
     },
+    "Add or remove phobias from Settings tab" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tambahkan atau hapus fobia dari halaman Pengaturan"
+          }
+        }
+      }
+    },
+    "Adjust volume of sounds produced by the feared object." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sesuaikan volume suara yang dihasilkan oleh objek yang ditakuti"
+          }
+        }
+      }
+    },
+    "Afraid" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takut"
+          }
+        }
+      }
+    },
     "after this session" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "setelah sesi ini"
+          }
+        }
+      }
+    },
+    "Age Restrictions" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batasan Usia"
           }
         }
       }
@@ -147,6 +217,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terapkan Perubahan"
+          }
+        }
+      }
+    },
+    "AR" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AR"
           }
         }
       }
@@ -217,12 +297,62 @@
         }
       }
     },
+    "Balloon" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Balon"
+          }
+        }
+      }
+    },
+    "Based on the results of your assessment, you are recommended to proceed to therapy using:" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berdasarkan hasil penilaian Anda, Anda disarankan untuk melanjutkan terapi menggunakan:"
+          }
+        }
+      }
+    },
+    "Better" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lebih Baik"
+          }
+        }
+      }
+    },
     "By pressing “I Accept” the user agrees to the disclaimer and have therefore read the Terms and Conditions to using Fear Exposure AR." : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dengan menekan “Saya Terima”, pengguna setuju dengan pernyataan penyangkalan dan karenanya telah membaca Syarat dan Ketentuan penggunaan Fear Exposure AR."
+          }
+        }
+      }
+    },
+    "By using the app, users may temporarily increase anxiety, distress, or physical symptoms like elevated heart rate as part of the exposure process. If symptoms worsen or become difficult to manage, consult a licensed psychologist or psychiatrist." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dengan menggunakan aplikasi, pengguna mungkin mengalami peningkatan kecemasan, tekanan, atau gejala fisik seperti peningkatan denyut jantung sebagai bagian dari proses paparan. Jika gejala memburuk atau menjadi sulit diatasi, konsultasikan dengan psikolog atau psikiater berlisensi."
+          }
+        }
+      }
+    },
+    "By using this app, user agrees to abide by this disclaimer and all other associated agreements and policies." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dengan menggunakan Aplikasi, pengguna setuju untuk mematuhi pernyataan ini dan semua perjanjian serta kebijakan terkait lainnya."
           }
         }
       }
@@ -237,12 +367,32 @@
         }
       }
     },
+    "Cat" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kucing"
+          }
+        }
+      }
+    },
     "Choose Therapy" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pilih Terapi"
+          }
+        }
+      }
+    },
+    "Cockroach" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kecoa"
           }
         }
       }
@@ -257,12 +407,12 @@
         }
       }
     },
-    "Congratulations! You have completed your session!" : {
+    "Crocodile" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selamat! Anda telah menyelesaikan sesi Anda!"
+            "value" : "Buaya"
           }
         }
       }
@@ -273,6 +423,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mode Gelap"
+          }
+        }
+      }
+    },
+    "Denxéro reserves the right to modify or update these terms and conditions at any time without prior notice. It is the user’s responsibility to review the disclaimer periodically for any changes. Continued use of this app following any modifications indicates your acceptance of the new terms." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denxéro berhak mengubah atau memperbarui syarat dan ketentuan ini kapan saja tanpa pemberitahuan sebelumnya. Pengguna bertanggung jawab untuk meninjau ketentuan ini secara berkala untuk setiap perubahan. Penggunaan aplikasi yang berkelanjutan setelah perubahan berarti Pengguna menerima ketentuan baru."
+          }
+        }
+      }
+    },
+    "Denxéro respects your privacy. All data is confidential and saved privately on your device. We do not store, share, or sell your personal information. It is your responsibility to keep your information private and secure." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denxéro menghargai privasi Pengguna. Semua data bersifat rahasia dan disimpan secara pribadi di perangkat Pengguna. Kami tidak menyimpan, membagikan, atau menjual informasi pribadi Pengguna. Pengguna bertanggung jawab untuk menjaga informasi Pengguna tetap pribadi dan aman."
+          }
+        }
+      }
+    },
+    "Dog" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anjing"
           }
         }
       }
@@ -334,7 +514,14 @@
       }
     },
     "Error" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        }
+      }
     },
     "FEAR is an iOS app designed to support individuals with phobias in confronting and managing their fears. Utilizing Digital Systematic Desensitization, or Exposure Therapy, FEAR gradually introduces users to feared objects in both 2D images and immersive 3D AR formats. By tracking heart rate via Apple Watch integration, FEAR provides a clear and measurable way to monitor progress and improvements over time, helping users on their journey to overcome their fears." : {
       "localizations" : {
@@ -346,12 +533,62 @@
         }
       }
     },
+    "Feared Object maintains distance with the user as they move" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Objek yang ditakuti menjaga jarak dengan pengguna ketika bergerak"
+          }
+        }
+      }
+    },
+    "Feared Object Volume" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volume Objek yang Ditakuti"
+          }
+        }
+      }
+    },
     "Feeling %@" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Perasaan %@"
+          }
+        }
+      }
+    },
+    "Frightened" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cemas"
+          }
+        }
+      }
+    },
+    "Gecko" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cicak"
+          }
+        }
+      }
+    },
+    "General" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umum"
           }
         }
       }
@@ -397,15 +634,11 @@
       }
     },
     "How do you feel %@?" : {
-
-    },
-    "How do you feel now compared to before the therapy session began?" : {
-      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bagaimana perasaan Anda sekarang dibandingkan sebelum sesi terapi dimulai?"
+            "value" : "Bagaimana perasaaan anda %@ ?"
           }
         }
       }
@@ -416,6 +649,106 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Saya Terima"
+          }
+        }
+      }
+    },
+    "Intense fear of Balloon" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketakutan besar terhadap Balon"
+          }
+        }
+      }
+    },
+    "Intense fear of Cat" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketakutan besar terhadap Kucing"
+          }
+        }
+      }
+    },
+    "Intense fear of Cockroach" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketakutan besar terhadap Kecoa"
+          }
+        }
+      }
+    },
+    "Intense fear of Crocodile" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketakutan besar terhadap Buaya"
+          }
+        }
+      }
+    },
+    "Intense fear of Dog" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketakutan besar terhadap Anjing"
+          }
+        }
+      }
+    },
+    "Intense fear of Gecko" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketakutan besar terhadap Cicak"
+          }
+        }
+      }
+    },
+    "Intense fear of Rat" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketakutan besar terhadap Tikus"
+          }
+        }
+      }
+    },
+    "Intense fear of Snake" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketakutan besar terhadap Ular"
+          }
+        }
+      }
+    },
+    "Intense fear of Spider" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ketakutan besar terhadap Laba-laba"
+          }
+        }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bahasa"
           }
         }
       }
@@ -432,6 +765,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bahasa"
+          }
+        }
+      }
+    },
+    "Limitation of Liability" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batasan Tanggung Jawab"
           }
         }
       }
@@ -456,12 +799,42 @@
         }
       }
     },
+    "Medical Disclaimer" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pernyataan Medis"
+          }
+        }
+      }
+    },
+    "Neutral" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Netral"
+          }
+        }
+      }
+    },
     "No Data Logs" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tidak ada Riwayat"
+          }
+        }
+      }
+    },
+    "No Guarantee of Cure" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak Ada Jaminan Penyembuhan"
           }
         }
       }
@@ -476,8 +849,25 @@
         }
       }
     },
+    "Object Follow User" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Objek Mengikuti Pengguna"
+          }
+        }
+      }
+    },
     "Okay" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oke"
+          }
+        }
+      }
     },
     "Our sincere appreciation goes to those who participated in user testing and interviews, providing valuable insights to refine the user experience:" : {
       "localizations" : {
@@ -485,6 +875,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Penghargaan tulus kami berikan kepada mereka yang berpartisipasi dalam pengujian dan wawancara pengguna, memberikan wawasan berharga untuk menyempurnakan pengalaman pengguna:"
+          }
+        }
+      }
+    },
+    "Phobia List" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daftar Fobia"
+          }
+        }
+      }
+    },
+    "Phobias" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fobia"
+          }
+        }
+      }
+    },
+    "Pictures" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gambar"
           }
         }
       }
@@ -499,6 +919,26 @@
         }
       }
     },
+    "Potential Side Effects" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Efek Samping yang Mungkin Terjadi"
+          }
+        }
+      }
+    },
+    "Privacy and Data Use" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privasi dan Penggunaan Data"
+          }
+        }
+      }
+    },
     "Privacy Notice" : {
       "localizations" : {
         "id" : {
@@ -509,50 +949,22 @@
         }
       }
     },
-    "Profile" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pengaturan"
-          }
-        }
-      }
-    },
-    "Progress Screen" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Halaman Progres"
-          }
-        }
-      }
-    },
-    "Putu Wira" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Putu Wira"
-          }
-        }
-      }
-    },
     "Question Category" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kategori Pertanyaan"
+          }
+        }
+      }
+    },
+    "Rat" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tikus"
           }
         }
       }
@@ -572,7 +984,37 @@
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mengalihkan ke sesi Anda menghasilkan %lld detik..."
+            "value" : "Mengalihkan ke halaman detail sesi dalam %lld detik"
+          }
+        }
+      }
+    },
+    "Relieved" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lega"
+          }
+        }
+      }
+    },
+    "Resize feared object to make it bigger or smaller." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ubah ukuran objek yang ditakuti menjadi lebih besar atau kecil"
+          }
+        }
+      }
+    },
+    "Result" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hasil"
           }
         }
       }
@@ -597,12 +1039,52 @@
         }
       }
     },
+    "Review your previous session reflections" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tinjau riwayat sesi anda sebelumnya"
+          }
+        }
+      }
+    },
+    "Scale Object" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukuran Objek"
+          }
+        }
+      }
+    },
+    "Scared" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takut"
+          }
+        }
+      }
+    },
     "See Test Result" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lihat Hasil Test"
+          }
+        }
+      }
+    },
+    "Select all the phobias that apply to you. Don’t worry, you can update these choices later." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pilih semua fobia yang sesuai dengan Anda. Jangan khawatir, Anda dapat memperbarui pilihan ini nanti."
           }
         }
       }
@@ -633,6 +1115,16 @@
         }
       }
     },
+    "Session Log" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riwayat Sesi"
+          }
+        }
+      }
+    },
     "Session Reflection" : {
       "localizations" : {
         "id" : {
@@ -654,7 +1146,24 @@
       }
     },
     "Settings" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengaturan"
+          }
+        }
+      }
+    },
+    "Snake" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ular"
+          }
+        }
+      }
     },
     "Special Thanks" : {
       "localizations" : {
@@ -662,6 +1171,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terima Kasih Khusus"
+          }
+        }
+      }
+    },
+    "Spider" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laba-laba"
           }
         }
       }
@@ -696,12 +1215,42 @@
         }
       }
     },
+    "Terms & Conditions" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Syarat & Ketentuan"
+          }
+        }
+      }
+    },
     "Terms and Conditions" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Syarat dan Ketentuan"
+          }
+        }
+      }
+    },
+    "Terrified" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sangat Takut"
+          }
+        }
+      }
+    },
+    "The App is intended for use by individuals who have reached the age of teenagers or older as defined by the laws of their country or region. By using the App, the user confirms that they have met this age requirement. If the user is under the age of majority, they must obtain parental or guardian consent before using the App." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikasi ini ditujukan untuk digunakan oleh individu yang telah mencapai usia remaja atau lebih tua sebagaimana ditetapkan oleh undang-undang di negara atau wilayah mereka. Dengan menggunakan Aplikasi, pengguna mengonfirmasi bahwa mereka telah memenuhi persyaratan usia ini. Jika pengguna berusia di bawah dewasa, mereka harus memperoleh izin dari orang tua atau wali sebelum menggunakan Aplikasi."
           }
         }
       }
@@ -716,12 +1265,52 @@
         }
       }
     },
+    "The user is responsible for their own health and safety while using this app. Use this app in a safe environment, especially when engaging with Augmented Reality (AR) features. Be aware of your surroundings to prevent physical injury or property damage." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengguna bertanggung jawab atas kesehatan dan keselamatan Pengguna sendiri saat menggunakan aplikasi ini. Gunakan aplikasi ini di lingkungan yang aman, terutama saat menggunakan fitur augmented reality (AR). Waspadai lingkungan sekitar Pengguna untuk mencegah cedera fisik atau kerusakan properti."
+          }
+        }
+      }
+    },
     "Theraphy" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terapi"
+          }
+        }
+      }
+    },
+    "Therapies" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terapi"
+          }
+        }
+      }
+    },
+    "This app is intended to assist in exposure therapy and is designed to complement professional psychological treatment. Denxéro and its affiliates do not guarantee that the use of this app will cure any mental illness or psychological condition. Individual results may vary." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikasi ini dirancang untuk membantu terapi paparan dan bertujuan untuk melengkapi perawatan psikologis profesional. Denxéro dan afiliasinya tidak menjamin bahwa penggunaan aplikasi ini akan menyembuhkan gangguan mental atau kondisi psikologis apa pun. Hasil penggunaan mungkin berbeda untuk setiap individu."
+          }
+        }
+      }
+    },
+    "This app is not intended to replace professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider or psychologist before starting any new treatment or therapy program, including the use of this app." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikasi ini tidak dimaksudkan untuk menggantikan saran, diagnosis, atau perawatan medis profesional. Selalu konsultasikan dengan penyedia layanan kesehatan atau psikolog yang berkualifikasi sebelum memulai perawatan atau program terapi baru, termasuk penggunaan aplikasi ini."
           }
         }
       }
@@ -736,12 +1325,62 @@
         }
       }
     },
+    "To the fullest extent permitted by law, Denxéro and its affiliates shall not be liable for any direct, indirect, incidental, consequential, or any other damages arising from your use of, or inability to use, this app. This includes, but is not limited to, damages for loss of profits, goodwill, data, or other intangible losses." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sejauh yang diizinkan oleh hukum, Denxéro dan afiliasinya tidak bertanggung jawab atas kerugian langsung, tidak langsung, insidental, konsekuensial, atau kerugian lainnya yang timbul dari penggunaan atau ketidakmampuan Pengguna menggunakan aplikasi ini. Hal ini mencakup, tetapi tidak terbatas pada, kerugian karena hilangnya keuntungan, nama baik, data, atau kerugian tidak berwujud lainnya."
+          }
+        }
+      }
+    },
+    "Updates to Terms and Conditions" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perubahan Ketentuan dan Persyaratan"
+          }
+        }
+      }
+    },
+    "Use AR to see and interact with snakes in a more realistic environment." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gunakan AR untuk melihat dan berinteraksi dengan ular di lingkungan yang lebih realistis."
+          }
+        }
+      }
+    },
+    "User Responsibility" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanggung Jawab Pengguna"
+          }
+        }
+      }
+    },
     "User Testing and Interviews" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pengujian Pengguna dan Wawancara"
+          }
+        }
+      }
+    },
+    "View photos of your feared object to gradually reduce your fear response." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lihatlah foto objek yang Anda takuti untuk mengurangi respons ketakutan Anda secara bertahap."
           }
         }
       }
@@ -757,7 +1396,14 @@
       }
     },
     "What are your thoughts during or about the therapy session?" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa pendapat Anda selama atau tentang sesi terapi?"
+          }
+        }
+      }
     },
     "What do you feel %@?" : {
       "localizations" : {
@@ -765,16 +1411,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apa yang kamu rasakan %@?"
-          }
-        }
-      }
-    },
-    "You’re Doing Great!" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kamu Hebat!"
           }
         }
       }

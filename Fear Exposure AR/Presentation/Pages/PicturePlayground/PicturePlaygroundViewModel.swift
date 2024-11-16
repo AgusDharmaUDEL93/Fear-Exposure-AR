@@ -29,23 +29,8 @@ class PicturePlaygroundViewModel {
     @ObservationIgnored private let counter : Double = 1.0
     
     var heartRateData : [Double] = []
-    
-    var phobia : Phobia = Phobia(
-        id: 0,
-        name: "Ophidiophobia",
-        displayName: "Snakes",
-        isAnimal: true,
-        description: "Intense fear of Snakes",
-        fearedObject: FearedObject(
-            baseModel: try? ModelEntity.loadModel(named: "snake.usdz"),
-            animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first,
-            image: [
-                "image/data/snake/snake1",
-                "image/data/snake/snake2",
-                "image/data/snake/snake3"
-            ]
-        )
-    )
+
+    var phobia : Phobia = Phobia.initial
     
     @MainActor
     func getPhobiaById (id : Int){

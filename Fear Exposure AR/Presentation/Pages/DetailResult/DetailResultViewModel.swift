@@ -17,10 +17,7 @@ class DetailResultViewModel {
     
     var errorMessage : String?
     
-    var log : LogSession = LogSession(
-        phobiaName: "Arachnophobia", dateTime: Date.now , duration: 120, feelingDuring: .frightened, notes: "Today’s session went better than I expected. I managed to look at photos of small spiders without that usual rush of panic.", heartRate: [90, 80, 94, 97, 93]
-        
-    )
+    var log : LogSession = LogSession.initial
     
     @MainActor
     func getLogById (id : UUID) {

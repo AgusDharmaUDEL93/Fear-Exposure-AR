@@ -34,13 +34,13 @@ enum Feeling : Int {
         case .unknown:
             ""
         case .terrified:
-            "Terrified"
+            String(localized: "Terrified")
         case .frightened:
-            "Frightened"
+            String(localized: "Frightened")
         case .scared:
-            "Scared"
+            String(localized: "Scared")
         case .neutral:
-            "Neutral"
+            String(localized: "Neutral")
             
         }
     }

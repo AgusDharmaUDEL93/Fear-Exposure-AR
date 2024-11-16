@@ -17,7 +17,7 @@ struct ChipFeel : View {
         Button(
             action : onSelected,
             label: {
-                Text(label)
+                Text(LocalizedStringKey(label))
                     .padding(.horizontal, 15)
                     .padding(.vertical, 8)
                     .background(
