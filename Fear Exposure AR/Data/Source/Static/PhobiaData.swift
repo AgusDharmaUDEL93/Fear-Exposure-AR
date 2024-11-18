@@ -20,9 +20,9 @@ let phobiasData : [Phobia] = [
             baseModel: try? ModelEntity.loadModel(named: "snake.usdz"),
             animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first,
             image: [
-                "image/data/snake/snake1",
-                "image/data/snake/snake2",
-                "image/data/snake/snake3"
+                "image/therapy/snake/snake1",
+                "image/therapy/snake/snake2",
+                "image/therapy/snake/snake3"
             ],
             audio: try? AudioFileResource.load(
                 named: "snake.m4a",
@@ -44,9 +44,9 @@ let phobiasData : [Phobia] = [
             baseModel: try? ModelEntity.loadModel(named: "dog.usdz"),
             animation: try? ModelEntity.loadModel(named: "dog.usdz").availableAnimations.first,
             image: [
-                "image/data/dog/dog1",
-                "image/data/dog/dog2",
-                "image/data/dog/dog3"
+                "image/therapy/dog/dog1",
+                "image/therapy/dog/dog2",
+                "image/therapy/dog/dog3"
             ],
             audio: try? AudioFileResource.load(
                 named: "dog.m4a",
@@ -68,9 +68,9 @@ let phobiasData : [Phobia] = [
             baseModel: try? ModelEntity.loadModel(named: "crocodile.usdz"),
             animation: try? ModelEntity.loadModel(named: "crocodile.usdz").availableAnimations.first,
             image: [
-                "image/data/crocodile/crocodile1",
-                "image/data/crocodile/crocodile2",
-                "image/data/crocodile/crocodile3"
+                "image/therapy/crocodile/crocodile1",
+                "image/therapy/crocodile/crocodile2",
+                "image/therapy/crocodile/crocodile3"
             ],
             audio: try? AudioFileResource.load(
                 named: "crocodile.m4a",
@@ -92,9 +92,9 @@ let phobiasData : [Phobia] = [
             baseModel: try? ModelEntity.loadModel(named: "spider.usdz"),
             animation: try? ModelEntity.loadModel(named: "spider.usdz").availableAnimations.first,
             image: [
-                "image/data/spider/spider1",
-                "image/data/spider/spider2",
-                "image/data/spider/spider3"
+                "image/therapy/spider/spider1",
+                "image/therapy/spider/spider2",
+                "image/therapy/spider/spider3"
             ],
             audio: try? AudioFileResource.load(
                 named: "spider.m4a",
@@ -116,9 +116,9 @@ let phobiasData : [Phobia] = [
             baseModel: try? ModelEntity.loadModel(named: "gecko.usdz"),
             animation: try? ModelEntity.loadModel(named: "gecko.usdz").availableAnimations.first,
             image: [
-                "image/data/gecko/gecko1",
-                "image/data/gecko/gecko2",
-                "image/data/gecko/gecko3"
+                "image/therapy/gecko/gecko1",
+                "image/therapy/gecko/gecko2",
+                "image/therapy/gecko/gecko3"
             ],
             audio: try? AudioFileResource.load(
                 named: "gecko.m4a",
@@ -140,9 +140,9 @@ let phobiasData : [Phobia] = [
             baseModel: try? ModelEntity.loadModel(named: "cockroach.usdz"),
             animation: try? ModelEntity.loadModel(named: "cockroach.usdz").availableAnimations.first,
             image: [
-                "image/data/cockroach/cockroach1",
-                "image/data/cockroach/cockroach2",
-                "image/data/cockroach/cockroach3"
+                "image/therapy/cockroach/cockroach1",
+                "image/therapy/cockroach/cockroach2",
+                "image/therapy/cockroach/cockroach3"
             ],
             audio: try? AudioFileResource.load(
                 named: "cockroach.m4a",
@@ -164,9 +164,9 @@ let phobiasData : [Phobia] = [
             baseModel: try? ModelEntity.loadModel(named: "cat.usdz"),
             animation: try? ModelEntity.loadModel(named: "cat.usdz").availableAnimations.first,
             image: [
-                "image/data/cat/cat1",
-                "image/data/cat/cat2",
-                "image/data/cat/cat3"
+                "image/therapy/cat/cat1",
+                "image/therapy/cat/cat2",
+                "image/therapy/cat/cat3"
             ],
             audio: try? AudioFileResource.load(
                 named: "cat.m4a",
@@ -188,9 +188,9 @@ let phobiasData : [Phobia] = [
             baseModel: try? ModelEntity.loadModel(named: "rat.usdz"),
             animation: try? ModelEntity.loadModel(named: "rat.usdz").availableAnimations.first,
             image: [
-                "image/data/rat/rat1",
-                "image/data/rat/rat2",
-                "image/data/rat/rat3"
+                "image/therapy/rat/rat1",
+                "image/therapy/rat/rat2",
+                "image/therapy/rat/rat3"
             ],
             audio: try? AudioFileResource.load(
                 named: "rat.m4a",
