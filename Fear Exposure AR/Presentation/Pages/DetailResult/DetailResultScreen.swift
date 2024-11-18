@@ -31,7 +31,7 @@ struct DetailResultScreen : View {
                         Image(systemName: "pawprint.fill")
                         Spacer()
                             .frame(width: 8)
-                        Text("\(viewModel.log.phobiaName ?? "") Therapy")
+                        Text("\(viewModel.phobia.name) Therapy")
                     }
                     .foregroundStyle(Color(Theme.primary500.rawValue))
                     .padding(.horizontal, 16)

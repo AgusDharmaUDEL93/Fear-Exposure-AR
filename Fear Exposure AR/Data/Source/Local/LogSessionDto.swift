@@ -12,7 +12,6 @@ import Foundation
 class LogSessionDto {
     var logId : UUID = UUID()
     var phobiaId : Int?
-    var phobiaName : String?
     var dateTime : Date = Date.now
     var duration : Double = 0
     var feelingDuring : Int = -1
@@ -20,10 +19,9 @@ class LogSessionDto {
     var notes : String = ""
     var heartRate : [Double] = []
     
-    init(logId: UUID = UUID(), phobiaId: Int? = nil, phobiaName : String? = nil, dateTime: Date = .now, duration: Double = 0, feelingDuring: Int = -1, feelingAfter: Int = -1, notes: String = "", heartRate: [Double] = []) {
+    init(logId: UUID = UUID(), phobiaId: Int? = nil, dateTime: Date = .now, duration: Double = 0, feelingDuring: Int = -1, feelingAfter: Int = -1, notes: String = "", heartRate: [Double] = []) {
         self.logId = logId
         self.phobiaId = phobiaId
-        self.phobiaName = phobiaName
         self.dateTime = dateTime
         self.duration = duration
         self.feelingDuring = feelingDuring

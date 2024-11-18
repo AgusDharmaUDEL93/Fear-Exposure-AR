@@ -14,6 +14,10 @@ class ReflectionViewModel {
     @ObservationIgnored
     private let logUseCases = LogUseCases.shared
     
+    @MainActor
+    @ObservationIgnored
+    private let phobiaUseCases = PhobiasUseCases.shared
+    
     var isActiveArray = [false, false, false, false, false]
     var notes = ""
     
@@ -32,11 +36,10 @@ class ReflectionViewModel {
     }
     
     @MainActor
-    func onSubmitData(phobiaId : Int, phobiaName : String, heartRate : [Double], duration : Double) {
+    func onSubmitData(phobiaId : Int, heartRate : [Double], duration : Double) {
         logUseCases.addLog.execute(
             log: LogSession(
                 phobiaId: phobiaId,
-                phobiaName: phobiaName,
                 duration: duration,
                 feelingDuring: feelingBeforeSelected,
                 feelingAfter: feelingAfterSelected,

@@ -216,7 +216,8 @@ struct ARPlaygroundScreen : View {
                     phoneConnectivityManager.stopSession()
                     viewModel.stopTimer()
                     
-                    router.navigate(to: .reflection(phobiaId: viewModel.phobia.id, phobiaName: viewModel.phobia.name, heartRate: viewModel.heartRateData, duration: viewModel.timerCount))
+//                    router.navigate(to: .reflection(phobiaId: viewModel.phobia.id, phobiaName: viewModel.phobia.name, heartRate: viewModel.heartRateData, duration: viewModel.timerCount))
+                    router.navigate(to: .reflection(phobiaId: viewModel.phobia.id, heartRate: viewModel.heartRateData, duration: viewModel.timerCount))
                 })
             },
             message: {

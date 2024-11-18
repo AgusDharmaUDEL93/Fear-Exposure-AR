@@ -14,7 +14,6 @@ struct ReflectionScreen: View {
     }
     
     var phobiaId : Int
-    var phobiaName : String
     var heartRate : [Double]
     var duration : Double
     
@@ -65,7 +64,7 @@ struct ReflectionScreen: View {
                     
                     Button(
                         action: {
-                            viewModel.onSubmitData(phobiaId: phobiaId, phobiaName: phobiaName, heartRate: heartRate, duration: duration)
+                            viewModel.onSubmitData(phobiaId: phobiaId, heartRate: heartRate, duration: duration)
                             router.navigate(to: .complete)
                         },
                         label: {
@@ -104,7 +103,7 @@ struct ReflectionScreen: View {
 #Preview {
     NavigationStack {
         ReflectionScreen(
-            phobiaId : 0, phobiaName: "Arachnophobia Therapy", heartRate: [], duration: 0
+            phobiaId : 0, heartRate: [], duration: 0
         )
     }
     .environment(Router())

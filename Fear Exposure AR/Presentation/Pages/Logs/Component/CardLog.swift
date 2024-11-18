@@ -14,7 +14,7 @@ struct CardLog : View {
     let notes : String
     let heartRate : Double
     let duration : Double
-    var isAnimal : Bool = true
+    let image : String
     let date : Date
     var action : () -> Void
     
@@ -23,8 +23,10 @@ struct CardLog : View {
         Button (action : action , label : {
             VStack {
                 HStack  {
-                    Image(systemName: isAnimal ? "pawprint.fill" : "shippingbox.fill")
-                        .font(.subheadline)
+                    Image(image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20, height: 20)
                     Spacer()
                         .frame(width: 8)
                     Text(LocalizedStringKey("\(phobiaName) Therapy"))
@@ -111,7 +113,7 @@ struct CardLog : View {
 }
 
 #Preview {
-    CardLog(phobiaName: "Arachnophobia Therapy", feeling: .terrified, notes: "Today’s session went better than I expected. I managed to look at photos of small spiders without that usual rush of panic.", heartRate: 75, duration: 5, date: .now, action:  {
+    CardLog(phobiaName: "Arachnophobia Therapy", feeling: .terrified, notes: "Today’s session went better than I expected. I managed to look at photos of small spiders without that usual rush of panic.", heartRate: 75, duration: 5, image: "image/illustration/phobia/nobg/snake_nobg", date: .now, action:  {
         
     })
         .padding()

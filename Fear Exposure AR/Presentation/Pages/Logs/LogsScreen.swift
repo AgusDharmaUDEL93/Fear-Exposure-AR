@@ -37,11 +37,12 @@ struct LogsScreen : View {
                             ForEach(viewModel.log, id: \.logId){ log in
                                 
                                 CardLog(
-                                    phobiaName: String(localized: "\((log.phobiaName ?? ""))"),
+                                    phobiaName: String(localized: "\((viewModel.getPhobiaById(id: log.phobiaId ?? 0)?.name ?? ""))"),
                                     feeling: .terrified,
                                     notes: log.notes,
                                     heartRate: log.heartRate.isEmpty ? -1 : (log.heartRate.reduce(0, +)/Double(log.heartRate.count)),
                                     duration: log.duration,
+                                    image: viewModel.getPhobiaById(id: log.phobiaId ?? 0)?.image_nobg ?? "",
                                     date: log.dateTime,
                                     action: {
                                         if let logId = log.logId {
@@ -54,12 +55,6 @@ struct LogsScreen : View {
                                 Spacer()
                                     .frame(height: 16)
                             }
-                            
-                            
-                            
-                            
-                            
-                            
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.horizontal, 16)

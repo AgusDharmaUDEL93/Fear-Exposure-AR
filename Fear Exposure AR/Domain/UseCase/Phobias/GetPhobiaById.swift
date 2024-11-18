@@ -16,6 +16,4 @@ class GetPhobiaById {
     func execute (id : Int) -> Phobia? {
         return phobiaRepository.getPhobiasById(phobia: id)
     }
-    
-    
 }

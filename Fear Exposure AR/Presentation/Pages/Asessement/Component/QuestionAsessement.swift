@@ -21,7 +21,7 @@ struct QuestionAsessement : View {
                 Text("\(number).")
                 Spacer()
                     .frame(width: 12)
-                Text(question)
+                Text(LocalizedStringKey(question))
                 Spacer()
             }
             LazyVGrid (columns: [

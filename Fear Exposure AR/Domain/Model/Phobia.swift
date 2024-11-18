@@ -12,6 +12,7 @@ struct Phobia {
     let name : String
     let displayName : String
     let image : String
+    let image_nobg : String
     let description : String
     var fearedObject : FearedObject
     
@@ -20,6 +21,7 @@ struct Phobia {
         name: "Ophidiophobia",
         displayName: String(localized: "Snake"),
         image: "image/illustration/phobia/balloon",
+        image_nobg: "image/illustration/phobia/nobg/snake_nobg",
         description: String(localized: "Intense fear of Snake"),
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "snake.usdz"),

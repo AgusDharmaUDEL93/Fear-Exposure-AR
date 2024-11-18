@@ -43,7 +43,6 @@ extension LogSessionDto {
         return LogSession(
             logId: logId,
             phobiaId: phobiaId,
-            phobiaName: phobiaName,
             dateTime: dateTime,
             duration: duration,
             feelingDuring: feelDur,

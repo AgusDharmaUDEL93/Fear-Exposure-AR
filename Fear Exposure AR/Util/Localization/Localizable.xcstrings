@@ -241,6 +241,36 @@
         }
       }
     },
+    "Are you willing to be exposed to a 2D cartoon image of the feared object." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apakah Anda bersedia melihat gambar 2D atau gambar realistis dari objek yang Anda takutkan?"
+          }
+        }
+      }
+    },
+    "Are you willing to be exposed to a 3D representation of the feared object using Augmented reality?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apakah Anda bersedia melihat representasi 3D dari objek yang Anda takutkan menggunakan AR? "
+          }
+        }
+      }
+    },
+    "Are you willing to have the 3D object approach to you?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apakah Anda bersedia jika objek 3D tersebut mendekati Anda?"
+          }
+        }
+      }
+    },
     "at %@, %@" : {
       "localizations" : {
         "en" : {
@@ -298,6 +328,7 @@
       }
     },
     "Balloon" : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -523,6 +554,16 @@
         }
       }
     },
+    "Fear Assessement" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Penilaian Ketakutan"
+          }
+        }
+      }
+    },
     "FEAR is an iOS app designed to support individuals with phobias in confronting and managing their fears. Utilizing Digital Systematic Desensitization, or Exposure Therapy, FEAR gradually introduces users to feared objects in both 2D images and immersive 3D AR formats. By tracking heart rate via Apple Watch integration, FEAR provides a clear and measurable way to monitor progress and improvements over time, helping users on their journey to overcome their fears." : {
       "localizations" : {
         "id" : {
@@ -643,6 +684,16 @@
         }
       }
     },
+    "How intense is your fear when exposed to the object?" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seberapa intens ketakutan Anda saat terpapar dengan objek tersebut?"
+          }
+        }
+      }
+    },
     "I Accept" : {
       "localizations" : {
         "id" : {
@@ -653,7 +704,28 @@
         }
       }
     },
+    "I have other mental health conditions that might affect my phobia." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saya memiliki kondisi kesehatan mental lain yang mungkin memengaruhi fobia saya."
+          }
+        }
+      }
+    },
+    "I have tried attending therapy to help manage my phobia." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saya telah mencoba mengikuti terapi untuk membantu mengelola fobia saya."
+          }
+        }
+      }
+    },
     "Intense fear of Balloon" : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -809,12 +881,32 @@
         }
       }
     },
+    "Mild" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lembut"
+          }
+        }
+      }
+    },
     "Neutral" : {
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Netral"
+          }
+        }
+      }
+    },
+    "No" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak"
           }
         }
       }
@@ -835,6 +927,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tidak Ada Jaminan Penyembuhan"
+          }
+        }
+      }
+    },
+    "None" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada"
           }
         }
       }
@@ -915,6 +1017,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tempatkan & Mulai"
+          }
+        }
+      }
+    },
+    "Please complete this assessment form to help us tailor the therapy to your specific needs." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Harap lengkapi formulir penilaian ini untuk membantu kami menyesuaikan terapi dengan kebutuhan spesifik Anda."
           }
         }
       }
@@ -1154,6 +1266,9 @@
           }
         }
       }
+    },
+    "Slightly" : {
+
     },
     "Snake" : {
       "localizations" : {
@@ -1411,6 +1526,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apa yang kamu rasakan %@?"
+          }
+        }
+      }
+    },
+    "When in fear, I experience physical symptoms (sweating, rapid heartbeat, shortness of breath)." : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saat takut, saya merasakan gejala fisik (berkeringat, detak jantung cepat, sesak napas)."
+          }
+        }
+      }
+    },
+    "Yes" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iya"
           }
         }
       }
