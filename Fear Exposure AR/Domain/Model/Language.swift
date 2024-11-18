@@ -7,7 +7,7 @@
 
 enum Language : String {
     case english = "en"
-    case indonesia = "id"
+    case indonesia = "id_ID"
     
     func getLanguageLabel () -> String {
         return switch self {

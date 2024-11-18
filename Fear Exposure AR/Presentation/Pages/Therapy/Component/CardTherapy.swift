@@ -28,7 +28,7 @@ struct CardTherapy : View {
                             x: -15,
                             y: 15
                         )
-                    
+                            
                     VStack (alignment : .leading, spacing: 8) {
                         Text(LocalizedStringKey(caption))
                             .font(.subheadline)

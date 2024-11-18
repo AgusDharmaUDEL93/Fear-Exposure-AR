@@ -1268,7 +1268,14 @@
       }
     },
     "Slightly" : {
-
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sedikit"
+          }
+        }
+      }
     },
     "Snake" : {
       "localizations" : {
