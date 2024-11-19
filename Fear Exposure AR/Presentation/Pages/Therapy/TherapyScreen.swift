@@ -24,8 +24,8 @@ struct TherapyScreen : View {
                     Spacer()
                         .frame(height: 16)
                     LazyVGrid (columns: [
-                        GridItem(.adaptive(minimum: 100)),
-                        GridItem(.adaptive(minimum: 100))
+                        GridItem(.adaptive(minimum: 150, maximum: 180)),
+                        GridItem(.adaptive(minimum: 150, maximum: 180))
                     ], spacing: 16){
                         ForEach(viewModel.phobia, id: \.id){ phobia in
                             CardTherapy(

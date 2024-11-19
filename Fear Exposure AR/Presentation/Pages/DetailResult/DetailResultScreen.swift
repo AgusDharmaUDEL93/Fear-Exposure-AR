@@ -60,6 +60,7 @@ struct DetailResultScreen : View {
                     .foregroundStyle(.gray)
                     
                 }
+                Spacer()
             }
             Spacer()
                 .frame(height: 48)
@@ -80,11 +81,14 @@ struct DetailResultScreen : View {
                     .font(.title3)
                     .bold()
                 VStack {
-                    LazyVGrid (columns: [
-                        GridItem(.adaptive(minimum: 100)),
-                        GridItem(.adaptive(minimum: 100)),
-                        GridItem(.adaptive(minimum: 100))
-                    ]) {
+                    LazyVGrid (
+                        columns: [
+                            GridItem(.flexible(minimum: 100, maximum: 180)),
+                            GridItem(.flexible(minimum: 100, maximum: 180)),
+                            GridItem(.flexible(minimum: 100, maximum: 180)),
+                        ],
+                        alignment: .center)
+                    {
                         VStack (alignment : .leading) {
                             Text("Lowest")
                                 .font(.caption)
@@ -175,7 +179,7 @@ struct DetailResultScreen : View {
             viewModel.getLogById(id: id)
         }
     }
-        
+    
     
 }
 

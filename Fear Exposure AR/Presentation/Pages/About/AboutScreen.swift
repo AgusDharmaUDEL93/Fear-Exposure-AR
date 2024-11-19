@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AboutScreen: View {
     var body: some View {
-        NavigationView {
             ScrollView {
                 VStack {
                     Text("FEAR is an iOS app designed to support individuals with phobias in confronting and managing their fears. Utilizing Digital Systematic Desensitization, or Exposure Therapy, FEAR gradually introduces users to feared objects in both 2D images and immersive 3D AR formats. By tracking heart rate via Apple Watch integration, FEAR provides a clear and measurable way to monitor progress and improvements over time, helping users on their journey to overcome their fears.")
@@ -83,10 +82,12 @@ struct AboutScreen: View {
                 .navigationTitle("About")
                 .padding()
             }
-        }
+        
     }
 }
 
 #Preview {
-    AboutScreen()
+    NavigationStack {
+        AboutScreen()
+    }
 }

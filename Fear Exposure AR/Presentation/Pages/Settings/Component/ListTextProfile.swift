@@ -28,7 +28,7 @@ struct ListTextProfile : View {
                             .frame(height: 25)
                         Spacer()
                             .frame(width: 16)
-                        Text (LocalizedStringKey(label))
+                        Text (label)
                         Spacer()
                         
                         // TODO : Changed the color
