@@ -130,7 +130,7 @@ struct RecommendationScreen: View {
         .toolbar(content: {
             ToolbarItem(placement : .topBarLeading){
                 Button(action: {
-                    router.navigateBack()
+                    router.navigateToRoot()
                    
                 }, label: {
                     HStack {
