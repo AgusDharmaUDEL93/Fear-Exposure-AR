@@ -42,6 +42,7 @@
       }
     },
     "%@" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -102,6 +103,7 @@
       }
     },
     "A message should be a short, complete sentence." : {
+      "extractionState" : "stale",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -132,6 +134,7 @@
       }
     },
     "Acceptance of Terms" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -152,6 +155,7 @@
       }
     },
     "Add or remove phobias from Settings tab" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -162,6 +166,7 @@
       }
     },
     "Adjust volume of sounds produced by the feared object." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -172,6 +177,7 @@
       }
     },
     "Afraid" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -192,6 +198,7 @@
       }
     },
     "Age Restrictions" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -222,6 +229,7 @@
       }
     },
     "AR" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -242,6 +250,7 @@
       }
     },
     "Are you willing to be exposed to a 2D cartoon image of the feared object." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -252,6 +261,7 @@
       }
     },
     "Are you willing to be exposed to a 3D representation of the feared object using Augmented reality?" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -262,6 +272,7 @@
       }
     },
     "Are you willing to have the 3D object approach to you?" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -328,7 +339,7 @@
       }
     },
     "Balloon" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -339,6 +350,7 @@
       }
     },
     "Based on the results of your assessment, you are recommended to proceed to therapy using:" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -349,6 +361,7 @@
       }
     },
     "Better" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -369,6 +382,7 @@
       }
     },
     "By using the app, users may temporarily increase anxiety, distress, or physical symptoms like elevated heart rate as part of the exposure process. If symptoms worsen or become difficult to manage, consult a licensed psychologist or psychiatrist." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -379,6 +393,7 @@
       }
     },
     "By using this app, user agrees to abide by this disclaimer and all other associated agreements and policies." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -399,6 +414,7 @@
       }
     },
     "Cat" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -419,11 +435,12 @@
       }
     },
     "Cockroach" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kecoa"
+            "value" : "Kecoak"
           }
         }
       }
@@ -433,12 +450,13 @@
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selamat karena Anda telah menyelesaikan sesi Anda!"
+            "value" : "Selamat Anda telah menyelesaikan sesi Anda!"
           }
         }
       }
     },
     "Crocodile" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -459,6 +477,7 @@
       }
     },
     "Denxéro reserves the right to modify or update these terms and conditions at any time without prior notice. It is the user’s responsibility to review the disclaimer periodically for any changes. Continued use of this app following any modifications indicates your acceptance of the new terms." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -469,6 +488,7 @@
       }
     },
     "Denxéro respects your privacy. All data is confidential and saved privately on your device. We do not store, share, or sell your personal information. It is your responsibility to keep your information private and secure." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -479,6 +499,7 @@
       }
     },
     "Dog" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -534,6 +555,16 @@
         }
       }
     },
+    "End the session to fill in the Reflection Page" : {
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akhiri sesi untuk mengisi halaman refleksi"
+          }
+        }
+      }
+    },
     "End Therapy Session?" : {
       "localizations" : {
         "id" : {
@@ -555,6 +586,7 @@
       }
     },
     "Fear Assessement" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -575,6 +607,7 @@
       }
     },
     "Feared Object maintains distance with the user as they move" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -585,6 +618,7 @@
       }
     },
     "Feared Object Volume" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -605,6 +639,7 @@
       }
     },
     "Frightened" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -615,16 +650,18 @@
       }
     },
     "Gecko" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cicak"
+            "value" : "Cecak"
           }
         }
       }
     },
     "General" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -685,6 +722,7 @@
       }
     },
     "How intense is your fear when exposed to the object?" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -705,6 +743,7 @@
       }
     },
     "I have other mental health conditions that might affect my phobia." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -715,6 +754,7 @@
       }
     },
     "I have tried attending therapy to help manage my phobia." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -725,7 +765,7 @@
       }
     },
     "Intense fear of Balloon" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -736,6 +776,7 @@
       }
     },
     "Intense fear of Cat" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -746,16 +787,18 @@
       }
     },
     "Intense fear of Cockroach" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ketakutan besar terhadap Kecoa"
+            "value" : "Ketakutan besar terhadap Kecoak"
           }
         }
       }
     },
     "Intense fear of Crocodile" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -766,6 +809,7 @@
       }
     },
     "Intense fear of Dog" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -776,16 +820,18 @@
       }
     },
     "Intense fear of Gecko" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ketakutan besar terhadap Cicak"
+            "value" : "Ketakutan besar terhadap Cecak"
           }
         }
       }
     },
     "Intense fear of Rat" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -796,6 +842,7 @@
       }
     },
     "Intense fear of Snake" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -806,6 +853,7 @@
       }
     },
     "Intense fear of Spider" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -816,6 +864,7 @@
       }
     },
     "Language" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -842,6 +891,7 @@
       }
     },
     "Limitation of Liability" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -872,6 +922,7 @@
       }
     },
     "Medical Disclaimer" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -882,16 +933,18 @@
       }
     },
     "Mild" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lembut"
+            "value" : "Ringan"
           }
         }
       }
     },
     "Neutral" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -902,6 +955,7 @@
       }
     },
     "No" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -922,6 +976,7 @@
       }
     },
     "No Guarantee of Cure" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -932,6 +987,7 @@
       }
     },
     "None" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -952,6 +1008,7 @@
       }
     },
     "Object Follow User" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -971,6 +1028,17 @@
         }
       }
     },
+    "Others" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lainnya"
+          }
+        }
+      }
+    },
     "Our sincere appreciation goes to those who participated in user testing and interviews, providing valuable insights to refine the user experience:" : {
       "localizations" : {
         "id" : {
@@ -982,6 +1050,7 @@
       }
     },
     "Phobia List" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -992,6 +1061,7 @@
       }
     },
     "Phobias" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1002,6 +1072,7 @@
       }
     },
     "Pictures" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1022,6 +1093,7 @@
       }
     },
     "Please complete this assessment form to help us tailor the therapy to your specific needs." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1032,6 +1104,7 @@
       }
     },
     "Potential Side Effects" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1042,6 +1115,7 @@
       }
     },
     "Privacy and Data Use" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1072,6 +1146,7 @@
       }
     },
     "Rat" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1102,6 +1177,7 @@
       }
     },
     "Relieved" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1112,6 +1188,7 @@
       }
     },
     "Resize feared object to make it bigger or smaller." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1122,6 +1199,7 @@
       }
     },
     "Result" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1152,6 +1230,7 @@
       }
     },
     "Review your previous session reflections" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1162,6 +1241,7 @@
       }
     },
     "Scale Object" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1172,6 +1252,7 @@
       }
     },
     "Scared" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1192,6 +1273,7 @@
       }
     },
     "Select all the phobias that apply to you. Don’t worry, you can update these choices later." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1228,6 +1310,7 @@
       }
     },
     "Session Log" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1268,6 +1351,7 @@
       }
     },
     "Slightly" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1278,6 +1362,7 @@
       }
     },
     "Snake" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1298,6 +1383,7 @@
       }
     },
     "Spider" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1337,16 +1423,6 @@
         }
       }
     },
-    "Terms & Conditions" : {
-      "localizations" : {
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Syarat & Ketentuan"
-          }
-        }
-      }
-    },
     "Terms and Conditions" : {
       "localizations" : {
         "id" : {
@@ -1358,6 +1434,7 @@
       }
     },
     "Terrified" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1368,6 +1445,7 @@
       }
     },
     "The App is intended for use by individuals who have reached the age of teenagers or older as defined by the laws of their country or region. By using the App, the user confirms that they have met this age requirement. If the user is under the age of majority, they must obtain parental or guardian consent before using the App." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1388,6 +1466,7 @@
       }
     },
     "The user is responsible for their own health and safety while using this app. Use this app in a safe environment, especially when engaging with Augmented Reality (AR) features. Be aware of your surroundings to prevent physical injury or property damage." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1408,6 +1487,7 @@
       }
     },
     "Therapies" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1418,6 +1498,7 @@
       }
     },
     "This app is intended to assist in exposure therapy and is designed to complement professional psychological treatment. Denxéro and its affiliates do not guarantee that the use of this app will cure any mental illness or psychological condition. Individual results may vary." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1428,6 +1509,7 @@
       }
     },
     "This app is not intended to replace professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider or psychologist before starting any new treatment or therapy program, including the use of this app." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1448,6 +1530,7 @@
       }
     },
     "To the fullest extent permitted by law, Denxéro and its affiliates shall not be liable for any direct, indirect, incidental, consequential, or any other damages arising from your use of, or inability to use, this app. This includes, but is not limited to, damages for loss of profits, goodwill, data, or other intangible losses." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1458,6 +1541,7 @@
       }
     },
     "Updates to Terms and Conditions" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1468,6 +1552,7 @@
       }
     },
     "Use AR to see and interact with snakes in a more realistic environment." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1478,6 +1563,7 @@
       }
     },
     "User Responsibility" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1498,6 +1584,7 @@
       }
     },
     "View photos of your feared object to gradually reduce your fear response." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
@@ -1538,16 +1625,18 @@
       }
     },
     "When in fear, I experience physical symptoms (sweating, rapid heartbeat, shortness of breath)." : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Saat takut, saya merasakan gejala fisik (berkeringat, detak jantung cepat, sesak napas)."
+            "value" : "Saat takut, saya merasakan gejala fisik (berkeringat, jantung berdebar cepat, kesulitan bernafas)."
           }
         }
       }
     },
     "Yes" : {
+      "extractionState" : "manual",
       "localizations" : {
         "id" : {
           "stringUnit" : {

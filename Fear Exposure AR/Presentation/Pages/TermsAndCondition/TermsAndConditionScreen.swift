@@ -22,56 +22,56 @@ struct TermsAndConditionScreen: View {
                     Group {
                         DisclaimerItem(
                             number: "1.",
-                            title: String(localized: "No Guarantee of Cure"),
-                            description: String(localized: "This app is intended to assist in exposure therapy and is designed to complement professional psychological treatment. Denxéro and its affiliates do not guarantee that the use of this app will cure any mental illness or psychological condition. Individual results may vary.")
+                            title:  "No Guarantee of Cure",
+                            description:  "This app is intended to assist in exposure therapy and is designed to complement professional psychological treatment. Denxéro and its affiliates do not guarantee that the use of this app will cure any mental illness or psychological condition. Individual results may vary."
                         )
                         
                         DisclaimerItem(
                             number: "2.",
-                            title: String(localized: "Medical Disclaimer" ),
-                            description: String(localized: "This app is not intended to replace professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider or psychologist before starting any new treatment or therapy program, including the use of this app.")
+                            title:  "Medical Disclaimer" ,
+                            description: "This app is not intended to replace professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider or psychologist before starting any new treatment or therapy program, including the use of this app."
                         )
                         
                         DisclaimerItem(
                             number: "3.",
-                            title: String(localized: "User Responsibility"),
-                            description: String(localized: "The user is responsible for their own health and safety while using this app. Use this app in a safe environment, especially when engaging with Augmented Reality (AR) features. Be aware of your surroundings to prevent physical injury or property damage.")
+                            title:  "User Responsibility",
+                            description: "The user is responsible for their own health and safety while using this app. Use this app in a safe environment, especially when engaging with Augmented Reality (AR) features. Be aware of your surroundings to prevent physical injury or property damage."
                         )
                         
                         DisclaimerItem(
                             number: "4.",
-                            title: String(localized: "Limitation of Liability"),
-                            description: String(localized: "To the fullest extent permitted by law, Denxéro and its affiliates shall not be liable for any direct, indirect, incidental, consequential, or any other damages arising from your use of, or inability to use, this app. This includes, but is not limited to, damages for loss of profits, goodwill, data, or other intangible losses.")
+                            title: "Limitation of Liability",
+                            description:  "To the fullest extent permitted by law, Denxéro and its affiliates shall not be liable for any direct, indirect, incidental, consequential, or any other damages arising from your use of, or inability to use, this app. This includes, but is not limited to, damages for loss of profits, goodwill, data, or other intangible losses."
                         )
                         
                         DisclaimerItem(
                             number: "5.",
-                            title: String(localized: "Privacy and Data Use"),
-                            description: String(localized:  "Denxéro respects your privacy. All data is confidential and saved privately on your device. We do not store, share, or sell your personal information. It is your responsibility to keep your information private and secure.")
+                            title: "Privacy and Data Use",
+                            description:  "Denxéro respects your privacy. All data is confidential and saved privately on your device. We do not store, share, or sell your personal information. It is your responsibility to keep your information private and secure."
                         )
                         
                         DisclaimerItem(
                             number: "6.",
-                            title: String(localized:  "Age Restrictions"),
-                            description: String(localized: "The App is intended for use by individuals who have reached the age of teenagers or older as defined by the laws of their country or region. By using the App, the user confirms that they have met this age requirement. If the user is under the age of majority, they must obtain parental or guardian consent before using the App.")
+                            title:   "Age Restrictions",
+                            description:  "The App is intended for use by individuals who have reached the age of teenagers or older as defined by the laws of their country or region. By using the App, the user confirms that they have met this age requirement. If the user is under the age of majority, they must obtain parental or guardian consent before using the App."
                         )
                         
                         DisclaimerItem(
                             number: "7.",
-                            title: String(localized: "Updates to Terms and Conditions"),
-                            description: String(localized: "Denxéro reserves the right to modify or update these terms and conditions at any time without prior notice. It is the user’s responsibility to review the disclaimer periodically for any changes. Continued use of this app following any modifications indicates your acceptance of the new terms.")
+                            title:  "Updates to Terms and Conditions",
+                            description:  "Denxéro reserves the right to modify or update these terms and conditions at any time without prior notice. It is the user’s responsibility to review the disclaimer periodically for any changes. Continued use of this app following any modifications indicates your acceptance of the new terms."
                         )
                         
                         DisclaimerItem(
                             number: "8.",
-                            title: String(localized: "Potential Side Effects"),
-                            description: String(localized: "By using the app, users may temporarily increase anxiety, distress, or physical symptoms like elevated heart rate as part of the exposure process. If symptoms worsen or become difficult to manage, consult a licensed psychologist or psychiatrist.")
+                            title:  "Potential Side Effects",
+                            description:  "By using the app, users may temporarily increase anxiety, distress, or physical symptoms like elevated heart rate as part of the exposure process. If symptoms worsen or become difficult to manage, consult a licensed psychologist or psychiatrist."
                         )
                         
                         DisclaimerItem(
                             number: "9.",
-                            title: String(localized: "Acceptance of Terms"),
-                            description: String(localized: "By using this app, user agrees to abide by this disclaimer and all other associated agreements and policies.")
+                            title: "Acceptance of Terms",
+                            description: "By using this app, user agrees to abide by this disclaimer and all other associated agreements and policies."
                         )
                     }
                     .background(

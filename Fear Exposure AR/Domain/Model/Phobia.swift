@@ -19,10 +19,10 @@ struct Phobia {
     static let initial = Phobia(
         id: 0,
         name: "Ophidiophobia",
-        displayName: String(localized: "Snake"),
+        displayName:  "Snake",
         image: "image/illustration/phobia/balloon",
         image_nobg: "image/illustration/phobia/nobg/snake_nobg",
-        description: String(localized: "Intense fear of Snake"),
+        description: "Intense fear of Snake",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "snake.usdz"),
             animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first,

@@ -17,8 +17,8 @@ struct TherapyScreen : View {
         GeometryReader { geometry in
             VStack {
                 TitleScreen(
-                    title: String(localized: "Therapies"),
-                    description: String(localized: "Add or remove phobias from Settings tab")
+                    title:  "Therapies",
+                    description: "Add or remove phobias from Settings tab"
                 )
                 ScrollView {
                     Spacer()

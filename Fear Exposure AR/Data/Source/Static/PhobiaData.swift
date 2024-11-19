@@ -12,10 +12,10 @@ let phobiasData : [Phobia] = [
     Phobia(
         id: 0,
         name: "Ophidiophobia",
-        displayName: String(localized: "Snake"),
+        displayName:  "Snake",
         image: "image/illustration/phobia/bg/snake",
         image_nobg: "image/illustration/phobia/nobg/snake_nobg",
-        description: String(localized: "Intense fear of Snake"),
+        description:"Intense fear of Snake",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "snake.usdz"),
             animation: try? ModelEntity.loadModel(named: "snake.usdz").availableAnimations.first,
@@ -36,10 +36,10 @@ let phobiasData : [Phobia] = [
     Phobia(
         id: 1,
         name: "Cynophobia",
-        displayName: String(localized: "Dog"),
+        displayName:  "Dog",
         image: "image/illustration/phobia/bg/dog",
         image_nobg: "image/illustration/phobia/nobg/dog_nobg",
-        description: String(localized: "Intense fear of Dog"),
+        description:  "Intense fear of Dog",
         fearedObject:  FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "dog.usdz"),
             animation: try? ModelEntity.loadModel(named: "dog.usdz").availableAnimations.first,
@@ -60,10 +60,10 @@ let phobiasData : [Phobia] = [
     Phobia(
         id: 2,
         name: "Herpetophobia",
-        displayName: String(localized: "Crocodile"),
+        displayName: "Crocodile",
         image: "image/illustration/phobia/bg/crocodile",
         image_nobg: "image/illustration/phobia/nobg/crocodile_nobg",
-        description: String(localized: "Intense fear of Crocodile"),
+        description:  "Intense fear of Crocodile",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "crocodile.usdz"),
             animation: try? ModelEntity.loadModel(named: "crocodile.usdz").availableAnimations.first,
@@ -84,10 +84,10 @@ let phobiasData : [Phobia] = [
     Phobia(
         id: 3,
         name: "Arachnophobia",
-        displayName: String(localized: "Spider"),
+        displayName:  "Spider",
         image: "image/illustration/phobia/bg/spider",
         image_nobg: "image/illustration/phobia/nobg/spider_nobg",
-        description: String(localized: "Intense fear of Spider"),
+        description:  "Intense fear of Spider",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "spider.usdz"),
             animation: try? ModelEntity.loadModel(named: "spider.usdz").availableAnimations.first,
@@ -108,10 +108,10 @@ let phobiasData : [Phobia] = [
     Phobia(
         id: 4,
         name: "Herpetophobia",
-        displayName: String(localized: "Gecko") ,
+        displayName:  "Gecko",
         image: "image/illustration/phobia/bg/gecko",
         image_nobg: "image/illustration/phobia/nobg/gecko_nobg",
-        description: String(localized: "Intense fear of Gecko") ,
+        description:  "Intense fear of Gecko",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "gecko.usdz"),
             animation: try? ModelEntity.loadModel(named: "gecko.usdz").availableAnimations.first,
@@ -132,10 +132,10 @@ let phobiasData : [Phobia] = [
     Phobia(
         id: 5,
         name: "Katsaridaphobia",
-        displayName: String(localized: "Cockroach"),
+        displayName:  "Cockroach",
         image: "image/illustration/phobia/bg/cockroach",
         image_nobg: "image/illustration/phobia/nobg/cockroach_nobg",
-        description: String(localized: "Intense fear of Cockroach"),
+        description:  "Intense fear of Cockroach",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "cockroach.usdz"),
             animation: try? ModelEntity.loadModel(named: "cockroach.usdz").availableAnimations.first,
@@ -156,10 +156,10 @@ let phobiasData : [Phobia] = [
     Phobia(
         id: 6,
         name: "Ailurophobia",
-        displayName: String(localized: "Cat") ,
+        displayName:  "Cat",
         image: "image/illustration/phobia/bg/cat",
         image_nobg: "image/illustration/phobia/nobg/cat_nobg",
-        description: String(localized: "Intense fear of Cat"),
+        description: "Intense fear of Cat",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "cat.usdz"),
             animation: try? ModelEntity.loadModel(named: "cat.usdz").availableAnimations.first,
@@ -180,10 +180,10 @@ let phobiasData : [Phobia] = [
     Phobia(
         id: 7,
         name: "Musophobia",
-        displayName: String(localized: "Rat"),
+        displayName:  "Rat",
         image: "image/illustration/phobia/bg/rat",
         image_nobg: "image/illustration/phobia/nobg/rat_nobg",
-        description: String(localized: "Intense fear of Rat"),
+        description: "Intense fear of Rat",
         fearedObject: FearedObject(
             baseModel: try? ModelEntity.loadModel(named: "rat.usdz"),
             animation: try? ModelEntity.loadModel(named: "rat.usdz").availableAnimations.first,

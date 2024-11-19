@@ -191,7 +191,7 @@ struct PicturePlaygroundScreen : View {
                     
                 },
                 message: {
-                    Text("A message should be a short, complete sentence.")
+                    Text("End the session to fill in the Reflection Page")
                 }
             )
             

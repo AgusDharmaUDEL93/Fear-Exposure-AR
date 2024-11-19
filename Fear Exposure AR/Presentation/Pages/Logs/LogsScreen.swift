@@ -16,8 +16,8 @@ struct LogsScreen : View {
         GeometryReader { geometry in
             VStack {
                 TitleScreen(
-                    title: String(localized: "Session Log"),
-                    description: String(localized: "Review your previous session reflections")
+                    title: "Session Log",
+                    description:  "Review your previous session reflections"
                 )
                 if (viewModel.log.isEmpty){
                     VStack (alignment: .center) {
@@ -37,7 +37,7 @@ struct LogsScreen : View {
                             ForEach(viewModel.log, id: \.logId){ log in
                                 
                                 CardLog(
-                                    phobiaName: String(localized: "\((viewModel.getPhobiaById(id: log.phobiaId ?? 0)?.name ?? ""))"),
+                                    phobiaName:  "\((viewModel.getPhobiaById(id: log.phobiaId ?? 0)?.name ?? ""))",
                                     feeling: .terrified,
                                     notes: log.notes,
                                     heartRate: log.heartRate.isEmpty ? -1 : (log.heartRate.reduce(0, +)/Double(log.heartRate.count)),

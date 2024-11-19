@@ -16,15 +16,15 @@ enum FeelingAfter : Int {
     func getLabel () -> String {
         return switch self {
         case .relieved:
-            String(localized: "Relieved")
+             "Relieved"
         case .afraid:
-            String(localized: "Afraid")
+            "Afraid"
         case .neutral:
-            String(localized: "Neutral")
+             "Neutral"
         case .better:
-            String(localized: "Better")
+           "Better"
         case .terrified:
-            String(localized: "Terrified") 
+            "Terrified"
         case .unknown:
             ""
         }

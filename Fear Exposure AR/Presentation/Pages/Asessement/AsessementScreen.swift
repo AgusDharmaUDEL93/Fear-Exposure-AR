@@ -18,8 +18,8 @@ struct AsessementScreen : View {
             
             VStack {
                 TitleScreen(
-                    title: String(localized:  "Fear Assessement"),
-                    description: String(localized:  "Please complete this assessment form to help us tailor the therapy to your specific needs.")
+                    title:   "Fear Assessement",
+                    description:   "Please complete this assessment form to help us tailor the therapy to your specific needs."
                 )
                 ScrollView {
                     VStack (alignment : .leading) {
@@ -37,9 +37,9 @@ struct AsessementScreen : View {
                             // 1
                             QuestionAsessement(
                                 number: 1,
-                                question: String(localized: "How intense is your fear when exposed to the object?"),
+                                question:  "How intense is your fear when exposed to the object?",
                                 options: [
-                                    String(localized:  "None"), String(localized: "Slightly"), String(localized: "Mild"), String(localized:  "Terrified")
+                                      "None",  "Slightly",  "Mild",  "Terrified"
                                 ],
                                 onChangedSelectedOption: { data in
                                     viewModel.onChangedAnswer(number: 1, answer: data)
@@ -48,9 +48,9 @@ struct AsessementScreen : View {
                             // 2
                             QuestionAsessement(
                                 number: 2,
-                                question: String(localized: "When in fear, I experience physical symptoms (sweating, rapid heartbeat, shortness of breath)."),
+                                question:  "When in fear, I experience physical symptoms (sweating, rapid heartbeat, shortness of breath).",
                                 options: [
-                                    String(localized: "Yes"), String(localized: "No")
+                                    "Yes",  "No"
                                 ],
                                 onChangedSelectedOption: { data in
                                     viewModel.onChangedAnswer(number: 2, answer: data)
@@ -60,9 +60,9 @@ struct AsessementScreen : View {
                             // 3
                             QuestionAsessement(
                                 number: 3,
-                                question: String(localized: "I have tried attending therapy to help manage my phobia."),
+                                question:  "I have tried attending therapy to help manage my phobia.",
                                 options: [
-                                    String(localized: "Yes"), String(localized: "No")
+                                    "Yes",  "No"
                                 ],
                                 onChangedSelectedOption: { data in
                                     viewModel.onChangedAnswer(number: 3, answer: data)
@@ -72,10 +72,10 @@ struct AsessementScreen : View {
                             // 4
                             QuestionAsessement(
                                 number: 4,
-                                question: String(localized: "I have other mental health conditions that might affect my phobia."),
+                                question:  "I have other mental health conditions that might affect my phobia.",
 
                                 options: [
-                                    String(localized: "Yes"), String(localized: "No")
+                                    "Yes",  "No"
                                 ],
                                 onChangedSelectedOption: { data in
                                     viewModel.onChangedAnswer(number: 4, answer: data)
@@ -97,9 +97,9 @@ struct AsessementScreen : View {
                             // 5
                             QuestionAsessement(
                                 number: 1,
-                                question: String(localized: "Are you willing to be exposed to a 2D cartoon image of the feared object."),
+                                question: "Are you willing to be exposed to a 2D cartoon image of the feared object.",
                                 options: [
-                                    String(localized: "Yes"), String(localized: "No")
+                                    "Yes",  "No"
                                 ],
                                 onChangedSelectedOption: { data in
                                     viewModel.onChangedAnswer(number: 5, answer: data)
@@ -109,9 +109,9 @@ struct AsessementScreen : View {
                             // 6
                             QuestionAsessement(
                                 number: 2,
-                                question: String(localized: "Are you willing to be exposed to a 3D representation of the feared object using Augmented reality?"),
+                                question: "Are you willing to be exposed to a 3D representation of the feared object using Augmented reality?",
                                 options: [
-                                    String(localized: "Yes"), String(localized: "No")
+                                    "Yes",  "No"
                                 ],
                                 onChangedSelectedOption: { data in
                                     viewModel.onChangedAnswer(number: 6, answer: data)
@@ -121,9 +121,9 @@ struct AsessementScreen : View {
                             // 7
                             QuestionAsessement(
                                 number: 3,
-                                question: String(localized: "Are you willing to have the 3D object approach to you?"),
+                                question: "Are you willing to have the 3D object approach to you?",
                                 options: [
-                                    String(localized: "Yes"), String(localized: "No")
+                                    "Yes",  "No"
                                 ],
                                 onChangedSelectedOption: { data in
                                     viewModel.onChangedAnswer(number: 7, answer: data)

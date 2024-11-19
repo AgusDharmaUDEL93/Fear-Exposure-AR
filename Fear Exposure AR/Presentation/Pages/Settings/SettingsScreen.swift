@@ -18,18 +18,18 @@ struct SettingsScreen : View {
         GeometryReader { geometry in
             ScrollView {
                 VStack (alignment : .leading) {
-                    TitleScreen(title: String(localized: "Settings"), description: "")
+                    TitleScreen(title: "Settings", description: "")
                     VStack (alignment : .leading) {
-                        TitleSectionSetting(label: String(localized: "General"))
+                        TitleSectionSetting(label: "General")
                         ListTextProfile(
-                            label: String(localized: "Phobias"),
+                            label: "Phobias",
                             image: "brain.filled.head.profile",
                             onAction: {
                                 router.navigate(to: .introductionPhobia)
                             }
                         )
                         ListTextProfile(
-                            label: String(localized: "Language") ,
+                            label: "Language" ,
                             image: "globe",
                             onAction: {
                                 viewModel.onOpenLanguageSheets()
@@ -40,21 +40,21 @@ struct SettingsScreen : View {
                         
                         TitleSectionSetting(label: "Others")
                         ListTextProfile(
-                            label: String(localized: "Terms & Conditions"),
+                            label: "Terms and Conditions",
                             image: "doc.plaintext",
                             onAction: {
                                 router.navigate(to: .termCondition(isOnlyShowing: true))
                             }
                         )
                         ListTextProfile(
-                            label: String(localized: "Privacy Notice"),
+                            label: "Privacy Notice",
                             image: "lock.shield",
                             onAction: {
                                 router.navigate(to: .privacyNotice)
                             }
                         )
                         ListTextProfile(
-                            label: String(localized: "About"),
+                            label: "About",
                             image: "info.circle",
                             onAction: {
                                 router.navigate(to: .about)
